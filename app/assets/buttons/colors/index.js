@@ -1,0 +1,13 @@
+export { default as Select } from "./kf_color_select_btn.svg";
+export { default as Purple } from "./kf_purple_btn.svg";
+export { default as Yellow } from "./kf_yellow_btn.svg";
+export { default as Green } from "./kf_green_btn.svg";
+export { default as Red } from "./kf_red_btn.svg";
+export { default as Orange } from "./kf_orange_btn.svg";
+export { default as Blue } from "./kf_blue_btn.svg";
+export { default as Black } from "./kf_black_btn.svg";
+export { default as White } from "./kf_white_btn.svg";
+export { default as Pink } from "./kf_pink_btn.svg";
+export { default as Brown } from "./kf_brown_btn.svg";
+export { default as Cyan } from "./kf_cyan_btn.svg";
+export { default as Gold } from "./kf_gold_btn.svg";

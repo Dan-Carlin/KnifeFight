@@ -1,46 +1,70 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-import Screen from "../../components/Screen";
-import Text from "../../components/Text";
+import colors from "../../config/colors";
+import HealthBar from "../../components/HealthBar";
+import NameDisplay from "../../components/NameDisplay";
+import OpacityButton from "../../components/OpacityButton";
+import { ToolsGraphic } from "../../assets/buttons/actions";
+import TraitScreen from "../../components/TraitScreen";
+import * as TraitSvgs from "../../assets/traits";
 
-const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
+const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen(props) {
   return (
-    <Screen style={styles.screenContainer} background={background}>
+    <TraitScreen
+      TraitGraphic={TraitSvgs.Unstable}
+      gangColor={colors.gang_red}
+      style={styles.screenContainer}
+      background={background}
+    >
       <View style={styles.buttonContainer}>
-        <Text>buttonContainer</Text>
+        <View style={styles.toolsButton}>
+          <OpacityButton
+            Graphic={ToolsGraphic}
+            onPress={() => console.log("Tools button pressed.")}
+          />
+        </View>
       </View>
       <View style={styles.nameContainer}>
-        <Text>nameContainer</Text>
+        <NameDisplay
+          gangName={"Gang Name"}
+          gangTrait={"Unstable"}
+          font="default"
+          color={colors.gang_red}
+        />
       </View>
       <View style={styles.healthContainer}>
-        <Text>healthContainer</Text>
+        <HealthBar
+          hpValue={"25"}
+          gangColor={colors.gang_red}
+          gangColorDark={colors.gang_medium_red}
+        />
       </View>
-    </Screen>
+    </TraitScreen>
   );
 }
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignItems: "center",
-    // backgroundColor: "crimson",
     flex: 0.25,
   },
   healthContainer: {
     alignItems: "center",
-    // backgroundColor: "limegreen",
     flex: 0.35,
   },
   nameContainer: {
     alignItems: "center",
-    // backgroundColor: "skyblue",
     flex: 0.4,
   },
   screenContainer: {
-    // backgroundColor: "gold",
     flex: 1,
+  },
+  toolsButton: {
+    height: "100%",
+    width: "20%",
+    transform: [{ rotate: "180deg" }],
   },
 });
 

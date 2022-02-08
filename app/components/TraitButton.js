@@ -3,7 +3,6 @@ import { View, StyleSheet, Pressable } from "react-native";
 import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 
 import colors from "../config/colors";
-import Text from "../components/Text";
 
 function TraitButton({ checked, onChange, trait, Graphic }) {
   function onCheckmarkPress() {

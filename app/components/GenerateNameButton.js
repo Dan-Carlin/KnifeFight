@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
-import ButtonText from "../assets/buttons/actions/kf_generate_name_btn.svg";
+import { GenerateNameGraphic } from "../assets/buttons/actions";
 
 function GenerateNameButton({ onPress }) {
   return (
     <TouchableWithoutFeedback style={styles.container} onPress={onPress}>
-      <ButtonText />
+      <GenerateNameGraphic />
     </TouchableWithoutFeedback>
   );
 }

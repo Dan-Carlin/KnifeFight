@@ -26,11 +26,10 @@ function HealthBar({ hpValue, gangColor, gangColorMedium }) {
         <View style={styles.barBorder}>
           <LinearGradient
             style={{
-              backgroundColor: gangColor,
               height: "100%",
               width: "100%",
             }}
-            colors={[gangColor, gangColorMedium]}
+            colors={[colors.gang_blue, colors.gang_medium_blue]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
           />
@@ -43,9 +42,9 @@ function HealthBar({ hpValue, gangColor, gangColorMedium }) {
 const styles = StyleSheet.create({
   barBorder: {
     borderColor: colors.light,
-    borderWidth: 8,
+    borderWidth: 6,
     height: "60%",
-    padding: 10,
+    padding: 8,
     width: "90%",
   },
   barContainer: {

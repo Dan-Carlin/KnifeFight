@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
 import AppLoading from "expo-app-loading";
+import { NavigationContainer } from "@react-navigation/native";
 
-import KFHomeScreen from "./app/screens/home/KFHomeScreen";
-import KFSetupStepOneScreen from "./app/screens/setup/KFSetupStepOneScreen";
-import KFSetupStepTwoScreen from "./app/screens/setup/KFSetupStepTwoScreen";
-import KFSetupStepThreeScreen from "./app/screens/setup/KFSetupStepThreeScreen";
-import KFBannerScreen from "./app/screens/tools/KFBannerScreen";
-import KFToolsScreen from "./app/screens/tools/KFToolsScreen";
 import useFonts from "./app/hooks/useFonts";
+import MainNavigator from "./app/navigation/MainNavigator";
+import NavigationTheme from "./app/navigation/NavigationTheme";
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -31,7 +27,9 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" backgroundColor="transparent" />
-      <KFBannerScreen />
+      <NavigationContainer theme={NavigationTheme}>
+        <MainNavigator />
+      </NavigationContainer>
     </>
   );
 }

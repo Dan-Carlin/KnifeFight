@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, StyleSheet } from "react-native";
 
 import { BackGraphic, NextGraphic } from "../../assets/buttons/navigation";
@@ -6,17 +6,18 @@ import CloseButton from "../../components/CloseButton";
 import * as ColorSvgs from "../../assets/buttons/colors/index";
 import ColorButton from "../../components/ColorButton";
 import NavButton from "../../components/NavButton";
+import routes from "../../navigation/routes";
 import Screen from "../../components/Screen";
 import Text from "../../components/Text";
 
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
-function KFSetupStepTwoScreen(props) {
+function KFSetupStepTwoScreen({ navigation }) {
   return (
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.topContainer}>
         <View style={styles.closeButton}>
-          <CloseButton onPress={() => console.log("Close button pressed.")} />
+          <CloseButton onPress={() => navigation.popToTop()} />
         </View>
       </View>
       <View style={styles.bodyContainer}>
@@ -68,12 +69,12 @@ function KFSetupStepTwoScreen(props) {
           <NavButton
             style={styles.navButton}
             Graphic={BackGraphic}
-            onPress={() => console.log("Back button pressed.")}
+            onPress={() => navigation.goBack()}
           />
           <NavButton
             style={styles.navButton}
             Graphic={NextGraphic}
-            onPress={() => console.log("Next button pressed.")}
+            onPress={() => navigation.navigate(routes.SETUP_STEP_THREE)}
           />
         </View>
       </View>

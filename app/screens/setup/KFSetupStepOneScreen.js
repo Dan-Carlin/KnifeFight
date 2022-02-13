@@ -5,13 +5,14 @@ import colors from "../../config/colors";
 import { ExitGraphic, NextGraphic } from "../../assets/buttons/navigation";
 import GenerateNameButton from "../../components/GenerateNameButton";
 import NavButton from "../../components/NavButton";
+import routes from "../../navigation/routes";
 import Screen from "../../components/Screen";
 import Text from "../../components/Text";
 import TextInput from "../../components/TextInput";
 
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
-function KFSetupStepOneScreen(props) {
+function KFSetupStepOneScreen({ navigation }) {
   return (
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.topContainer} />
@@ -32,12 +33,12 @@ function KFSetupStepOneScreen(props) {
           <NavButton
             style={styles.navButton}
             Graphic={ExitGraphic}
-            onPress={() => console.log("Exit button pressed.")}
+            onPress={() => navigation.goBack()}
           />
           <NavButton
             style={styles.navButton}
             Graphic={NextGraphic}
-            onPress={() => console.log("Next button pressed.")}
+            onPress={() => navigation.navigate(routes.SETUP_STEP_TWO)}
           />
         </View>
       </View>

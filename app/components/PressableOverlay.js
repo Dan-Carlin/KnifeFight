@@ -1,0 +1,34 @@
+import React from "react";
+import { StyleSheet, Pressable, Platform } from "react-native";
+
+function PressableOverlay({ onPress }) {
+  return (
+    <Pressable
+      style={[
+        Platform.OS === "ios" ? styles.iOSBackdrop : styles.androidBackdrop,
+        styles.backdrop,
+      ]}
+      onPress={onPress}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  iOSBackdrop: {
+    backgroundColor: "#000000",
+    opacity: 0.3,
+  },
+  androidBackdrop: {
+    backgroundColor: "#000000",
+    opacity: 0.32,
+  },
+  backdrop: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+});
+
+export default PressableOverlay;

@@ -4,6 +4,7 @@ import { View, StyleSheet, Image } from "react-native";
 import FGLogo from "../../assets/logos/fg_logo.svg";
 import Gradient from "../../assets/backgrounds/split_gradient_green.svg";
 import KFLogo from "../../assets/logos/kf_logo.svg";
+import routes from "../../navigation/routes";
 import Screen from "../../components/Screen";
 import StartGameButton from "../../components/StartGameButton";
 import Text from "../../components/Text";
@@ -11,7 +12,7 @@ import Text from "../../components/Text";
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 const sgLogo = require("../../assets/logos/sg_logo_light.png");
 
-function KFHomeScreen(props) {
+function KFHomeScreen({ navigation }) {
   return (
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.logoContainer}>
@@ -19,7 +20,10 @@ function KFHomeScreen(props) {
       </View>
       <View style={styles.buttonContainer}>
         <Gradient style={styles.gradient} />
-        <StartGameButton style={styles.button} />
+        <StartGameButton
+          style={styles.button}
+          onPress={() => navigation.navigate(routes.SETUP_STEP_ONE)}
+        />
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomContents}>

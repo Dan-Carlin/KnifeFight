@@ -1,5 +1,6 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, BackHandler } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 
 import {
   ArrowLeftGraphic,
@@ -12,9 +13,13 @@ import {
 import Button from "../../components/Button";
 import colors from "../../config/colors";
 import CounterContainer from "../../components/CounterContainer";
+import CustomAlert from "../../components/CustomAlert";
 import { HomeGraphic } from "../../assets/buttons/navigation";
+import InstructionsModal from "../../components/InstructionsModal";
+import Modal from "../../components/Modal";
 import NameDisplay from "../../components/NameDisplay";
 import OpacityButton from "../../components/OpacityButton";
+import routes from "../../navigation/routes";
 import Screen from "../../components/Screen";
 import SoundButton from "../../components/SoundButton";
 import Text from "../../components/Text";
@@ -22,9 +27,45 @@ import * as TraitSvgs from "../../assets/traits";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
-function KFToolsScreen(props) {
+function KFToolsScreen({ navigation }) {
+  const [exitModalVisible, setExitModalVisible] = useState(false);
+  const [howToModalVisible, setHowToModalVisible] = useState(true);
+
+  const onBackPress = () => {
+    setExitModalVisible(true);
+    return true;
+  };
+
+  useFocusEffect(
+    React.useCallback(() => {
+      BackHandler.addEventListener("hardwareBackPress", onBackPress);
+
+      return () =>
+        BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+    }, [])
+  );
+
   return (
     <Screen style={styles.screenContainer} background={background}>
+      <Modal
+        component={
+          <InstructionsModal onConfirm={() => setHowToModalVisible(false)} />
+        }
+        isVisible={howToModalVisible}
+        setIsVisible={() => setHowToModalVisible(!howToModalVisible)}
+      />
+
+      <Modal
+        component={
+          <CustomAlert
+            onCancel={() => setExitModalVisible(false)}
+            onConfirm={() => navigation.popToTop()}
+          />
+        }
+        isVisible={exitModalVisible}
+        setIsVisible={() => setExitModalVisible(!exitModalVisible)}
+      />
+
       <View style={styles.leftContainer}>
         <View style={styles.topButtons}>
           <SoundButton style={styles.soundButton} />
@@ -88,12 +129,12 @@ function KFToolsScreen(props) {
       </View>
       <View style={styles.rightContainer}>
         <View style={styles.topButtons}>
-          <OpacityButton Graphic={HomeGraphic} />
+          <OpacityButton Graphic={HomeGraphic} onPress={() => onBackPress()} />
         </View>
         <View style={styles.bannerButton}>
           <OpacityButton
             Graphic={BannerGraphic}
-            onPress={() => console.log("Banner button pressed.")}
+            onPress={() => navigation.navigate(routes.BANNER)}
           />
         </View>
       </View>

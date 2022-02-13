@@ -11,7 +11,7 @@ import * as TraitSvgs from "../../assets/traits";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
-function KFBannerScreen(props) {
+function KFBannerScreen({ navigation }) {
   return (
     <TraitScreen
       TraitGraphic={TraitSvgs.Unstable}
@@ -23,7 +23,7 @@ function KFBannerScreen(props) {
         <View style={styles.toolsButton}>
           <OpacityButton
             Graphic={ToolsGraphic}
-            onPress={() => console.log("Tools button pressed.")}
+            onPress={() => navigation.goBack()}
           />
         </View>
       </View>

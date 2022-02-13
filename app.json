@@ -4,7 +4,7 @@
     "slug": "KnifeFight",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./app/assets/icon.png",
+    "icon": "./app/assets/kf_icon_logo.png",
     "splash": {
       "image": "./app/assets/splash.png",
       "resizeMode": "contain",
@@ -17,13 +17,15 @@
       "**/*"
     ],
     "ios": {
+      "icon": "./app/assets/icons/kf_icon_ios.png",
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./app/assets/icons/kf_icon_android_fg.png",
+        "backgroundImage": "./app/assets/icons/kf_icon_android_bg.png"
+      },
+      "icon": "./app/assets/icons/kf_icon_android.png"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"

@@ -2,13 +2,18 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 
-import colors from "../config/colors";
 import Text from "../components/Text";
 
-function NameDisplay({ gangName, gangTrait, font, color }) {
-  const traitTextA = "(The ";
-  const traitTextB = " ones)";
+import colors from "../config/colors";
+import strings from "../config/strings";
 
+function NameDisplay({
+  gangName,
+  gangTrait,
+  font,
+  color,
+  descriptionVisible = false,
+}) {
   return (
     <View style={styles.container}>
       <AutoSizeText
@@ -24,11 +29,13 @@ function NameDisplay({ gangName, gangTrait, font, color }) {
       >
         {gangName}
       </AutoSizeText>
-      <Text style={styles.traitTextContainer}>
-        <Text style={styles.text}>{traitTextA}</Text>
-        <Text style={styles.traitName}>{gangTrait}</Text>
-        <Text style={styles.text}>{traitTextB}</Text>
-      </Text>
+      {descriptionVisible && (
+        <Text style={styles.traitTextContainer}>
+          <Text style={styles.text}>{strings.name_display_text_a}</Text>
+          <Text style={styles.traitName}>{gangTrait}</Text>
+          <Text style={styles.text}>{strings.name_display_text_b}</Text>
+        </Text>
+      )}
     </View>
   );
 }

@@ -1,19 +1,15 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 
-function OpacityButton({ Graphic, onPress }) {
+function OpacityButton({ Graphic, onPress, width = "100%" }) {
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+    <TouchableOpacity
+      style={{ height: "100%", width: width }}
+      onPress={onPress}
+    >
       <Graphic />
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    height: "100%",
-    width: "100%",
-  },
-});
 
 export default OpacityButton;

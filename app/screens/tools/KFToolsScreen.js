@@ -1,7 +1,13 @@
+/*
+KFToolsScreen - View for the tools screen.
+*/
+
+// External libraries
 import React, { useState } from "react";
-import { View, StyleSheet, BackHandler } from "react-native";
+import { View, BackHandler } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 
+// Assets
 import {
   ArrowLeftGraphic,
   ArrowRightGraphic,
@@ -10,20 +16,26 @@ import {
   MinusGraphic,
   PlusGraphic,
 } from "../../assets/buttons/actions";
-import Button from "../../components/Button";
-import colors from "../../config/colors";
-import CounterContainer from "../../components/CounterContainer";
-import CustomAlert from "../../components/CustomAlert";
 import { HomeGraphic } from "../../assets/buttons/navigation";
-import InstructionsModal from "../../components/InstructionsModal";
+import * as TraitSvgs from "../../assets/traits";
+
+// Components
+import Button from "../../components/Button";
+import CounterContainer from "../../components/CounterContainer";
+import ExitModal from "../modals/ExitModal";
+import InstructionsModal from "../modals/InstructionsModal";
 import Modal from "../../components/Modal";
 import NameDisplay from "../../components/NameDisplay";
 import OpacityButton from "../../components/OpacityButton";
-import routes from "../../navigation/routes";
 import Screen from "../../components/Screen";
 import SoundButton from "../../components/SoundButton";
 import Text from "../../components/Text";
-import * as TraitSvgs from "../../assets/traits";
+
+// Resources
+import colors from "../../config/colors";
+import routes from "../../navigation/routes";
+import strings from "../../config/strings";
+import styles from "./KFToolsStyles";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
@@ -57,7 +69,7 @@ function KFToolsScreen({ navigation }) {
 
       <Modal
         component={
-          <CustomAlert
+          <ExitModal
             onCancel={() => setExitModalVisible(false)}
             onConfirm={() => navigation.popToTop()}
           />
@@ -87,7 +99,7 @@ function KFToolsScreen({ navigation }) {
               />
             </View>
             <View style={styles.fontPickerContainer}>
-              <Text style={styles.styleLabel}>Font Style:</Text>
+              <Text style={styles.styleLabel}>{strings.tools_font_label}</Text>
               <Text style={styles.currentFont}>Default</Text>
             </View>
             <View style={styles.styleButtons}>
@@ -100,9 +112,9 @@ function KFToolsScreen({ navigation }) {
           <View style={styles.nameDisplayContainer}>
             <NameDisplay
               gangName={"Gang Name"}
-              gangTrait={"Unstable"}
+              gangTrait={strings.traits_unstable}
               font="default"
-              color={colors.gang_red}
+              color={colors.gang_normal_red}
             />
           </View>
         </View>
@@ -117,7 +129,7 @@ function KFToolsScreen({ navigation }) {
             width={240}
             Graphic={TraitSvgs.Unstable}
             hpValue="25"
-            gangColor={colors.gang_red}
+            gangColor={colors.gang_normal_red}
           />
           <View style={styles.hpButtons}>
             <Button
@@ -141,100 +153,5 @@ function KFToolsScreen({ navigation }) {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  bannerButton: {
-    height: "50%",
-    padding: 10,
-    width: "100%",
-  },
-  bottomContainer: {
-    alignItems: "center",
-    flex: 0.5,
-    flexDirection: "row",
-    paddingHorizontal: 10,
-    width: "100%",
-  },
-  centerContainer: {
-    alignItems: "center",
-    flex: 0.6,
-  },
-  currentFont: {
-    fontSize: 18,
-    fontStyle: "italic",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  diceRollButton: {
-    height: "50%",
-    padding: 30,
-    width: "100%",
-  },
-  fontPickerContainer: {
-    alignItems: "center",
-    height: "100%",
-    justifyContent: "center",
-    width: "30%",
-  },
-  hpButtons: {
-    bottom: -25,
-    flex: 1,
-    margin: 10,
-  },
-  leftContainer: {
-    alignItems: "center",
-    flex: 0.2,
-    justifyContent: "space-between",
-  },
-  nameContainer: {
-    alignItems: "center",
-    flex: 0.5,
-    width: "100%",
-  },
-  nameDisplayContainer: {
-    flex: 0.65,
-    height: "100%",
-    width: "100%",
-  },
-  rightContainer: {
-    alignItems: "center",
-    flex: 0.2,
-    justifyContent: "space-between",
-  },
-  screenContainer: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  soundButton: {
-    height: "60%",
-    width: "60%",
-  },
-  styleButtons: {
-    height: "100%",
-    padding: 14,
-    width: "20%",
-  },
-  styleEditContainer: {
-    alignItems: "center",
-    flex: 0.35,
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-  },
-  styleLabel: {
-    color: colors.medium,
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  topButtons: {
-    alignItems: "center",
-    flexDirection: "row",
-    height: "25%",
-    justifyContent: "center",
-    padding: 15,
-    width: "100%",
-  },
-});
 
 export default KFToolsScreen;

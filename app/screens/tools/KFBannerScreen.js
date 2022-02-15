@@ -1,13 +1,25 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+/*
+KFBannerScreen - View for the banner screen.
+*/
 
-import colors from "../../config/colors";
+// External libraries
+import React from "react";
+import { View } from "react-native";
+
+// Assets
+import { ToolsGraphic } from "../../assets/buttons/actions";
+import * as TraitSvgs from "../../assets/traits";
+
+// Components
 import HealthBar from "../../components/HealthBar";
 import NameDisplay from "../../components/NameDisplay";
 import OpacityButton from "../../components/OpacityButton";
-import { ToolsGraphic } from "../../assets/buttons/actions";
 import TraitScreen from "../../components/TraitScreen";
-import * as TraitSvgs from "../../assets/traits";
+
+// Resources
+import colors from "../../config/colors";
+import strings from "../../config/strings";
+import styles from "./KFBannerStyles";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
@@ -15,7 +27,7 @@ function KFBannerScreen({ navigation }) {
   return (
     <TraitScreen
       TraitGraphic={TraitSvgs.Unstable}
-      gangColor={colors.gang_red}
+      gangColor={colors.gang_normal_red}
       style={styles.screenContainer}
       background={background}
     >
@@ -30,42 +42,21 @@ function KFBannerScreen({ navigation }) {
       <View style={styles.nameContainer}>
         <NameDisplay
           gangName={"Gang Name"}
-          gangTrait={"Unstable"}
+          gangTrait={strings.traits_unstable}
           font="default"
-          color={colors.gang_red}
+          color={colors.gang_normal_red}
+          descriptionVisible
         />
       </View>
       <View style={styles.healthContainer}>
         <HealthBar
           hpValue={"25"}
-          gangColor={colors.gang_red}
-          gangColorDark={colors.gang_medium_red}
+          gangColor={colors.gang_normal_red}
+          gangColorMedium={colors.gang_medium_red}
         />
       </View>
     </TraitScreen>
   );
 }
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    flex: 0.25,
-  },
-  healthContainer: {
-    alignItems: "center",
-    flex: 0.35,
-  },
-  nameContainer: {
-    alignItems: "center",
-    flex: 0.4,
-  },
-  screenContainer: {
-    flex: 1,
-  },
-  toolsButton: {
-    height: "100%",
-    width: "20%",
-    transform: [{ rotate: "180deg" }],
-  },
-});
 
 export default KFBannerScreen;

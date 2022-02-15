@@ -29,7 +29,7 @@ function HealthBar({ hpValue, gangColor, gangColorMedium }) {
               height: "100%",
               width: "100%",
             }}
-            colors={[colors.gang_blue, colors.gang_medium_blue]}
+            colors={[gangColorMedium, gangColor]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
           />

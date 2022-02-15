@@ -1,14 +1,29 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+/*
+KFSetupStepTwoScreen - View for the second setup screen.
+*/
 
-import { BackGraphic, NextGraphic } from "../../assets/buttons/navigation";
-import CloseButton from "../../components/CloseButton";
+// External libraries
+import React from "react";
+import { View } from "react-native";
+
+// Assets
+import {
+  BackGraphic,
+  CloseGraphic,
+  NextGraphic,
+} from "../../assets/buttons/navigation";
 import * as ColorSvgs from "../../assets/buttons/colors/index";
+
+// Components
 import ColorButton from "../../components/ColorButton";
-import NavButton from "../../components/NavButton";
-import routes from "../../navigation/routes";
+import OpacityButton from "../../components/OpacityButton";
 import Screen from "../../components/Screen";
 import Text from "../../components/Text";
+
+// Resources
+import routes from "../../navigation/routes";
+import strings from "../../config/strings";
+import styles from "./KFSetupStepTwoStyles";
 
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
@@ -17,12 +32,15 @@ function KFSetupStepTwoScreen({ navigation }) {
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.topContainer}>
         <View style={styles.closeButton}>
-          <CloseButton onPress={() => navigation.popToTop()} />
+          <OpacityButton
+            Graphic={CloseGraphic}
+            onPress={() => navigation.popToTop()}
+          />
         </View>
       </View>
       <View style={styles.bodyContainer}>
-        <Text style={styles.title}>Next...</Text>
-        <Text style={styles.text}>Let's choose a gang color.</Text>
+        <Text style={styles.title}>{strings.setup_step_two_title}</Text>
+        <Text style={styles.text}>{strings.setup_step_two_text}</Text>
         <View style={styles.colorGrid}>
           <View style={styles.colorRow}>
             <View style={styles.colorButton}>
@@ -66,15 +84,17 @@ function KFSetupStepTwoScreen({ navigation }) {
           </View>
         </View>
         <View style={styles.navContainer}>
-          <NavButton
+          <OpacityButton
             style={styles.navButton}
             Graphic={BackGraphic}
             onPress={() => navigation.goBack()}
+            width="45%"
           />
-          <NavButton
+          <OpacityButton
             style={styles.navButton}
             Graphic={NextGraphic}
             onPress={() => navigation.navigate(routes.SETUP_STEP_THREE)}
+            width="45%"
           />
         </View>
       </View>
@@ -82,62 +102,5 @@ function KFSetupStepTwoScreen({ navigation }) {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  bodyContainer: {
-    alignItems: "center",
-    flex: 0.5,
-    justifyContent: "center",
-    paddingHorizontal: 25,
-  },
-  bottomContainer: {
-    alignItems: "center",
-    flex: 0.25,
-  },
-  closeButton: {
-    height: 50,
-    marginStart: 35,
-    marginTop: 20,
-    width: 50,
-  },
-  colorButton: {
-    alignItems: "center",
-    flex: 0.15,
-    justifyContent: "center",
-  },
-  colorGrid: {
-    height: "55%",
-    marginVertical: 6,
-    width: "95%",
-  },
-  colorRow: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    margin: 4,
-  },
-  navButton: {
-    height: "100%",
-    width: "100%",
-  },
-  navContainer: {
-    flexDirection: "row",
-    height: 90,
-  },
-  text: {
-    textAlign: "center",
-  },
-  topContainer: {
-    flex: 0.25,
-  },
-  screenContainer: {
-    flex: 1,
-  },
-  title: {
-    fontFamily: "default",
-    fontSize: 50,
-    textAlign: "center",
-  },
-});
 
 export default KFSetupStepTwoScreen;

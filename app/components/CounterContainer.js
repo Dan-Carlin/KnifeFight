@@ -4,6 +4,8 @@ import { View, StyleSheet } from "react-native";
 import colors from "../config/colors";
 import Text from "../components/Text";
 
+import strings from "../config/strings";
+
 function CounterContainer({ width, Graphic, hpValue, gangColor }) {
   return (
     <View
@@ -32,7 +34,7 @@ function CounterContainer({ width, Graphic, hpValue, gangColor }) {
           textAlign: "center",
         }}
       >
-        HP
+        {strings.app_hp_label}
       </Text>
       <Text style={styles.number}>{hpValue}</Text>
     </View>

@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`How To Modal second screen tests renders second How To screen correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 0.85,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginEnd": 6,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#fff",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "width": "100%",
+              },
+              undefined,
+            ]
+          }
+        >
+          2.
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#fff",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "width": "100%",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+            During your turn: 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          >
+            Use the tools screen to keep track of your remaining HP, handle dice rolls, and customize how your name will display to your rivals. Once finished, tap the 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "color": "#f26e85",
+                  "fontStyle": "italic",
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+            End Turn
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          >
+             button.
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": "54%",
+          "justifyContent": "flex-start",
+          "padding": 10,
+        }
+      }
+    >
+      <SvgMock />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 0.15,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": "80%",
+          "width": "25%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      >
+        <SvgMock />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+              "fontFamily": "Avenir",
+              "fontSize": 16,
+              "width": "100%",
+            },
+            Object {
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        2/3
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "height": "80%",
+          "width": "25%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      >
+        <SvgMock />
+      </View>
+    </View>
+  </View>
+</View>
+`;

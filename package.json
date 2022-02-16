@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
@@ -17,7 +18,7 @@
     "expo-font": "~10.0.4",
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
-    "react": "17.0.1",
+    "react": "^17.0.2",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
     "react-native-auto-size-text": "^1.1.1",
@@ -28,7 +29,20 @@
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^7.2.0",
+    "jest": "^26.6.3",
+    "jest-expo": "^44.0.1",
+    "jest-fetch-mock": "^3.0.3",
+    "react-test-renderer": "17.0.2"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "automock": false,
+    "moduleNameMapper": {
+      "\\.svg": "<rootDir>/app/__mocks__/svgMock.js"
+    }
+  }
 }

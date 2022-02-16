@@ -3,9 +3,8 @@ KFToolsScreen - View for the tools screen.
 */
 
 // External libraries
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, BackHandler } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
 
 // Assets
 import {
@@ -48,14 +47,12 @@ function KFToolsScreen({ navigation }) {
     return true;
   };
 
-  useFocusEffect(
-    React.useCallback(() => {
-      BackHandler.addEventListener("hardwareBackPress", onBackPress);
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", onBackPress);
 
-      return () =>
-        BackHandler.removeEventListener("hardwareBackPress", onBackPress);
-    }, [])
-  );
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+  }, []);
 
   return (
     <Screen style={styles.screenContainer} background={background}>

@@ -33,11 +33,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <NavigationContainer theme={navigationTheme}>
       <StatusBar style="light" backgroundColor="transparent" />
-      <NavigationContainer theme={navigationTheme}>
-        <MainNavigator />
-      </NavigationContainer>
-    </>
+      <MainNavigator />
+    </NavigationContainer>
   );
 }

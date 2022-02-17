@@ -11,6 +11,7 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => (
   <Stack.Navigator
+    initialRouteName="Home"
     screenOptions={{
       headerShown: false,
       orientation: "portrait",

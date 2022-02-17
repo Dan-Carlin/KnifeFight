@@ -18,6 +18,7 @@ export default StyleSheet.create({
   },
   screenContainer: {
     flex: 1,
+    padding: 16,
   },
   toolsButton: {
     height: "100%",

@@ -5,6 +5,7 @@ KFBannerScreen - View for the banner screen.
 // External libraries
 import React from "react";
 import { View } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 // Assets
 import { ToolsGraphic } from "../../assets/buttons/actions";
@@ -23,7 +24,9 @@ import styles from "./KFBannerStyles";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
-function KFBannerScreen({ navigation }) {
+function KFBannerScreen({ route, navigation }) {
+  const { hp } = route.params;
+
   return (
     <TraitScreen
       TraitGraphic={TraitSvgs.Unstable}
@@ -49,11 +52,7 @@ function KFBannerScreen({ navigation }) {
         />
       </View>
       <View style={styles.healthContainer}>
-        <HealthBar
-          hpValue={"25"}
-          gangColor={colors.gang_normal_red}
-          gangColorMedium={colors.gang_medium_red}
-        />
+        <HealthBar hpValue={hp} gangColor={colors.gang_normal_red} />
       </View>
     </TraitScreen>
   );

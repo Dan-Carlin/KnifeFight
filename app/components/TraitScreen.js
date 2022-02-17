@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   screen: {
-    paddingTop: Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight / 2,
   },
   traitGraphic: {
     height: "100%",

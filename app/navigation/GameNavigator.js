@@ -3,12 +3,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import KFBannerScreen from "../screens/tools/KFBannerScreen";
 import KFToolsScreen from "../screens/tools/KFToolsScreen";
-import InstructionsNavigator from "./InstructionsNavigator";
 
 const Stack = createNativeStackNavigator();
 
 const GameNavigator = () => (
   <Stack.Navigator
+    initialRouteName="Tools"
     screenOptions={{
       headerShown: false,
       orientation: "landscape",
@@ -16,8 +16,11 @@ const GameNavigator = () => (
     }}
   >
     <Stack.Screen name="Tools" component={KFToolsScreen} />
-    <Stack.Screen name="Banner" component={KFBannerScreen} />
-    <Stack.Screen name="Instructions" component={InstructionsNavigator} />
+    <Stack.Screen
+      name="Banner"
+      component={KFBannerScreen}
+      options={({ route }) => ({ hp: route.params.hp })}
+    />
   </Stack.Navigator>
 );
 

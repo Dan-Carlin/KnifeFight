@@ -18,6 +18,7 @@ function NameDisplay({
     <View style={styles.container}>
       <AutoSizeText
         style={{
+          alignSelf: "flex-start",
           color: color,
           fontFamily: font,
           textAlign: "center",
@@ -43,22 +44,27 @@ function NameDisplay({
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
+    flexDirection: "row",
     height: "100%",
     justifyContent: "center",
     width: "100%",
   },
   text: {
     color: colors.light,
+    fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
   },
   traitName: {
+    fontSize: 20,
     fontStyle: "italic",
     fontWeight: "bold",
     textAlign: "center",
   },
   traitTextContainer: {
+    alignSelf: "flex-end",
     textAlign: "center",
+    position: "absolute",
   },
 });
 

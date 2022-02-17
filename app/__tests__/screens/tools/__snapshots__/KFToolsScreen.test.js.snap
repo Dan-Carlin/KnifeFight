@@ -778,6 +778,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flexDirection": "row",
                 "height": "100%",
                 "justifyContent": "center",
                 "width": "100%",
@@ -792,6 +793,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "alignSelf": "flex-start",
                     "color": "#ec2b3d",
                     "fontFamily": "default",
                     "textAlign": "center",

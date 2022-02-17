@@ -35,10 +35,13 @@ import colors from "../../config/colors";
 import routes from "../../navigation/routes";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
+import useCounter from "../../hooks/useCounter";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFToolsScreen({ navigation }) {
+  const { count, increaseCount, decreaseCount } = useCounter(25);
+
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [howToModalVisible, setHowToModalVisible] = useState(true);
 
@@ -117,22 +120,16 @@ function KFToolsScreen({ navigation }) {
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.hpButtons}>
-            <Button
-              Graphic={MinusGraphic}
-              onPress={() => console.log("Minus button pressed.")}
-            />
+            <Button Graphic={MinusGraphic} onPress={decreaseCount} />
           </View>
           <CounterContainer
             width={240}
             Graphic={TraitSvgs.Unstable}
-            hpValue="25"
+            hpValue={count}
             gangColor={colors.gang_normal_red}
           />
           <View style={styles.hpButtons}>
-            <Button
-              Graphic={PlusGraphic}
-              onPress={() => console.log("Plus button pressed.")}
-            />
+            <Button Graphic={PlusGraphic} onPress={increaseCount} />
           </View>
         </View>
       </View>
@@ -143,7 +140,7 @@ function KFToolsScreen({ navigation }) {
         <View style={styles.bannerButton}>
           <OpacityButton
             Graphic={BannerGraphic}
-            onPress={() => navigation.navigate(routes.BANNER)}
+            onPress={() => navigation.navigate(routes.BANNER, { hp: count })}
           />
         </View>
       </View>

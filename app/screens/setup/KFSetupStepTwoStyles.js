@@ -15,6 +15,9 @@ export default StyleSheet.create({
     alignItems: "center",
     flex: 0.25,
   },
+  buttonDisabled: {
+    opacity: 0.5,
+  },
   closeButton: {
     height: 50,
     marginStart: 35,

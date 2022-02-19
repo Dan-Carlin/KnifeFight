@@ -13,7 +13,7 @@ export default StyleSheet.create({
     width: "25%",
   },
   buttonDisabled: {
-    opacity: 0.4,
+    opacity: 0.5,
   },
   buttonsContainer: {
     alignItems: "center",

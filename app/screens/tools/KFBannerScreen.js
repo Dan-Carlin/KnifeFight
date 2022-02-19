@@ -5,7 +5,6 @@ KFBannerScreen - View for the banner screen.
 // External libraries
 import React from "react";
 import { View } from "react-native";
-import { useRoute } from "@react-navigation/native";
 
 // Assets
 import { ToolsGraphic } from "../../assets/buttons/actions";
@@ -18,19 +17,17 @@ import OpacityButton from "../../components/OpacityButton";
 import TraitScreen from "../../components/TraitScreen";
 
 // Resources
-import colors from "../../config/colors";
-import strings from "../../config/strings";
 import styles from "./KFBannerStyles";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen({ route, navigation }) {
-  const { hp } = route.params;
+  const { hp, name, Color, Trait } = route.params;
 
   return (
     <TraitScreen
-      TraitGraphic={TraitSvgs.Unstable}
-      gangColor={colors.gang_normal_red}
+      Trait={Trait}
+      Color={Color}
       style={styles.screenContainer}
       background={background}
     >
@@ -44,15 +41,15 @@ function KFBannerScreen({ route, navigation }) {
       </View>
       <View style={styles.nameContainer}>
         <NameDisplay
-          gangName={"Gang Name"}
-          gangTrait={strings.traits_unstable}
+          gangName={name}
+          Trait={Trait}
           font="default"
-          color={colors.gang_normal_red}
+          Color={Color}
           descriptionVisible
         />
       </View>
       <View style={styles.healthContainer}>
-        <HealthBar hpValue={hp} gangColor={colors.gang_normal_red} />
+        <HealthBar hpValue={hp} gangColor={Color.normal} />
       </View>
     </TraitScreen>
   );

@@ -3,8 +3,9 @@ KFSetupStepThreeScreen - View for the third setup screen.
 */
 
 // External libraries
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Assets
 import {
@@ -12,7 +13,6 @@ import {
   CloseGraphic,
   FinishGraphic,
 } from "../../assets/buttons/navigation";
-import * as TraitSvgs from "../../assets/traits";
 
 // Components
 import OpacityButton from "../../components/OpacityButton";
@@ -21,6 +21,7 @@ import Text from "../../components/Text";
 import TraitButton from "../../components/TraitButton";
 
 // Resources
+import gangTraits from "../../data/gangTraits";
 import routes from "../../navigation/routes";
 import strings from "../../config/strings";
 import styles from "./KFSetupStepThreeStyles";
@@ -28,6 +29,27 @@ import styles from "./KFSetupStepThreeStyles";
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
 function KFSetupStepThreeScreen({ navigation }) {
+  const [trait, setTrait] = useState(gangTraits.NONE);
+  const [traitIsSelected, setTraitIsSelected] = useState(false);
+
+  const setGangTrait = (value) => {
+    if (value != gangTraits.NONE) {
+      setTraitIsSelected(true);
+    } else {
+      setTraitIsSelected(false);
+    }
+    setTrait(value);
+  };
+
+  const storeGangTrait = async (value) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem("@gangTrait", jsonValue);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.topContainer}>
@@ -45,144 +67,166 @@ function KFSetupStepThreeScreen({ navigation }) {
           <View style={styles.traitRow}>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_adventurous}
-                Graphic={TraitSvgs.Adventurous}
+                Trait={gangTraits.ADVENTUROUS}
+                isSelected={trait == gangTraits.ADVENTUROUS}
+                onSelect={() => setGangTrait(gangTraits.ADVENTUROUS)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_aggressive}
-                Graphic={TraitSvgs.Aggressive}
+                Trait={gangTraits.AGGRESSIVE}
+                isSelected={trait == gangTraits.AGGRESSIVE}
+                onSelect={() => setGangTrait(gangTraits.AGGRESSIVE)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_brash}
-                Graphic={TraitSvgs.Brash}
+                Trait={gangTraits.BRASH}
+                isSelected={trait == gangTraits.BRASH}
+                onSelect={() => setGangTrait(gangTraits.BRASH)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_burly}
-                Graphic={TraitSvgs.Burly}
-              />
-            </View>
-          </View>
-          <View style={styles.traitRow}>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_cocky}
-                Graphic={TraitSvgs.Cocky}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_eager}
-                Graphic={TraitSvgs.Eager}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_fierce}
-                Graphic={TraitSvgs.Fierce}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_heavy}
-                Graphic={TraitSvgs.Heavy}
+                Trait={gangTraits.BURLY}
+                isSelected={trait == gangTraits.BURLY}
+                onSelect={() => setGangTrait(gangTraits.BURLY)}
               />
             </View>
           </View>
           <View style={styles.traitRow}>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_low_key}
-                Graphic={TraitSvgs.LowKey}
+                Trait={gangTraits.COCKY}
+                isSelected={trait == gangTraits.COCKY}
+                onSelect={() => setGangTrait(gangTraits.COCKY)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_lucky}
-                Graphic={TraitSvgs.Lucky}
+                Trait={gangTraits.EAGER}
+                isSelected={trait == gangTraits.EAGER}
+                onSelect={() => setGangTrait(gangTraits.EAGER)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_practical}
-                Graphic={TraitSvgs.Practical}
+                Trait={gangTraits.FIERCE}
+                isSelected={trait == gangTraits.FIERCE}
+                onSelect={() => setGangTrait(gangTraits.FIERCE)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_quick}
-                Graphic={TraitSvgs.Quick}
-              />
-            </View>
-          </View>
-          <View style={styles.traitRow}>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_savage}
-                Graphic={TraitSvgs.Savage}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_sketchy}
-                Graphic={TraitSvgs.Sketchy}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_slick}
-                Graphic={TraitSvgs.Slick}
-              />
-            </View>
-            <View style={styles.traitButton}>
-              <TraitButton
-                trait={strings.traits_smart}
-                Graphic={TraitSvgs.Smart}
+                Trait={gangTraits.HEAVY}
+                isSelected={trait == gangTraits.HEAVY}
+                onSelect={() => setGangTrait(gangTraits.HEAVY)}
               />
             </View>
           </View>
           <View style={styles.traitRow}>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_strong}
-                Graphic={TraitSvgs.Strong}
+                Trait={gangTraits.LOW_KEY}
+                isSelected={trait == gangTraits.LOW_KEY}
+                onSelect={() => setGangTrait(gangTraits.LOW_KEY)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_tenacious}
-                Graphic={TraitSvgs.Tenacious}
+                Trait={gangTraits.LUCKY}
+                isSelected={trait == gangTraits.LUCKY}
+                onSelect={() => setGangTrait(gangTraits.LUCKY)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_tough}
-                Graphic={TraitSvgs.Tough}
+                Trait={gangTraits.PRACTICAL}
+                isSelected={trait == gangTraits.PRACTICAL}
+                onSelect={() => setGangTrait(gangTraits.PRACTICAL)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_unstable}
-                Graphic={TraitSvgs.Unstable}
+                Trait={gangTraits.QUICK}
+                isSelected={trait == gangTraits.QUICK}
+                onSelect={() => setGangTrait(gangTraits.QUICK)}
               />
             </View>
           </View>
           <View style={styles.traitRow}>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_well_rounded}
-                Graphic={TraitSvgs.WellRounded}
+                Trait={gangTraits.SAVAGE}
+                isSelected={trait == gangTraits.SAVAGE}
+                onSelect={() => setGangTrait(gangTraits.SAVAGE)}
               />
             </View>
             <View style={styles.traitButton}>
               <TraitButton
-                trait={strings.traits_wily}
-                Graphic={TraitSvgs.Wily}
+                Trait={gangTraits.SKETCHY}
+                isSelected={trait == gangTraits.SKETCHY}
+                onSelect={() => setGangTrait(gangTraits.SKETCHY)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.SLICK}
+                isSelected={trait == gangTraits.SLICK}
+                onSelect={() => setGangTrait(gangTraits.SLICK)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.SMART}
+                isSelected={trait == gangTraits.SMART}
+                onSelect={() => setGangTrait(gangTraits.SMART)}
+              />
+            </View>
+          </View>
+          <View style={styles.traitRow}>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.STRONG}
+                isSelected={trait == gangTraits.STRONG}
+                onSelect={() => setGangTrait(gangTraits.STRONG)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.TENACIOUS}
+                isSelected={trait == gangTraits.TENACIOUS}
+                onSelect={() => setGangTrait(gangTraits.TENACIOUS)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.TOUGH}
+                isSelected={trait == gangTraits.TOUGH}
+                onSelect={() => setGangTrait(gangTraits.TOUGH)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.UNSTABLE}
+                isSelected={trait == gangTraits.UNSTABLE}
+                onSelect={() => setGangTrait(gangTraits.UNSTABLE)}
+              />
+            </View>
+          </View>
+          <View style={styles.traitRow}>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.WELL_ROUNDED}
+                isSelected={trait == gangTraits.WELL_ROUNDED}
+                onSelect={() => setGangTrait(gangTraits.WELL_ROUNDED)}
+              />
+            </View>
+            <View style={styles.traitButton}>
+              <TraitButton
+                Trait={gangTraits.WILY}
+                isSelected={trait == gangTraits.WILY}
+                onSelect={() => setGangTrait(gangTraits.WILY)}
               />
             </View>
           </View>
@@ -194,12 +238,20 @@ function KFSetupStepThreeScreen({ navigation }) {
             onPress={() => navigation.goBack()}
             width="45%"
           />
-          <OpacityButton
-            style={styles.navButton}
-            Graphic={FinishGraphic}
-            onPress={() => navigation.navigate(routes.GAME_NAVIGATOR)}
-            width="45%"
-          />
+          {traitIsSelected && (
+            <OpacityButton
+              style={styles.navButton}
+              Graphic={FinishGraphic}
+              onPress={() => {
+                storeGangTrait(trait);
+                navigation.navigate(routes.GAME_NAVIGATOR);
+              }}
+              width="45%"
+            />
+          )}
+          {!traitIsSelected && (
+            <FinishGraphic style={styles.buttonDisabled} width="45%" />
+          )}
         </View>
       </View>
       <View style={styles.bottomContainer} />

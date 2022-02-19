@@ -4,14 +4,24 @@ import { View, StyleSheet } from "react-native";
 import colors from "../config/colors";
 import Text from "../components/Text";
 
+import gangColors from "../data/gangColors";
+import gangTraits from "../data/gangTraits";
 import strings from "../config/strings";
+import { traits } from "../assets/traits/TraitArray";
 
-function CounterContainer({ width, Graphic, hpValue, gangColor }) {
+function CounterContainer({
+  width,
+  Trait = gangTraits.NONE,
+  hpValue,
+  Color = gangColors.NONE,
+}) {
+  const TraitGraphic = traits[Trait.svgId];
+
   return (
     <View
       style={{
         alignItems: "center",
-        backgroundColor: "black",
+        backgroundColor: Color.dark,
         borderColor: colors.light,
         borderEndWidth: 6,
         borderStartWidth: 6,
@@ -24,11 +34,11 @@ function CounterContainer({ width, Graphic, hpValue, gangColor }) {
         width: width,
       }}
     >
-      <Graphic style={styles.graphic} />
+      <TraitGraphic style={styles.graphic} />
       <Text
         style={{
           bottom: -20,
-          color: gangColor,
+          color: Color.normal,
           fontFamily: "default",
           fontSize: 100,
           textAlign: "center",

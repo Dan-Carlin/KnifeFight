@@ -2,6 +2,7 @@ export default {
   black: "#000",
   white: "#fff",
   medium: "#7a7b7c",
+  normal: "#9e9fa1",
   light: "#bcbec0",
   dark: "#414042",
   gang_normal_purple: "#9b4e9e",

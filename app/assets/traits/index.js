@@ -8,6 +8,7 @@ export { default as Fierce } from "./trait_symbol_fierce.svg";
 export { default as Heavy } from "./trait_symbol_heavy.svg";
 export { default as LowKey } from "./trait_symbol_low_key.svg";
 export { default as Lucky } from "./trait_symbol_lucky.svg";
+export { default as None } from "./trait_symbol_none.svg";
 export { default as Practical } from "./trait_symbol_practical.svg";
 export { default as Quick } from "./trait_symbol_quick.svg";
 export { default as Savage } from "./trait_symbol_savage.svg";

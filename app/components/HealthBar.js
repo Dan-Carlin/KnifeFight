@@ -6,13 +6,15 @@ import colors from "../config/colors";
 import Text from "../components/Text";
 import { LinearGradient } from "expo-linear-gradient";
 
+import gangColors from "../data/gangColors";
+
 const healthColors = [
   [colors.gang_medium_cyan, colors.gang_normal_cyan],
   [colors.gang_medium_yellow, colors.gang_normal_yellow],
   [colors.gang_medium_red, colors.gang_normal_red],
 ];
 
-function HealthBar({ hpValue, gangColor }) {
+function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
   const getHealthBarColors = () => {
     if (hpValue <= 3) {
       return healthColors[2];
@@ -43,7 +45,7 @@ function HealthBar({ hpValue, gangColor }) {
           </AutoSizeText>
           <Text
             style={{
-              color: gangColor,
+              color: gangColor.normal,
               fontFamily: "default",
               fontSize: 70,
               lineHeight: 80,

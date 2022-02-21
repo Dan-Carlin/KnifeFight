@@ -14,6 +14,7 @@ function CounterContainer({
   Trait = gangTraits.NONE,
   hpValue,
   Color = gangColors.NONE,
+  testID,
 }) {
   const TraitGraphic = traits[Trait.svgId];
 
@@ -46,7 +47,9 @@ function CounterContainer({
       >
         {strings.app_hp_label}
       </Text>
-      <Text style={styles.number}>{hpValue}</Text>
+      <Text testID={testID} style={styles.number}>
+        {hpValue}
+      </Text>
     </View>
   );
 }

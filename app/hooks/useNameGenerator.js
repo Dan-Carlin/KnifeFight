@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const gangNameList = {
   prefix: [
     "Southside",

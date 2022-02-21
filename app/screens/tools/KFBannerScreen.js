@@ -49,7 +49,7 @@ function KFBannerScreen({ route, navigation }) {
         />
       </View>
       <View style={styles.healthContainer}>
-        <HealthBar hpValue={hp} gangColor={Color.normal} />
+        <HealthBar hpValue={hp} gangColor={Color} />
       </View>
     </TraitScreen>
   );

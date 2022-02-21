@@ -102,7 +102,7 @@ exports[`How To Modal first screen tests renders first How To screen correctly 1
       <SvgMock
         style={
           Object {
-            "opacity": 0.4,
+            "opacity": 0.5,
           }
         }
       />

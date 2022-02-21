@@ -35,6 +35,7 @@
     "@testing-library/react-native": "^7.2.0",
     "jest": "^26.6.3",
     "jest-expo": "^44.0.1",
+    "jest-extended": "^1.2.0",
     "jest-fetch-mock": "^3.0.3",
     "react-test-renderer": "17.0.2"
   },
@@ -43,7 +44,10 @@
     "preset": "jest-expo",
     "automock": false,
     "moduleNameMapper": {
-      "\\.svg": "<rootDir>/app/__mocks__/svgMock.js"
-    }
+      "\\.svg": "<rootDir>/__mocks__/svgMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/__mocks__/jestSetup.js"
+    ]
   }
 }

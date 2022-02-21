@@ -252,7 +252,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                   <SvgMock
                     style={
                       Object {
-                        "opacity": 0.4,
+                        "opacity": 0.5,
                       }
                     }
                   />
@@ -794,7 +794,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 Array [
                   Object {
                     "alignSelf": "flex-start",
-                    "color": "#ec2b3d",
+                    "color": "#9e9fa1",
                     "fontFamily": "default",
                     "textAlign": "center",
                     "width": "94%",
@@ -806,7 +806,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               }
               testID="max-lines"
             >
-              Gang Name
+              ???
             </Text>
           </View>
         </View>
@@ -847,7 +847,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "black",
+              "backgroundColor": "#414042",
               "borderColor": "#bcbec0",
               "borderEndWidth": 6,
               "borderStartWidth": 6,
@@ -881,7 +881,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 },
                 Object {
                   "bottom": -20,
-                  "color": "#ec2b3d",
+                  "color": "#9e9fa1",
                   "fontFamily": "default",
                   "fontSize": 100,
                   "textAlign": "center",

@@ -6,7 +6,7 @@ import { CheckGraphic } from "../assets/buttons/actions";
 import colors from "../config/colors";
 import { traits } from "../assets/traits/TraitArray";
 
-function TraitButton({ Trait, isSelected, onSelect }) {
+function TraitButton({ Trait, isSelected, onSelect, testID }) {
   function onCheckmarkPress() {
     onSelect();
   }
@@ -15,7 +15,11 @@ function TraitButton({ Trait, isSelected, onSelect }) {
 
   return (
     <View style={styles.buttonContainer}>
-      <Pressable style={styles.checkboxBase} onPress={onCheckmarkPress}>
+      <Pressable
+        testID={testID}
+        style={styles.checkboxBase}
+        onPress={onCheckmarkPress}
+      >
         <TraitGraphic style={styles.traitGraphic} />
         <AutoSizeText
           style={styles.traitName}

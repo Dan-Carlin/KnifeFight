@@ -8,4 +8,12 @@ describe("Setup third screen tests", () => {
     const tree = renderer.create(<KFSetupStepThreeScreen />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  // sets trait value correctly when Trait button tapped
+
+  // sets checked state of buttons not selected to false
+
+  // activates Next button when trait is selected
+
+  // stores trait value when Next button is tapped
 });

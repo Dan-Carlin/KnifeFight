@@ -1,9 +1,13 @@
 import React from "react";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
-function Button({ Graphic, onPress }) {
+function Button({ Graphic, onPress, testID }) {
   return (
-    <TouchableWithoutFeedback style={styles.buttonContainer} onPress={onPress}>
+    <TouchableWithoutFeedback
+      testID={testID}
+      style={styles.buttonContainer}
+      onPress={onPress}
+    >
       <Graphic />
     </TouchableWithoutFeedback>
   );

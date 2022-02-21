@@ -3,9 +3,19 @@ import { SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
 
-import colors from "../config/colors";
+import gangColors from "../data/gangColors";
+import gangTraits from "../data/gangTraits";
+import { traits } from "../assets/traits/TraitArray";
 
-function Screen({ children, background, gangColor, TraitGraphic, style }) {
+function Screen({
+  children,
+  background,
+  Color = gangColors.NONE,
+  Trait = gangTraits.NONE,
+  style,
+}) {
+  const TraitGraphic = traits[Trait.svgId];
+
   return (
     <ImageBackground
       style={styles.background}
@@ -14,7 +24,7 @@ function Screen({ children, background, gangColor, TraitGraphic, style }) {
     >
       <LinearGradient
         style={styles.gradient}
-        colors={["#0000", gangColor]}
+        colors={["#0000", Color.normal]}
         start={{ x: 0, y: 0.5 }}
         end={{ x: 0, y: 1 }}
       />

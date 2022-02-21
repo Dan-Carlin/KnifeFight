@@ -5,6 +5,7 @@ KFToolsScreen - View for the tools screen.
 // External libraries
 import React, { useState, useEffect } from "react";
 import { View, BackHandler } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Assets
 import {
@@ -16,7 +17,6 @@ import {
   PlusGraphic,
 } from "../../assets/buttons/actions";
 import { HomeGraphic } from "../../assets/buttons/navigation";
-import * as TraitSvgs from "../../assets/traits";
 
 // Components
 import Button from "../../components/Button";
@@ -31,16 +31,20 @@ import SoundButton from "../../components/SoundButton";
 import Text from "../../components/Text";
 
 // Resources
-import colors from "../../config/colors";
+import gangColors from "../../data/gangColors";
+import gangTraits from "../../data/gangTraits";
 import routes from "../../navigation/routes";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
+const initialHp = 25;
 
 function KFToolsScreen({ navigation }) {
-  const { count, increaseCount, decreaseCount } = useCounter(25);
+  const [gangName, setGangName] = useState("???");
+  const [gangColor, setGangColor] = useState(gangColors.NONE);
+  const [gangTrait, setGangTrait] = useState(gangTraits.NONE);
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [howToModalVisible, setHowToModalVisible] = useState(true);
@@ -50,12 +54,33 @@ function KFToolsScreen({ navigation }) {
     return true;
   };
 
+  const getData = async () => {
+    try {
+      const nameValue = await AsyncStorage.getItem("@gangName");
+      const colorValue = await AsyncStorage.getItem("@gangColor");
+      const color = JSON.parse(colorValue);
+      const traitValue = await AsyncStorage.getItem("@gangTrait");
+      const trait = JSON.parse(traitValue);
+      setGangName(nameValue != null ? nameValue : null);
+      setGangColor(color);
+      setGangTrait(trait);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
+    getData();
+
     BackHandler.addEventListener("hardwareBackPress", onBackPress);
 
     return () =>
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
   }, []);
+
+  const { count, increaseCount, decreaseCount } = useCounter(
+    initialHp + gangTrait.hp
+  );
 
   return (
     <Screen style={styles.screenContainer} background={background}>
@@ -111,10 +136,10 @@ function KFToolsScreen({ navigation }) {
           </View>
           <View style={styles.nameDisplayContainer}>
             <NameDisplay
-              gangName={"Gang Name"}
-              gangTrait={strings.traits_unstable}
+              gangName={gangName}
+              Trait={gangTrait}
               font="default"
-              color={colors.gang_normal_red}
+              Color={gangColor}
             />
           </View>
         </View>
@@ -124,9 +149,9 @@ function KFToolsScreen({ navigation }) {
           </View>
           <CounterContainer
             width={240}
-            Graphic={TraitSvgs.Unstable}
+            Trait={gangTrait}
             hpValue={count}
-            gangColor={colors.gang_normal_red}
+            Color={gangColor}
           />
           <View style={styles.hpButtons}>
             <Button Graphic={PlusGraphic} onPress={increaseCount} />
@@ -140,7 +165,14 @@ function KFToolsScreen({ navigation }) {
         <View style={styles.bannerButton}>
           <OpacityButton
             Graphic={BannerGraphic}
-            onPress={() => navigation.navigate(routes.BANNER, { hp: count })}
+            onPress={() =>
+              navigation.navigate(routes.BANNER, {
+                hp: count,
+                name: gangName,
+                Color: gangColor,
+                Trait: gangTrait,
+              })
+            }
           />
         </View>
       </View>

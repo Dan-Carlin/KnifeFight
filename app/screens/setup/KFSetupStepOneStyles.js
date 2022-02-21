@@ -22,9 +22,8 @@ export default StyleSheet.create({
     marginBottom: 15,
     width: "85%",
   },
-  navButton: {
-    height: "100%",
-    width: "100%",
+  buttonDisabled: {
+    opacity: 0.5,
   },
   navContainer: {
     flexDirection: "row",

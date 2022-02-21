@@ -162,6 +162,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -183,7 +184,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -206,7 +206,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -239,6 +239,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -260,7 +261,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -283,7 +283,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -316,6 +316,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -337,7 +338,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -360,7 +360,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -393,6 +393,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -414,7 +415,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -437,7 +437,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -480,6 +480,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -501,7 +502,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -524,7 +524,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -557,6 +557,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -578,7 +579,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -601,7 +601,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -634,6 +634,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -655,7 +656,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -678,7 +678,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -711,6 +711,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -732,7 +733,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -755,7 +755,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -798,6 +798,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -819,7 +820,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -842,7 +842,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -875,6 +875,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -896,7 +897,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -919,7 +919,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -952,6 +952,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -973,7 +974,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -996,7 +996,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1029,6 +1029,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1050,7 +1051,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1073,7 +1073,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1116,6 +1116,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1137,7 +1138,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1160,7 +1160,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1193,6 +1193,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1214,7 +1215,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1237,7 +1237,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1270,6 +1270,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1291,7 +1292,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1314,7 +1314,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1347,6 +1347,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1368,7 +1369,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1391,7 +1391,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1434,6 +1434,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1455,7 +1456,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1478,7 +1478,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1511,6 +1511,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1532,7 +1533,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1555,7 +1555,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1588,6 +1588,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1609,7 +1610,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1632,7 +1632,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1665,6 +1665,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1686,7 +1687,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1709,7 +1709,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1752,6 +1752,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1773,7 +1774,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1796,7 +1796,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1829,6 +1829,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                 Object {
                   "backgroundColor": "black",
                   "height": "100%",
+                  "overflow": "hidden",
                   "width": "100%",
                 }
               }
@@ -1850,7 +1851,6 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   Object {
                     "alignItems": "center",
                     "borderColor": "#414042",
-                    "borderWidth": 1,
                     "height": "100%",
                     "justifyContent": "flex-end",
                     "width": "100%",
@@ -1873,7 +1873,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#bcbec0",
+                        "color": "#fff",
                         "fontSize": 14,
                         "fontWeight": "bold",
                         "marginBottom": 4,
@@ -1922,26 +1922,14 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
         >
           <SvgMock />
         </View>
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <SvgMock
           style={
             Object {
-              "height": "100%",
-              "opacity": 1,
-              "width": "45%",
+              "opacity": 0.5,
             }
           }
-        >
-          <SvgMock />
-        </View>
+          width="45%"
+        />
       </View>
     </View>
     <View

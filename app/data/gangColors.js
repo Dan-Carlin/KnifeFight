@@ -1,0 +1,95 @@
+import colors from "../config/colors";
+import * as ColorSvgs from "../assets/buttons/colors";
+
+export default Object.freeze({
+  PURPLE: {
+    normal: colors.gang_normal_purple,
+    light: colors.gang_light_purple,
+    medium: colors.gang_medium_purple,
+    dark: colors.gang_dark_purple,
+    svg: ColorSvgs.Purple,
+  },
+  YELLOW: {
+    normal: colors.gang_normal_yellow,
+    light: colors.gang_light_yellow,
+    medium: colors.gang_medium_yellow,
+    dark: colors.gang_dark_yellow,
+    svg: ColorSvgs.Yellow,
+  },
+  GREEN: {
+    normal: colors.gang_normal_green,
+    light: colors.gang_light_green,
+    medium: colors.gang_medium_green,
+    dark: colors.gang_dark_green,
+    svg: ColorSvgs.Green,
+  },
+  RED: {
+    normal: colors.gang_normal_red,
+    light: colors.gang_light_red,
+    medium: colors.gang_medium_red,
+    dark: colors.gang_dark_red,
+    svg: ColorSvgs.Red,
+  },
+  ORANGE: {
+    normal: colors.gang_normal_orange,
+    light: colors.gang_light_orange,
+    medium: colors.gang_medium_orange,
+    dark: colors.gang_dark_orange,
+    svg: ColorSvgs.Orange,
+  },
+  BLUE: {
+    normal: colors.gang_normal_blue,
+    light: colors.gang_light_blue,
+    medium: colors.gang_medium_blue,
+    dark: colors.gang_dark_blue,
+    svg: ColorSvgs.Blue,
+  },
+  BLACK: {
+    normal: colors.gang_normal_black,
+    light: colors.gang_light_black,
+    medium: colors.gang_medium_black,
+    dark: colors.gang_dark_black,
+    svg: ColorSvgs.Black,
+  },
+  WHITE: {
+    normal: colors.gang_normal_white,
+    light: colors.gang_light_white,
+    medium: colors.gang_medium_white,
+    dark: colors.gang_dark_white,
+    svg: ColorSvgs.White,
+  },
+  PINK: {
+    normal: colors.gang_normal_pink,
+    light: colors.gang_light_pink,
+    medium: colors.gang_medium_pink,
+    dark: colors.gang_dark_pink,
+    svg: ColorSvgs.Pink,
+  },
+  BROWN: {
+    normal: colors.gang_normal_brown,
+    light: colors.gang_light_brown,
+    medium: colors.gang_medium_brown,
+    dark: colors.gang_dark_brown,
+    svg: ColorSvgs.Brown,
+  },
+  CYAN: {
+    normal: colors.gang_normal_cyan,
+    light: colors.gang_light_cyan,
+    medium: colors.gang_medium_cyan,
+    dark: colors.gang_dark_cyan,
+    svg: ColorSvgs.Cyan,
+  },
+  GOLD: {
+    normal: colors.gang_normal_gold,
+    light: colors.gang_light_gold,
+    medium: colors.gang_medium_gold,
+    dark: colors.gang_dark_gold,
+    svg: ColorSvgs.Gold,
+  },
+  NONE: {
+    normal: colors.normal,
+    light: colors.light,
+    medium: colors.medium,
+    dark: colors.dark,
+  },
+});

@@ -5,13 +5,15 @@ import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 import Text from "../components/Text";
 
 import colors from "../config/colors";
+import gangColors from "../data/gangColors";
+import gangTraits from "../data/gangTraits";
 import strings from "../config/strings";
 
 function NameDisplay({
   gangName,
-  gangTrait,
+  Trait = gangTraits.NONE,
   font,
-  color,
+  Color = gangColors.NONE,
   descriptionVisible = false,
 }) {
   return (
@@ -19,7 +21,7 @@ function NameDisplay({
       <AutoSizeText
         style={{
           alignSelf: "flex-start",
-          color: color,
+          color: Color.normal,
           fontFamily: font,
           textAlign: "center",
           width: "94%",
@@ -33,7 +35,7 @@ function NameDisplay({
       {descriptionVisible && (
         <Text style={styles.traitTextContainer}>
           <Text style={styles.text}>{strings.name_display_text_a}</Text>
-          <Text style={styles.traitName}>{gangTrait}</Text>
+          <Text style={styles.traitName}>{Trait.name}</Text>
           <Text style={styles.text}>{strings.name_display_text_b}</Text>
         </Text>
       )}

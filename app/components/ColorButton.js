@@ -3,16 +3,20 @@ import { StyleSheet, Pressable } from "react-native";
 
 import { Select } from "../assets/buttons/colors/index";
 
-function ColorButton({ checked, onChange, Graphic }) {
+function ColorButton({ Color, isSelected, onSelect, testID }) {
   function onCheckmarkPress() {
-    onChange(!checked);
+    onSelect();
   }
 
   return (
     <>
-      <Graphic style={styles.colorGraphic} />
-      <Pressable style={styles.checkboxBase} onPress={onCheckmarkPress}>
-        {checked && <Select style={styles.colorSelect} />}
+      <Color.svg style={styles.colorGraphic} />
+      <Pressable
+        testID={testID}
+        style={styles.checkboxBase}
+        onPress={onCheckmarkPress}
+      >
+        {isSelected && <Select style={styles.colorSelect} />}
       </Pressable>
     </>
   );

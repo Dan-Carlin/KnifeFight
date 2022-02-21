@@ -165,7 +165,7 @@ exports[`Instructions Modal screen tests renders Instructions screen correctly 1
           <SvgMock
             style={
               Object {
-                "opacity": 0.4,
+                "opacity": 0.5,
               }
             }
           />

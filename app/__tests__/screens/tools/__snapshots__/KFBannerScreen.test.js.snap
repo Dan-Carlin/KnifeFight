@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner screen tests renders Banner screen correctly 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Object {
+      "flex": 1,
+      "transform": Array [
+        Object {
+          "rotate": "180deg",
+        },
+      ],
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": undefined,
+          "width": undefined,
+        },
+        undefined,
+      ]
+    }
+  />
+  <ViewManagerAdapter_ExpoLinearGradient
+    proxiedProperties={
+      Object {
+        "colors": Array [
+          0,
+          4288585633,
+        ],
+        "endPoint": Array [
+          0,
+          1,
+        ],
+        "locations": undefined,
+        "startPoint": Array [
+          0,
+          0.5,
+        ],
+      }
+    }
+    style={
+      Object {
+        "height": "100%",
+        "opacity": 0.4,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <SvgMock
+    style={
+      Object {
+        "height": "100%",
+        "opacity": 0.7,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={
+      Array [
+        Object {
+          "paddingBottom": 10,
+        },
+        Object {
+          "flex": 1,
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.25,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": "100%",
+            "transform": Array [
+              Object {
+                "rotate": "180deg",
+              },
+            ],
+            "width": "20%",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "height": "100%",
+              "opacity": 1,
+              "width": "100%",
+            }
+          }
+        >
+          <SvgMock />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.4,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignSelf": "flex-start",
+                "color": "#9e9fa1",
+                "fontFamily": "default",
+                "textAlign": "center",
+                "width": "94%",
+              },
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="max-lines"
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#fff",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "width": "100%",
+              },
+              Object {
+                "alignSelf": "flex-end",
+                "position": "absolute",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "color": "#bcbec0",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            (The 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            ???
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "color": "#bcbec0",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+             ones)
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.35,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 0.5,
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "width": "100%",
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              mode="preset_font_sizes"
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "fontSize": 70,
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 64,
+                  },
+                ]
+              }
+              testID="preset-font-sizes"
+            >
+              25
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "width": "100%",
+                  },
+                  Object {
+                    "color": "#9e9fa1",
+                    "fontFamily": "default",
+                    "fontSize": 70,
+                    "lineHeight": 80,
+                  },
+                ]
+              }
+            >
+              HP
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 0.5,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#bcbec0",
+                "borderWidth": 6,
+                "height": "60%",
+                "overflow": "hidden",
+                "padding": 8,
+                "width": "90%",
+              }
+            }
+          >
+            <ViewManagerAdapter_ExpoLinearGradient
+              proxiedProperties={
+                Object {
+                  "colors": Array [
+                    4279925848,
+                    4283417276,
+                  ],
+                  "endPoint": Array [
+                    1,
+                    0,
+                  ],
+                  "locations": undefined,
+                  "startPoint": Array [
+                    0,
+                    0,
+                  ],
+                }
+              }
+              style={
+                Object {
+                  "height": "100%",
+                  "width": undefined,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;

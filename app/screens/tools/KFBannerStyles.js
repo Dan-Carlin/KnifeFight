@@ -10,11 +10,11 @@ export default StyleSheet.create({
   },
   healthContainer: {
     alignItems: "center",
-    flex: 0.35,
+    flex: 0.25,
   },
   nameContainer: {
     alignItems: "center",
-    flex: 0.4,
+    flex: 0.5,
   },
   screenContainer: {
     flex: 1,

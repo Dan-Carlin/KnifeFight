@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 
 import colors from "../config/colors";
+import strings from "../config/strings";
 import Text from "../components/Text";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -33,28 +34,6 @@ function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.numberContainer}>
-        <Text style={styles.hpText}>
-          <AutoSizeText
-            style={styles.numberText}
-            fontSizePresets={[64, 42, 24]}
-            numberOfLines={1}
-            mode={ResizeTextMode.preset_font_sizes}
-          >
-            {hpValue <= 25 ? hpValue : 25}
-          </AutoSizeText>
-          <Text
-            style={{
-              color: gangColor.normal,
-              fontFamily: "default",
-              fontSize: 70,
-              lineHeight: 80,
-            }}
-          >
-            HP
-          </Text>
-        </Text>
-      </View>
       <View style={styles.barContainer}>
         <View style={styles.barBorder}>
           <LinearGradient
@@ -66,6 +45,21 @@ function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
           />
+          <Text style={styles.hpText}>
+            <Text style={styles.numberText}>
+              {hpValue <= 25 ? hpValue : 25}
+            </Text>
+            <Text
+              style={{
+                color: gangColor.light,
+                fontFamily: "default",
+                fontSize: 40,
+                lineHeight: 80,
+              }}
+            >
+              {strings.app_hp_label}
+            </Text>
+          </Text>
         </View>
         {hpValue > 25 && (
           <View style={styles.extraHpContainer}>
@@ -81,15 +75,16 @@ const styles = StyleSheet.create({
   barBorder: {
     borderColor: colors.light,
     borderWidth: 6,
-    height: "60%",
+    height: "65%",
+    justifyContent: "center",
     overflow: "hidden",
-    padding: 8,
+    padding: 4,
     width: "90%",
   },
   barContainer: {
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.5,
+    flex: 1,
   },
   container: {
     height: "100%",
@@ -116,15 +111,12 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   hpText: {
+    alignSelf: "center",
+    position: "absolute",
     textAlign: "center",
   },
-  numberContainer: {
-    alignItems: "center",
-    justifyContent: "flex-end",
-    flex: 0.5,
-  },
   numberText: {
-    fontSize: 70,
+    fontSize: 40,
     fontWeight: "bold",
   },
 });

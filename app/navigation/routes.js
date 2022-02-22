@@ -4,4 +4,5 @@ export default Object.freeze({
   SETUP_STEP_ONE: "SetupStepOne",
   SETUP_STEP_TWO: "SetupStepTwo",
   SETUP_STEP_THREE: "SetupStepThree",
+  TOOLS: "Tools",
 });

@@ -8,7 +8,6 @@ import { View } from "react-native";
 
 // Assets
 import { ToolsGraphic } from "../../assets/buttons/actions";
-import * as TraitSvgs from "../../assets/traits";
 
 // Components
 import HealthBar from "../../components/HealthBar";
@@ -22,7 +21,7 @@ import styles from "./KFBannerStyles";
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen({ route, navigation }) {
-  const { hp, name, Color, Trait } = route.params;
+  const { hp, style, name, Color, Trait } = route.params;
 
   return (
     <TraitScreen
@@ -43,7 +42,7 @@ function KFBannerScreen({ route, navigation }) {
         <NameDisplay
           gangName={name}
           Trait={Trait}
-          font="default"
+          style={style}
           Color={Color}
           descriptionVisible
         />

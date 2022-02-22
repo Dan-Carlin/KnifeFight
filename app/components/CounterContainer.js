@@ -39,9 +39,9 @@ function CounterContainer({
       <Text
         style={{
           bottom: -20,
-          color: Color.normal,
+          color: Color.light,
           fontFamily: "default",
-          fontSize: 100,
+          fontSize: 80,
           textAlign: "center",
         }}
       >

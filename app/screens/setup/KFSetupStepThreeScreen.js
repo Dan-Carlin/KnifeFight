@@ -244,7 +244,10 @@ function KFSetupStepThreeScreen({ navigation }) {
               Graphic={FinishGraphic}
               onPress={() => {
                 storeGangTrait(trait);
-                navigation.navigate(routes.GAME_NAVIGATOR);
+                navigation.navigate(routes.GAME_NAVIGATOR, {
+                  screen: routes.TOOLS,
+                  params: { hpModifier: trait.hp },
+                });
               }}
               width="45%"
             />

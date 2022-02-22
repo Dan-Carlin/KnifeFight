@@ -19,6 +19,12 @@ export default StyleSheet.create({
     alignItems: "center",
     flex: 0.6,
   },
+  checkbox: {
+    alignSelf: "center",
+    height: "50%",
+    justifyContent: "flex-end",
+    width: "17%",
+  },
   currentFont: {
     fontSize: 18,
     fontStyle: "italic",
@@ -32,9 +38,9 @@ export default StyleSheet.create({
   },
   fontPickerContainer: {
     alignItems: "center",
-    height: "100%",
+    height: "60%",
     justifyContent: "center",
-    width: "30%",
+    width: "25%",
   },
   hpButtons: {
     bottom: -25,
@@ -70,21 +76,21 @@ export default StyleSheet.create({
     width: "60%",
   },
   styleButtons: {
-    height: "100%",
-    padding: 14,
-    width: "20%",
+    height: "60%",
+    width: "15%",
   },
   styleEditContainer: {
-    alignItems: "center",
+    alignItems: "flex-start",
     flex: 0.35,
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     width: "100%",
   },
   styleLabel: {
     color: colors.medium,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 2,
     textAlign: "center",
   },
   topButtons: {

@@ -31,20 +31,46 @@ import SoundButton from "../../components/SoundButton";
 import Text from "../../components/Text";
 
 // Resources
+import capitalize from "../../utils/capitalize";
+import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
 import routes from "../../navigation/routes";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
+import Checkbox from "../../components/Checkbox";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 const initialHp = 25;
 
-function KFToolsScreen({ navigation }) {
+function KFToolsScreen({ route, navigation }) {
   const [gangName, setGangName] = useState("???");
   const [gangColor, setGangColor] = useState(gangColors.NONE);
   const [gangTrait, setGangTrait] = useState(gangTraits.NONE);
+
+  const [fontIndex, setFontIndex] = useState(0);
+  const [bevelVisible, setBevelVisible] = useState(true);
+  const [shadowVisible, setShadowVisible] = useState(true);
+  const previousFont = () => {
+    if (fontIndex == 0) {
+      setFontIndex(fonts.length - 1);
+    } else {
+      setFontIndex(fontIndex - 1);
+    }
+  };
+  const nextFont = () => {
+    if (fontIndex == fonts.length - 1) {
+      setFontIndex(0);
+    } else {
+      setFontIndex(fontIndex + 1);
+    }
+  };
+
+  const { hpModifier } = route.params;
+  const { count, increaseCount, decreaseCount } = useCounter(
+    initialHp + hpModifier
+  );
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [howToModalVisible, setHowToModalVisible] = useState(true);
@@ -77,10 +103,6 @@ function KFToolsScreen({ navigation }) {
     return () =>
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
   }, []);
-
-  const { count, increaseCount, decreaseCount } = useCounter(
-    initialHp + gangTrait.hp
-  );
 
   return (
     <Screen style={styles.screenContainer} background={background}>
@@ -120,25 +142,37 @@ function KFToolsScreen({ navigation }) {
             <View style={styles.styleButtons}>
               <Button
                 Graphic={ArrowLeftGraphic}
-                onPress={() => console.log("Previous style pressed.")}
+                onPress={() => previousFont()}
               />
             </View>
             <View style={styles.fontPickerContainer}>
               <Text style={styles.styleLabel}>{strings.tools_font_label}</Text>
-              <Text style={styles.currentFont}>Default</Text>
+              <Text style={styles.currentFont}>
+                {capitalize(fonts[fontIndex])}
+              </Text>
             </View>
             <View style={styles.styleButtons}>
-              <Button
-                Graphic={ArrowRightGraphic}
-                onPress={() => console.log("Next style pressed.")}
-              />
+              <Button Graphic={ArrowRightGraphic} onPress={() => nextFont()} />
+            </View>
+            <View style={styles.checkbox}>
+              <Text style={styles.styleLabel}>Bevel:</Text>
+              <Checkbox onSelect={() => setBevelVisible(!bevelVisible)} />
+            </View>
+            <View style={styles.checkbox}>
+              <Text style={styles.styleLabel}>Shadow:</Text>
+              <Checkbox onSelect={() => setShadowVisible(!shadowVisible)} />
             </View>
           </View>
           <View style={styles.nameDisplayContainer}>
             <NameDisplay
               gangName={gangName}
               Trait={gangTrait}
-              font="default"
+              style={{
+                font: fonts[fontIndex],
+                borderSize: 2,
+                shadowVisible: shadowVisible,
+                bevelVisible: bevelVisible,
+              }}
               Color={gangColor}
             />
           </View>
@@ -168,6 +202,12 @@ function KFToolsScreen({ navigation }) {
             onPress={() =>
               navigation.navigate(routes.BANNER, {
                 hp: count,
+                style: {
+                  font: fonts[fontIndex],
+                  borderSize: 4,
+                  shadowVisible: shadowVisible,
+                  bevelVisible: bevelVisible,
+                },
                 name: gangName,
                 Color: gangColor,
                 Trait: gangTrait,

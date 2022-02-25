@@ -18,6 +18,7 @@ import OpacityButton from "../../components/OpacityButton";
 import Text from "../../components/Text";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFHowToModalThreeStyles";
 
@@ -48,7 +49,11 @@ function KFHowToModalThreeScreen({ onPreviousPress }) {
       </View>
       <View style={styles.buttonsContainer}>
         <View style={styles.button}>
-          <OpacityButton Graphic={ArrowLeftGraphic} onPress={onPreviousPress} />
+          <OpacityButton
+            Graphic={ArrowLeftGraphic}
+            onPress={onPreviousPress}
+            sound={sounds.ARROW_LEFT}
+          />
         </View>
         <View style={styles.pageLabelContainer}>
           <Text style={styles.pageLabel}>{strings.modal_page_three_label}</Text>

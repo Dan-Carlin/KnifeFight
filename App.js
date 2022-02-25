@@ -12,21 +12,26 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "./app/navigation/MainNavigator";
 
 // Resources
-import useFonts from "./app/hooks/useFonts";
 import navigationTheme from "./app/navigation/navigationTheme";
+import Player from "./app/utils/Player";
+import soundLibrary from "./app/assets/sounds/soundLibrary";
+import useFonts from "./app/hooks/useFonts";
 
 export default function App() {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
 
-  const LoadFonts = async () => {
+  const LoadAssets = async () => {
     await useFonts();
+
+    const sounds = Player.load(soundLibrary);
+    return Promise.all([...sounds]);
   };
 
-  if (!fontsLoaded) {
+  if (!assetsLoaded) {
     return (
       <AppLoading
-        startAsync={LoadFonts}
-        onFinish={() => setFontsLoaded(true)}
+        startAsync={LoadAssets}
+        onFinish={() => setAssetsLoaded(true)}
         onError={() => {}}
       />
     );

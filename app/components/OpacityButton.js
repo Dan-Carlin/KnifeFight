@@ -1,12 +1,17 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 
-function OpacityButton({ Graphic, onPress, width = "100%", testID }) {
+import Player from "../utils/Player";
+
+function OpacityButton({ Graphic, onPress, width = "100%", testID, sound }) {
   return (
     <TouchableOpacity
       testID={testID}
       style={{ height: "100%", width: width }}
-      onPress={onPress}
+      onPress={() => {
+        Player.playSound(sound);
+        onPress();
+      }}
     >
       <Graphic />
     </TouchableOpacity>

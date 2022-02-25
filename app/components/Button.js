@@ -1,12 +1,17 @@
 import React from "react";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
-function Button({ Graphic, onPress, testID }) {
+import Player from "../utils/Player";
+
+function Button({ Graphic, onPress, testID, sound }) {
   return (
     <TouchableWithoutFeedback
       testID={testID}
       style={styles.buttonContainer}
-      onPress={onPress}
+      onPress={() => {
+        Player.playSound(sound);
+        onPress();
+      }}
     >
       <Graphic />
     </TouchableWithoutFeedback>

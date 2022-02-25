@@ -23,6 +23,7 @@ import Text from "../../components/Text";
 // Resources
 import gangColors from "../../data/gangColors";
 import routes from "../../navigation/routes";
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFSetupStepTwoStyles";
 
@@ -56,6 +57,7 @@ function KFSetupStepTwoScreen({ navigation }) {
         <View style={styles.closeButton}>
           <OpacityButton
             Graphic={CloseGraphic}
+            sound={sounds.BACK_CANCEL}
             onPress={() => navigation.popToTop()}
           />
         </View>
@@ -157,6 +159,7 @@ function KFSetupStepTwoScreen({ navigation }) {
           <OpacityButton
             style={styles.navButton}
             Graphic={BackGraphic}
+            sound={sounds.BACK_CANCEL}
             onPress={() => navigation.goBack()}
             width="45%"
           />
@@ -164,6 +167,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             <OpacityButton
               style={styles.navButton}
               Graphic={NextGraphic}
+              sound={sounds.NEXT_CONFIRM}
               onPress={() => {
                 storeGangColor(color);
                 navigation.navigate(routes.SETUP_STEP_THREE);

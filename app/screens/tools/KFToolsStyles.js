@@ -32,8 +32,8 @@ export default StyleSheet.create({
     textAlign: "center",
   },
   diceRollButton: {
-    height: "50%",
-    padding: 30,
+    height: "38%",
+    paddingHorizontal: 30,
     width: "100%",
   },
   fontPickerContainer: {

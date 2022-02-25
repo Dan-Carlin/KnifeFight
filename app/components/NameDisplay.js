@@ -34,7 +34,7 @@ function NameDisplay({
             },
             textShadowRadius: 14,
             textShadowColor: colors.black,
-            width: "92%",
+            width: "90%",
           }}
           fontSize={200}
           numberOfLines={1}
@@ -58,7 +58,7 @@ function NameDisplay({
             },
             textShadowRadius: 1,
             textShadowColor: Color.medium,
-            width: "92%",
+            width: "90%",
           }}
           fontSize={200}
           numberOfLines={1}
@@ -82,7 +82,7 @@ function NameDisplay({
             },
             textShadowRadius: 1,
             textShadowColor: Color.medium,
-            width: "92%",
+            width: "90%",
           }}
           fontSize={200}
           numberOfLines={1}
@@ -106,7 +106,7 @@ function NameDisplay({
             },
             textShadowRadius: 1,
             textShadowColor: Color.light,
-            width: "92%",
+            width: "90%",
           }}
           fontSize={200}
           numberOfLines={1}
@@ -130,7 +130,7 @@ function NameDisplay({
             },
             textShadowRadius: 1,
             textShadowColor: Color.dark,
-            width: "92%",
+            width: "90%",
           }}
           fontSize={200}
           numberOfLines={1}
@@ -147,7 +147,7 @@ function NameDisplay({
           includeFontPadding: false,
           position: "absolute",
           textAlign: "center",
-          width: "92%",
+          width: "90%",
         }}
         fontSize={200}
         numberOfLines={1}

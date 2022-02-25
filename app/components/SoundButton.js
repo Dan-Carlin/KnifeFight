@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Pressable } from "react-native";
 
+import Player from "../utils/Player";
+import sounds from "../assets/sounds/sounds";
 import {
   SoundBaseGraphic,
   SoundOffGraphic,
@@ -9,6 +11,7 @@ import {
 
 function SoundButton({ checked = true, style }) {
   function onSpeakerPress() {
+    Player.playSound(sounds.SOUND);
     onChange(!checked);
   }
 

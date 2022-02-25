@@ -4,10 +4,13 @@ import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 
 import { CheckGraphic } from "../assets/buttons/actions";
 import colors from "../config/colors";
+import Player from "../utils/Player";
+import sounds from "../assets/sounds/sounds";
 import { traits } from "../assets/traits/TraitArray";
 
 function TraitButton({ Trait, isSelected, onSelect, testID }) {
   function onCheckmarkPress() {
+    Player.playSound(sounds.TRAIT_DICE);
     onSelect();
   }
 

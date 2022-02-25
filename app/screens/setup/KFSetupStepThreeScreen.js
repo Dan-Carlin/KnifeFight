@@ -23,6 +23,7 @@ import TraitButton from "../../components/TraitButton";
 // Resources
 import gangTraits from "../../data/gangTraits";
 import routes from "../../navigation/routes";
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFSetupStepThreeStyles";
 
@@ -56,6 +57,7 @@ function KFSetupStepThreeScreen({ navigation }) {
         <View style={styles.closeButton}>
           <OpacityButton
             Graphic={CloseGraphic}
+            sound={sounds.BACK_CANCEL}
             onPress={() => navigation.popToTop()}
           />
         </View>
@@ -235,6 +237,7 @@ function KFSetupStepThreeScreen({ navigation }) {
           <OpacityButton
             style={styles.navButton}
             Graphic={BackGraphic}
+            sound={sounds.BACK_CANCEL}
             onPress={() => navigation.goBack()}
             width="45%"
           />
@@ -242,6 +245,7 @@ function KFSetupStepThreeScreen({ navigation }) {
             <OpacityButton
               style={styles.navButton}
               Graphic={FinishGraphic}
+              sound={sounds.FINISH}
               onPress={() => {
                 storeGangTrait(trait);
                 navigation.navigate(routes.GAME_NAVIGATOR, {

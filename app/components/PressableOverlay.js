@@ -16,11 +16,11 @@ function PressableOverlay({ onPress }) {
 const styles = StyleSheet.create({
   iOSBackdrop: {
     backgroundColor: "#000000",
-    opacity: 0.3,
+    opacity: 0.5,
   },
   androidBackdrop: {
     backgroundColor: "#000000",
-    opacity: 0.32,
+    opacity: 0.52,
   },
   backdrop: {
     position: "absolute",

@@ -18,6 +18,7 @@ import Text from "../../components/Text";
 
 // Resources
 import routes from "../../navigation/routes";
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFHomeStyles";
 
@@ -35,7 +36,12 @@ function KFHomeScreen({ navigation }) {
         <View style={styles.button}>
           <OpacityButton
             Graphic={StartGameGraphic}
-            onPress={() => navigation.navigate(routes.SETUP_STEP_ONE)}
+            sound={sounds.START_END_TURN}
+            onPress={() => {
+              setTimeout(() => {
+                navigation.navigate(routes.SETUP_STEP_ONE);
+              }, 100);
+            }}
           />
         </View>
       </View>

@@ -17,6 +17,7 @@ import KFHowToModalThreeScreen from "../instructions/KFHowToModalThreeScreen";
 import Text from "../../components/Text";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./InstructionsModalStyles";
 
@@ -44,7 +45,11 @@ function InstructionsModal({ onConfirm }) {
       <View style={styles.bodyContainer}>{currentScreen}</View>
       <View style={styles.buttonsContainer}>
         <View style={styles.button}>
-          <Button Graphic={GotItGraphic} onPress={onConfirm} />
+          <Button
+            Graphic={GotItGraphic}
+            sound={sounds.NEXT_CONFIRM}
+            onPress={onConfirm}
+          />
         </View>
       </View>
     </View>

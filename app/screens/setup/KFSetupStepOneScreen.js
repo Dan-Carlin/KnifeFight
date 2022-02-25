@@ -20,6 +20,7 @@ import TextInput from "../../components/TextInput";
 
 // Resources
 import routes from "../../navigation/routes";
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFSetupStepOneStyles";
 import useNameGenerator from "../../hooks/useNameGenerator";
@@ -60,14 +61,13 @@ function KFSetupStepOneScreen({ navigation }) {
           placeholder={strings.setup_step_one_placeholder}
           maxLength={25}
           value={name}
-          onChangeText={(value) => {
-            setGangName(value);
-          }}
+          onChangeText={(value) => setGangName(value)}
         />
         <View style={styles.nameButton}>
           <Button
             testID={"btn_generateName"}
             Graphic={GenerateNameGraphic}
+            sound={sounds.GENERATE_NAME}
             style={styles.button}
             onPress={() => setGangName(getRandomName())}
           />
@@ -76,12 +76,14 @@ function KFSetupStepOneScreen({ navigation }) {
           <OpacityButton
             style={styles.navButton}
             Graphic={ExitGraphic}
+            sound={sounds.BACK_CANCEL}
             onPress={() => navigation.goBack()}
             width="45%"
           />
           {nameIsEntered && (
             <OpacityButton
               Graphic={NextGraphic}
+              sound={sounds.NEXT_CONFIRM}
               onPress={() => {
                 Keyboard.dismiss();
                 storeGangName(name);

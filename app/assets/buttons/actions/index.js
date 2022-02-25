@@ -4,6 +4,7 @@ export { default as BannerGraphic } from "./kf_banner_btn.svg";
 export { default as CancelGraphic } from "./kf_cancel_btn.svg";
 export { default as CheckGraphic } from "./kf_check_btn.svg";
 export { default as CheckboxGraphic } from "./kf_checkbox_btn.svg";
+export { default as CloseDiceRollerGraphic } from "./kf_close_dice_roller_btn.svg";
 export { default as D4Graphic } from "./kf_d4_btn.svg";
 export { default as D6Graphic } from "./kf_d6_btn.svg";
 export { default as D8Graphic } from "./kf_d8_btn.svg";

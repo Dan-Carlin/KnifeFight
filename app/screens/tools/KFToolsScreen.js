@@ -45,7 +45,7 @@ import useCounter from "../../hooks/useCounter";
 import Checkbox from "../../components/Checkbox";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
-const initialHp = 50;
+const initialHp = 20;
 const minusHpSounds = [sounds.MINUS_A, sounds.MINUS_B, sounds.MINUS_C];
 
 function KFToolsScreen({ route, navigation }) {

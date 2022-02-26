@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   menuContainer: {
     alignItems: "center",
     flexDirection: "row",
-    // justifyContent: "space-between",
+    justifyContent: "space-between",
   },
 });
 

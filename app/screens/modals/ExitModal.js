@@ -15,6 +15,7 @@ import Button from "../../components/Button";
 import Text from "../../components/Text";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./ExitModalStyles";
 
@@ -33,10 +34,18 @@ function ExitModal({ onConfirm, onCancel }) {
         </View>
         <View style={styles.buttonsContainer}>
           <View style={styles.button}>
-            <Button Graphic={CancelGraphic} onPress={onCancel} />
+            <Button
+              Graphic={CancelGraphic}
+              sound={sounds.BACK_CANCEL}
+              onPress={onCancel}
+            />
           </View>
           <View style={styles.button}>
-            <Button Graphic={YesGraphic} onPress={onConfirm} />
+            <Button
+              Graphic={YesGraphic}
+              sound={sounds.NEXT_CONFIRM}
+              onPress={onConfirm}
+            />
           </View>
         </View>
       </View>

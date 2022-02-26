@@ -18,6 +18,7 @@ import OpacityButton from "../../components/OpacityButton";
 import Text from "../../components/Text";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFHowToModalOneStyles";
 
@@ -45,7 +46,11 @@ function KFHowToModalOneScreen({ onNextPress }) {
           <Text style={styles.pageLabel}>{strings.modal_page_one_label}</Text>
         </View>
         <View style={styles.button}>
-          <OpacityButton Graphic={ArrowRightGraphic} onPress={onNextPress} />
+          <OpacityButton
+            Graphic={ArrowRightGraphic}
+            onPress={onNextPress}
+            sound={sounds.ARROW_RIGHT}
+          />
         </View>
       </View>
     </View>

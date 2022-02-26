@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Pressable } from "react-native";
 
+import Player from "../utils/Player";
+import sounds from "../assets/sounds/sounds";
 import {
   SoundBaseGraphic,
   SoundOffGraphic,
   SoundOnGraphic,
 } from "../assets/buttons/actions";
 
-function SoundButton({ checked = true, style }) {
+function SoundButton({ style }) {
+  const [isActive, setIsActive] = useState(true);
+
   function onSpeakerPress() {
-    onChange(!checked);
+    Player.playSound(sounds.SOUND);
+    Player.setMutedState(isActive);
+    setIsActive(!isActive);
   }
 
   return (
     <Pressable style={[styles.container, style]} onPress={onSpeakerPress}>
       <SoundBaseGraphic style={styles.soundBase} />
-      {checked && <SoundOnGraphic style={styles.soundOn} />}
-      {!checked && <SoundOffGraphic style={styles.soundOff} />}
+      {isActive && <SoundOnGraphic style={styles.soundOn} />}
+      {!isActive && <SoundOffGraphic style={styles.soundOff} />}
     </Pressable>
   );
 }
@@ -25,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     height: "100%",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "100%",
   },
   soundBase: {
@@ -34,7 +40,8 @@ const styles = StyleSheet.create({
   },
   soundOff: {
     height: "100%",
-    width: "35%",
+    marginStart: 4,
+    width: "20%",
   },
   soundOn: {
     height: "100%",

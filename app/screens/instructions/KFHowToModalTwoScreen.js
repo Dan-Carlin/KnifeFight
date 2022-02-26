@@ -18,6 +18,7 @@ import OpacityButton from "../../components/OpacityButton";
 import Text from "../../components/Text";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFHowToModalTwoStyles";
 
@@ -48,13 +49,21 @@ function KFHowToModalTwoScreen({ onPreviousPress, onNextPress }) {
       </View>
       <View style={styles.buttonsContainer}>
         <View style={styles.button}>
-          <OpacityButton Graphic={ArrowLeftGraphic} onPress={onPreviousPress} />
+          <OpacityButton
+            Graphic={ArrowLeftGraphic}
+            onPress={onPreviousPress}
+            sound={sounds.ARROW_LEFT}
+          />
         </View>
         <View style={styles.pageLabelContainer}>
           <Text style={styles.pageLabel}>{strings.modal_page_two_label}</Text>
         </View>
         <View style={styles.button}>
-          <OpacityButton Graphic={ArrowRightGraphic} onPress={onNextPress} />
+          <OpacityButton
+            Graphic={ArrowRightGraphic}
+            onPress={onNextPress}
+            sound={sounds.ARROW_RIGHT}
+          />
         </View>
       </View>
     </View>

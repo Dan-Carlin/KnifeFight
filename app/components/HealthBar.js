@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
 
 import colors from "../config/colors";
 import strings from "../config/strings";
@@ -15,11 +14,11 @@ const healthColors = [
   [colors.gang_medium_red, colors.gang_normal_red],
 ];
 
-function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
+function HealthBar({ currentHp, initialHp, gangColor = gangColors.NONE }) {
   const getHealthBarColors = () => {
-    if (hpValue <= 3) {
+    if (currentHp <= initialHp / 6) {
       return healthColors[2];
-    } else if (hpValue > 3 && hpValue <= 8) {
+    } else if (currentHp > initialHp / 6 && currentHp <= initialHp / 3) {
       return healthColors[1];
     } else {
       return healthColors[0];
@@ -27,8 +26,8 @@ function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
   };
 
   const getHealthBarLength = () => {
-    if (hpValue <= 25) {
-      return hpValue * 4 + "%";
+    if (currentHp <= initialHp) {
+      return (currentHp * 100) / initialHp + "%";
     }
   };
 
@@ -47,7 +46,7 @@ function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
           />
           <Text style={styles.hpText}>
             <Text style={styles.numberText}>
-              {hpValue <= 25 ? hpValue : 25}
+              {currentHp <= initialHp ? currentHp : initialHp}
             </Text>
             <Text
               style={{
@@ -61,9 +60,9 @@ function HealthBar({ hpValue, gangColor = gangColors.NONE }) {
             </Text>
           </Text>
         </View>
-        {hpValue > 25 && (
+        {currentHp > initialHp && (
           <View style={styles.extraHpContainer}>
-            <Text style={styles.extraHpText}>+{hpValue - 25}</Text>
+            <Text style={styles.extraHpText}>+{currentHp - initialHp}</Text>
           </View>
         )}
       </View>

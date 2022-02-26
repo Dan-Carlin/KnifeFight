@@ -16,12 +16,13 @@ import OpacityButton from "../../components/OpacityButton";
 import TraitScreen from "../../components/TraitScreen";
 
 // Resources
+import sounds from "../../assets/sounds/sounds";
 import styles from "./KFBannerStyles";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen({ route, navigation }) {
-  const { hp, style, name, Color, Trait } = route.params;
+  const { currentHp, initialHp, style, name, Color, Trait } = route.params;
 
   return (
     <TraitScreen
@@ -34,6 +35,7 @@ function KFBannerScreen({ route, navigation }) {
         <View style={styles.toolsButton}>
           <OpacityButton
             Graphic={ToolsGraphic}
+            sound={sounds.START_TURN}
             onPress={() => navigation.goBack()}
           />
         </View>
@@ -48,7 +50,11 @@ function KFBannerScreen({ route, navigation }) {
         />
       </View>
       <View style={styles.healthContainer}>
-        <HealthBar hpValue={hp} gangColor={Color} />
+        <HealthBar
+          currentHp={currentHp}
+          initialHp={initialHp}
+          gangColor={Color}
+        />
       </View>
     </TraitScreen>
   );

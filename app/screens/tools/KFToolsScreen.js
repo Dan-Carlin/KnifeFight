@@ -21,6 +21,7 @@ import { HomeGraphic } from "../../assets/buttons/navigation";
 // Components
 import Button from "../../components/Button";
 import CounterContainer from "../../components/CounterContainer";
+import DiceRollerMenu from "../../components/DiceRollerMenu";
 import ExitModal from "../modals/ExitModal";
 import InstructionsModal from "../modals/InstructionsModal";
 import Modal from "../../components/Modal";
@@ -35,14 +36,17 @@ import capitalize from "../../utils/capitalize";
 import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
+import getRandomNumber from "../../utils/getRandomNumber";
 import routes from "../../navigation/routes";
+import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
 import Checkbox from "../../components/Checkbox";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
-const initialHp = 25;
+const initialHp = 20;
+const minusHpSounds = [sounds.MINUS_A, sounds.MINUS_B, sounds.MINUS_C];
 
 function KFToolsScreen({ route, navigation }) {
   const [gangName, setGangName] = useState("???");
@@ -74,6 +78,7 @@ function KFToolsScreen({ route, navigation }) {
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [howToModalVisible, setHowToModalVisible] = useState(true);
+  const [diceRollerVisible, setDiceRollerVisible] = useState(false);
 
   const onBackPress = () => {
     setExitModalVisible(true);
@@ -125,15 +130,26 @@ function KFToolsScreen({ route, navigation }) {
         setIsVisible={() => setExitModalVisible(!exitModalVisible)}
       />
 
+      <Modal
+        component={
+          <DiceRollerMenu onClose={() => setDiceRollerVisible(false)} />
+        }
+        isVisible={diceRollerVisible}
+        setIsVisible={() => setDiceRollerVisible(!diceRollerVisible)}
+      />
+
       <View style={styles.leftContainer}>
         <View style={styles.topButtons}>
           <SoundButton style={styles.soundButton} />
         </View>
         <View style={styles.diceRollButton}>
-          <OpacityButton
-            Graphic={DiceRollerGraphic}
-            onPress={() => console.log("Dice roller button pressed.")}
-          />
+          {!diceRollerVisible && (
+            <OpacityButton
+              Graphic={DiceRollerGraphic}
+              sound={sounds.DICE_ROLLER}
+              onPress={() => setDiceRollerVisible(true)}
+            />
+          )}
         </View>
       </View>
       <View style={styles.centerContainer}>
@@ -142,6 +158,7 @@ function KFToolsScreen({ route, navigation }) {
             <View style={styles.styleButtons}>
               <Button
                 Graphic={ArrowLeftGraphic}
+                sound={sounds.ARROW_LEFT}
                 onPress={() => previousFont()}
               />
             </View>
@@ -152,7 +169,11 @@ function KFToolsScreen({ route, navigation }) {
               </Text>
             </View>
             <View style={styles.styleButtons}>
-              <Button Graphic={ArrowRightGraphic} onPress={() => nextFont()} />
+              <Button
+                Graphic={ArrowRightGraphic}
+                sound={sounds.ARROW_RIGHT}
+                onPress={() => nextFont()}
+              />
             </View>
             <View style={styles.checkbox}>
               <Text style={styles.styleLabel}>Bevel:</Text>
@@ -179,7 +200,11 @@ function KFToolsScreen({ route, navigation }) {
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.hpButtons}>
-            <Button Graphic={MinusGraphic} onPress={decreaseCount} />
+            <Button
+              Graphic={MinusGraphic}
+              sound={minusHpSounds[getRandomNumber(3)]}
+              onPress={decreaseCount}
+            />
           </View>
           <CounterContainer
             width={240}
@@ -188,20 +213,30 @@ function KFToolsScreen({ route, navigation }) {
             Color={gangColor}
           />
           <View style={styles.hpButtons}>
-            <Button Graphic={PlusGraphic} onPress={increaseCount} />
+            <Button
+              Graphic={PlusGraphic}
+              sound={sounds.PLUS}
+              onPress={increaseCount}
+            />
           </View>
         </View>
       </View>
       <View style={styles.rightContainer}>
         <View style={styles.topButtons}>
-          <OpacityButton Graphic={HomeGraphic} onPress={() => onBackPress()} />
+          <OpacityButton
+            Graphic={HomeGraphic}
+            sound={sounds.CLOSE_EXIT}
+            onPress={() => onBackPress()}
+          />
         </View>
         <View style={styles.bannerButton}>
           <OpacityButton
             Graphic={BannerGraphic}
+            sound={sounds.START_END_TURN}
             onPress={() =>
               navigation.navigate(routes.BANNER, {
-                hp: count,
+                currentHp: count,
+                initialHp: initialHp,
                 style: {
                   font: fonts[fontIndex],
                   borderSize: 4,

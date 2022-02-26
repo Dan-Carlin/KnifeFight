@@ -1,3 +1,5 @@
+import getRandomNumber from "../utils/getRandomNumber";
+
 const gangNameList = {
   prefix: [
     "Southside",
@@ -114,8 +116,6 @@ const gangNameList = {
     "Saints",
   ],
 };
-
-const getRandomNumber = (max) => Math.floor(Math.random() * max);
 
 const useNameGenerator = () => {
   const getRandomName = () => {

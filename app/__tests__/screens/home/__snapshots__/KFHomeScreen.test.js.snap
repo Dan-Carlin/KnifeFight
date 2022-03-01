@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home screen tests renders home screen correctly 1`] = `
+exports[`Home screen tests renders correctly 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={

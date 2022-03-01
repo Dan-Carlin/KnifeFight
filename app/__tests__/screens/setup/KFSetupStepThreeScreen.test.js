@@ -1,19 +1,25 @@
 import React from "react";
+import { fireEvent, render } from "@testing-library/react-native";
 import renderer from "react-test-renderer";
 
 import KFSetupStepThreeScreen from "../../../screens/setup/KFSetupStepThreeScreen";
 
 describe("Setup third screen tests", () => {
-  it("renders third Setup screen correctly", () => {
+  it("renders correctly", () => {
     const tree = renderer.create(<KFSetupStepThreeScreen />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  // sets trait value correctly when Trait button tapped
+  beforeEach(() => {
+    ({ getByTestId } = render(<KFSetupStepThreeScreen />));
+  });
 
-  // sets checked state of buttons not selected to false
+  it("displays next button when trait value is not empty", () => {
+    const smartButton = getByTestId("st3_btn_smart");
 
-  // activates Next button when trait is selected
+    fireEvent.press(smartButton);
+    const finishButton = getByTestId("st3_btn_finish");
 
-  // stores trait value when Next button is tapped
+    expect(finishButton).not.toBeNull();
+  });
 });

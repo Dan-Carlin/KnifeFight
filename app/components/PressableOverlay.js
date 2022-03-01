@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Pressable, Platform } from "react-native";
 
-function PressableOverlay({ onPress }) {
+function PressableOverlay({ onPress, ...props }) {
   return (
     <Pressable
       style={[
@@ -9,6 +9,7 @@ function PressableOverlay({ onPress }) {
         styles.backdrop,
       ]}
       onPress={onPress}
+      {...props}
     />
   );
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
+exports[`Setup third screen tests renders correctly 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
@@ -189,6 +189,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_adventurous"
               >
                 <SvgMock
                   style={
@@ -266,6 +267,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_aggressive"
               >
                 <SvgMock
                   style={
@@ -343,6 +345,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_brash"
               >
                 <SvgMock
                   style={
@@ -420,6 +423,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_burly"
               >
                 <SvgMock
                   style={
@@ -507,6 +511,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_cocky"
               >
                 <SvgMock
                   style={
@@ -584,6 +589,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_eager"
               >
                 <SvgMock
                   style={
@@ -661,6 +667,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_fierce"
               >
                 <SvgMock
                   style={
@@ -738,6 +745,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_heavy"
               >
                 <SvgMock
                   style={
@@ -825,6 +833,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_lowKey"
               >
                 <SvgMock
                   style={
@@ -902,6 +911,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_lucky"
               >
                 <SvgMock
                   style={
@@ -979,6 +989,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_practical"
               >
                 <SvgMock
                   style={
@@ -1056,6 +1067,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_quick"
               >
                 <SvgMock
                   style={
@@ -1143,6 +1155,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_savage"
               >
                 <SvgMock
                   style={
@@ -1220,6 +1233,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_sketchy"
               >
                 <SvgMock
                   style={
@@ -1297,6 +1311,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_slick"
               >
                 <SvgMock
                   style={
@@ -1374,6 +1389,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_smart"
               >
                 <SvgMock
                   style={
@@ -1461,6 +1477,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_strong"
               >
                 <SvgMock
                   style={
@@ -1538,6 +1555,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_tenacious"
               >
                 <SvgMock
                   style={
@@ -1615,6 +1633,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_tough"
               >
                 <SvgMock
                   style={
@@ -1692,6 +1711,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_unstable"
               >
                 <SvgMock
                   style={
@@ -1779,6 +1799,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_wellRounded"
               >
                 <SvgMock
                   style={
@@ -1856,6 +1877,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
                     "width": "100%",
                   }
                 }
+                testID="st3_btn_wily"
               >
                 <SvgMock
                   style={
@@ -1919,6 +1941,7 @@ exports[`Setup third screen tests renders third Setup screen correctly 1`] = `
               "width": "45%",
             }
           }
+          testID="st3_btn_back"
         >
           <SvgMock />
         </View>

@@ -6,7 +6,6 @@ const soundObjects = {};
 
 class Player {
   constructor() {
-    // super();
     this.state = {
       muted: true,
     };
@@ -41,7 +40,6 @@ class Player {
       for (const name in soundLibrary) {
         await soundObjects[name].setIsMutedAsync(isMuted);
       }
-      // await soundObjects[name].setIsMutedAsync(true);
     } catch (error) {
       console.warn(error);
     }

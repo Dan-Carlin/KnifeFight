@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tools screen tests renders Tools screen correctly 1`] = `
+exports[`Setup first screen tests renders correctly 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
@@ -67,7 +67,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
           Array [
             Object {
               "backgroundColor": "#000000",
-              "opacity": 0.3,
+              "opacity": 0.5,
             },
             Object {
               "bottom": 0,
@@ -87,6 +87,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
             "justifyContent": "center",
           }
         }
+        testID="tls_modal_instructions"
       >
         <View
           style={
@@ -344,6 +345,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                testID="ins_btn_gotit"
               />
             </View>
           </View>
@@ -374,7 +376,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
           Array [
             Object {
               "backgroundColor": "#000000",
-              "opacity": 0.3,
+              "opacity": 0.5,
             },
             Object {
               "bottom": 0,
@@ -394,6 +396,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
             "justifyContent": "center",
           }
         }
+        testID="tls_modal_exit"
       >
         <View
           style={
@@ -545,6 +548,251 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
         </View>
       </View>
     </Modal>
+    <Modal
+      animationType="fade"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#000000",
+              "opacity": 0.5,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+        testID="tls_modal_diceroll"
+      >
+        <View
+          style={
+            Object {
+              "height": "100%",
+              "justifyContent": "flex-end",
+              "paddingHorizontal": "4.5%",
+              "paddingVertical": "2.2%",
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "height": 80,
+                  "padding": 16,
+                  "width": 80,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 100,
+                  "width": 100,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": "100%",
+                    "opacity": 1,
+                    "width": "100%",
+                  }
+                }
+              >
+                <SvgMock />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </Modal>
     <View
       style={
         Object {
@@ -584,7 +832,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               Object {
                 "flexDirection": "row",
                 "height": "100%",
-                "justifyContent": "center",
+                "justifyContent": "flex-start",
                 "width": "100%",
               },
               Object {
@@ -615,8 +863,8 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
       <View
         style={
           Object {
-            "height": "50%",
-            "padding": 30,
+            "height": "38%",
+            "paddingHorizontal": 30,
             "width": "100%",
           }
         }
@@ -638,6 +886,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               "width": "100%",
             }
           }
+          testID="tls_btn_diceRoller"
         >
           <SvgMock />
         </View>
@@ -663,10 +912,10 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
+              "alignItems": "flex-start",
               "flex": 0.35,
               "flexDirection": "row",
-              "justifyContent": "center",
+              "justifyContent": "space-between",
               "width": "100%",
             }
           }
@@ -674,9 +923,8 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
           <View
             style={
               Object {
-                "height": "100%",
-                "padding": 14,
-                "width": "20%",
+                "height": "60%",
+                "width": "15%",
               }
             }
           >
@@ -690,15 +938,16 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              testID="tls_btn_arrowLeft"
             />
           </View>
           <View
             style={
               Object {
                 "alignItems": "center",
-                "height": "100%",
+                "height": "60%",
                 "justifyContent": "center",
-                "width": "30%",
+                "width": "25%",
               }
             }
           >
@@ -713,8 +962,9 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                   },
                   Object {
                     "color": "#7a7b7c",
-                    "fontSize": 20,
+                    "fontSize": 18,
                     "fontWeight": "bold",
+                    "marginBottom": 2,
                     "textAlign": "center",
                   },
                 ]
@@ -746,9 +996,8 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
           <View
             style={
               Object {
-                "height": "100%",
-                "padding": 14,
-                "width": "20%",
+                "height": "60%",
+                "width": "15%",
               }
             }
           >
@@ -762,7 +1011,178 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              testID="tls_btn_arrowRight"
             />
+          </View>
+          <View
+            style={
+              Object {
+                "alignSelf": "center",
+                "height": "50%",
+                "justifyContent": "flex-end",
+                "width": "17%",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "width": "100%",
+                  },
+                  Object {
+                    "color": "#7a7b7c",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 2,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Bevel:
+            </Text>
+            <View
+              style={
+                Object {
+                  "height": "100%",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  }
+                }
+                testID="tls_cb_bevel"
+              >
+                <SvgMock
+                  style={
+                    Object {
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "height": "60%",
+                      "position": "absolute",
+                      "width": "60%",
+                    }
+                  }
+                >
+                  <SvgMock />
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignSelf": "center",
+                "height": "50%",
+                "justifyContent": "flex-end",
+                "width": "17%",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "width": "100%",
+                  },
+                  Object {
+                    "color": "#7a7b7c",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 2,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Shadow:
+            </Text>
+            <View
+              style={
+                Object {
+                  "height": "100%",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  }
+                }
+                testID="tls_cb_shadow"
+              >
+                <SvgMock
+                  style={
+                    Object {
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "height": "60%",
+                      "position": "absolute",
+                      "width": "60%",
+                    }
+                  }
+                >
+                  <SvgMock />
+                </View>
+              </View>
+            </View>
           </View>
         </View>
         <View
@@ -781,9 +1201,11 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 "flexDirection": "row",
                 "height": "100%",
                 "justifyContent": "center",
+                "paddingBottom": 4,
                 "width": "100%",
               }
             }
+            testID="tls_ndc"
           >
             <Text
               adjustsFontSizeToFit={true}
@@ -792,19 +1214,201 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               onTextLayout={[Function]}
               style={
                 Array [
-                  Object {
-                    "alignSelf": "flex-start",
-                    "color": "#9e9fa1",
-                    "fontFamily": "default",
-                    "textAlign": "center",
-                    "width": "94%",
-                  },
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "color": "#000",
+                      "includeFontPadding": false,
+                      "opacity": 0.5,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "textShadowColor": "#000",
+                      "textShadowRadius": 14,
+                      "width": "90%",
+                    },
+                    Object {
+                      "fontFamily": "default",
+                      "textShadowOffset": Object {
+                        "height": 5,
+                        "width": 5,
+                      },
+                    },
+                  ],
                   Object {
                     "fontSize": 200,
                   },
                 ]
               }
-              testID="max-lines"
+              testID="ndc_ast_nameShadow"
+            >
+              ???
+            </Text>
+            <Text
+              adjustsFontSizeToFit={true}
+              mode="max_lines"
+              numberOfLines={1}
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "includeFontPadding": false,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "textShadowRadius": 1,
+                      "width": "90%",
+                    },
+                    Object {
+                      "color": "#7a7b7c",
+                      "fontFamily": "default",
+                      "textShadowColor": "#7a7b7c",
+                      "textShadowOffset": Object {
+                        "height": 2,
+                        "width": -2,
+                      },
+                    },
+                  ],
+                  Object {
+                    "fontSize": 200,
+                  },
+                ]
+              }
+              testID="ndc_ast_nameBevelMedA"
+            >
+              ???
+            </Text>
+            <Text
+              adjustsFontSizeToFit={true}
+              mode="max_lines"
+              numberOfLines={1}
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "includeFontPadding": false,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "textShadowRadius": 1,
+                      "width": "90%",
+                    },
+                    Object {
+                      "color": "#7a7b7c",
+                      "fontFamily": "default",
+                      "textShadowColor": "#7a7b7c",
+                      "textShadowOffset": Object {
+                        "height": -2,
+                        "width": 2,
+                      },
+                    },
+                  ],
+                  Object {
+                    "fontSize": 200,
+                  },
+                ]
+              }
+              testID="ndc_ast_nameBevelMedB"
+            >
+              ???
+            </Text>
+            <Text
+              adjustsFontSizeToFit={true}
+              mode="max_lines"
+              numberOfLines={1}
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "includeFontPadding": false,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "textShadowRadius": 1,
+                      "width": "90%",
+                    },
+                    Object {
+                      "color": "#bcbec0",
+                      "fontFamily": "default",
+                      "textShadowColor": "#bcbec0",
+                      "textShadowOffset": Object {
+                        "height": -2,
+                        "width": -2,
+                      },
+                    },
+                  ],
+                  Object {
+                    "fontSize": 200,
+                  },
+                ]
+              }
+              testID="ndc_ast_nameBevelLight"
+            >
+              ???
+            </Text>
+            <Text
+              adjustsFontSizeToFit={true}
+              mode="max_lines"
+              numberOfLines={1}
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "includeFontPadding": false,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "textShadowRadius": 1,
+                      "width": "90%",
+                    },
+                    Object {
+                      "color": "#414042",
+                      "fontFamily": "default",
+                      "textShadowColor": "#414042",
+                      "textShadowOffset": Object {
+                        "height": 2,
+                        "width": 2,
+                      },
+                    },
+                  ],
+                  Object {
+                    "fontSize": 200,
+                  },
+                ]
+              }
+              testID="ndc_ast_nameBevelDark"
+            >
+              ???
+            </Text>
+            <Text
+              adjustsFontSizeToFit={true}
+              mode="max_lines"
+              numberOfLines={1}
+              onTextLayout={[Function]}
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "alignSelf": "center",
+                      "includeFontPadding": false,
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "width": "90%",
+                    },
+                    Object {
+                      "color": "#9e9fa1",
+                      "fontFamily": "default",
+                    },
+                  ],
+                  Object {
+                    "fontSize": 200,
+                  },
+                ]
+              }
+              testID="ndc_ast_nameFill"
             >
               ???
             </Text>
@@ -841,6 +1445,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            testID="tls_btn_minus"
           />
         </View>
         <View
@@ -881,9 +1486,9 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 },
                 Object {
                   "bottom": -20,
-                  "color": "#9e9fa1",
+                  "color": "#bcbec0",
                   "fontFamily": "default",
-                  "fontSize": 100,
+                  "fontSize": 80,
                   "textAlign": "center",
                 },
               ]
@@ -908,8 +1513,9 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
                 },
               ]
             }
+            testID="tls_txt_hpValue"
           >
-            25
+            NaN
           </Text>
         </View>
         <View
@@ -931,6 +1537,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            testID="tls_btn_plus"
           />
         </View>
       </View>
@@ -973,6 +1580,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               "width": "100%",
             }
           }
+          testID="tls_btn_home"
         >
           <SvgMock />
         </View>
@@ -1003,6 +1611,7 @@ exports[`Tools screen tests renders Tools screen correctly 1`] = `
               "width": "100%",
             }
           }
+          testID="tls_btn_banner"
         >
           <SvgMock />
         </View>

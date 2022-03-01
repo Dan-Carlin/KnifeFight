@@ -5,25 +5,48 @@ import renderer from "react-test-renderer";
 import KFSetupStepOneScreen from "../../../screens/setup/KFSetupStepOneScreen";
 
 describe("Setup first screen tests", () => {
-  it("renders first Setup screen correctly", () => {
+  let getByPlaceholderText, getByTestId;
+
+  it("renders correctly", () => {
     const tree = renderer.create(<KFSetupStepOneScreen />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  // generates a random name
-  // it("generates a random name", () => {
-  //   const { getByTestId, getByPlaceholderText, get } = render(
-  //     <KFSetupStepOneScreen />
-  //   );
-  //   const button = getByTestId("btn_generateName");
-  //   const textInput = getByPlaceholderText(/Name your gang/i);
+  beforeEach(() => {
+    ({ getByPlaceholderText, getByTestId } = render(<KFSetupStepOneScreen />));
+  });
 
-  //   fireEvent.press(button);
+  it("displays user input in text field", () => {
+    const testString = "test";
+    const nameInput = getByPlaceholderText(/name your gang/i);
 
-  //   expect(textInput.value).toBeDefined();
-  // });
+    fireEvent.changeText(nameInput, testString);
 
-  // activates Next button when name field is not empty
+    expect(nameInput.props.value).toBe(testString);
+  });
 
-  // stores name value when next button is tapped
+  it("limits the text input to 25 characters", () => {
+    const nameInput = getByPlaceholderText(/name your gang/i);
+
+    expect(nameInput.props.maxLength).toBe(25);
+  });
+
+  it("generates a random gang name", () => {
+    const nameInput = getByPlaceholderText(/name your gang/i);
+    const generateNameButton = getByTestId("st1_btn_generateName");
+
+    fireEvent.press(generateNameButton);
+
+    expect(nameInput.props.value).toBeDefined();
+  });
+
+  it("displays next button when name value is not empty", () => {
+    const testString = "test";
+    const nameInput = getByPlaceholderText(/name your gang/i);
+
+    fireEvent.changeText(nameInput, testString);
+    const nextButton = getByTestId("st1_btn_next");
+
+    expect(nextButton).not.toBeNull();
+  });
 });

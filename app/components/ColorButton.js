@@ -5,7 +5,7 @@ import Player from "../utils/Player";
 import { Select } from "../assets/buttons/colors/index";
 import sounds from "../assets/sounds/sounds";
 
-function ColorButton({ Color, isSelected, onSelect, testID }) {
+function ColorButton({ Color, isSelected, onSelect, ...props }) {
   function onCheckmarkPress() {
     Player.playSound(sounds.COLOR);
     onSelect();
@@ -15,7 +15,7 @@ function ColorButton({ Color, isSelected, onSelect, testID }) {
     <>
       <Color.svg style={styles.colorGraphic} />
       <Pressable
-        testID={testID}
+        {...props}
         style={styles.checkboxBase}
         onPress={onCheckmarkPress}
       >

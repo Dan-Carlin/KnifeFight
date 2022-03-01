@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
+exports[`Setup second screen tests renders correctly 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
@@ -183,6 +183,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_purple"
             />
           </View>
           <View
@@ -222,6 +223,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_yellow"
             />
           </View>
           <View
@@ -261,6 +263,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_green"
             />
           </View>
           <View
@@ -300,6 +303,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_red"
             />
           </View>
           <View
@@ -339,6 +343,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_orange"
             />
           </View>
           <View
@@ -378,6 +383,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_blue"
             />
           </View>
         </View>
@@ -428,6 +434,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_black"
             />
           </View>
           <View
@@ -467,6 +474,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_white"
             />
           </View>
           <View
@@ -506,6 +514,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_pink"
             />
           </View>
           <View
@@ -545,6 +554,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_brown"
             />
           </View>
           <View
@@ -584,6 +594,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_cyan"
             />
           </View>
           <View
@@ -623,6 +634,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
                   "width": "100%",
                 }
               }
+              testID="st2_btn_gold"
             />
           </View>
         </View>
@@ -654,6 +666,7 @@ exports[`Setup second screen tests renders second Setup screen correctly 1`] = `
               "width": "45%",
             }
           }
+          testID="st2_btn_back"
         >
           <SvgMock />
         </View>

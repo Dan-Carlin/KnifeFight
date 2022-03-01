@@ -13,14 +13,14 @@ import {
 } from "../assets/buttons/actions";
 
 function DiceRollerMenu({ onClose }) {
-  const translation = useRef(new Animated.Value(0)).current;
+  // const translation = useRef(new Animated.Value(0)).current;
 
-  useEffect(() => {
-    Animated.spring(translation, {
-      toValue: 50,
-      useNativeDriver: true,
-    }).start();
-  }, []);
+  // useEffect(() => {
+  //   Animated.spring(translation, {
+  //     toValue: 50,
+  //     useNativeDriver: true,
+  //   }).start();
+  // }, []);
 
   return (
     <View style={styles.container}>

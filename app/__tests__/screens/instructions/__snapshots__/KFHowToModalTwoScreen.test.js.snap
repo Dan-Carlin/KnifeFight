@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`How To Modal second screen tests renders second How To screen correctly 1`] = `
+exports[`How To Modal second screen tests renders correctly 1`] = `
 <View
   style={
     Object {
@@ -167,7 +167,7 @@ exports[`How To Modal second screen tests renders second How To screen correctly
     >
       <View
         accessible={true}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -223,7 +223,7 @@ exports[`How To Modal second screen tests renders second How To screen correctly
     >
       <View
         accessible={true}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}

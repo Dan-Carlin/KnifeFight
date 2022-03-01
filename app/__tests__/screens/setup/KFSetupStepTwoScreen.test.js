@@ -1,19 +1,34 @@
 import React from "react";
+import { fireEvent, render } from "@testing-library/react-native";
 import renderer from "react-test-renderer";
 
 import KFSetupStepTwoScreen from "../../../screens/setup/KFSetupStepTwoScreen";
 
 describe("Setup second screen tests", () => {
-  it("renders second Setup screen correctly", () => {
+  it("renders correctly", () => {
     const tree = renderer.create(<KFSetupStepTwoScreen />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  // sets color value correctly when Color button tapped
+  beforeEach(() => {
+    ({ getByTestId } = render(<KFSetupStepTwoScreen />));
+  });
 
-  // sets checked state of buttons not selected to false
+  it("displays next button when color value is not empty", () => {
+    const purpleButton = getByTestId("st2_btn_purple");
 
-  // activates Next button when color is selected
+    fireEvent.press(purpleButton);
+    const nextButton = getByTestId("st2_btn_next");
 
-  // stores color value when Next button is tapped
+    expect(nextButton).not.toBeNull();
+  });
+
+  // it("deselects color button when other color button pressed", () => {
+  //   const redButton = getByTestId("st2_btn_red");
+  //   const cyanButton = getByTestId("st2_btn_cyan");
+
+  //   fireEvent.press(redButton);
+
+  //   expect(redButton.props.isSelected).toBeTrue();
+  // });
 });

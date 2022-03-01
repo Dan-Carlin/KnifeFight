@@ -3,10 +3,10 @@ import { TouchableOpacity } from "react-native";
 
 import Player from "../utils/Player";
 
-function OpacityButton({ Graphic, onPress, width = "100%", testID, sound }) {
+function OpacityButton({ Graphic, onPress, width = "100%", sound, ...props }) {
   return (
     <TouchableOpacity
-      testID={testID}
+      {...props}
       style={{ height: "100%", width: width }}
       onPress={() => {
         Player.playSound(sound);

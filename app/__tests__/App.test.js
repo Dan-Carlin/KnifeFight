@@ -5,7 +5,7 @@ import { waitFor } from "@testing-library/react-native";
 import App from "../../App";
 
 describe("App tests", () => {
-  it("renders App correctly", async () => {
+  it("renders correctly", async () => {
     let tree;
 
     await waitFor(() => (tree = renderer.create(<App />).toJSON()));

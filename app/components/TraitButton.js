@@ -8,7 +8,7 @@ import Player from "../utils/Player";
 import sounds from "../assets/sounds/sounds";
 import { traits } from "../assets/traits/TraitArray";
 
-function TraitButton({ Trait, isSelected, onSelect, testID }) {
+function TraitButton({ Trait, isSelected, onSelect, ...props }) {
   function onCheckmarkPress() {
     Player.playSound(sounds.TRAIT_DICE);
     onSelect();
@@ -19,7 +19,7 @@ function TraitButton({ Trait, isSelected, onSelect, testID }) {
   return (
     <View style={styles.buttonContainer}>
       <Pressable
-        testID={testID}
+        {...props}
         style={styles.checkboxBase}
         onPress={onCheckmarkPress}
       >

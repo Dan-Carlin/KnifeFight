@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Banner screen tests renders Banner screen correctly 1`] = `
+exports[`Banner screen tests renders correctly 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
@@ -131,7 +131,7 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "flex": 0.4,
+          "flex": 0.5,
         }
       }
     >
@@ -142,6 +142,7 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
             "flexDirection": "row",
             "height": "100%",
             "justifyContent": "center",
+            "paddingBottom": 4,
             "width": "100%",
           }
         }
@@ -153,19 +154,191 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
           onTextLayout={[Function]}
           style={
             Array [
-              Object {
-                "alignSelf": "flex-start",
-                "color": "#9e9fa1",
-                "fontFamily": "default",
-                "textAlign": "center",
-                "width": "94%",
-              },
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#000",
+                  "includeFontPadding": false,
+                  "opacity": 0.5,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "textShadowColor": "#000",
+                  "textShadowRadius": 14,
+                  "width": "90%",
+                },
+                Object {
+                  "fontFamily": "default",
+                  "textShadowOffset": Object {
+                    "height": 5,
+                    "width": 5,
+                  },
+                },
+              ],
               Object {
                 "fontSize": 200,
               },
             ]
           }
-          testID="max-lines"
+          testID="ndc_ast_nameShadow"
+        />
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "includeFontPadding": false,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "textShadowRadius": 1,
+                  "width": "90%",
+                },
+                Object {
+                  "color": "#7a7b7c",
+                  "fontFamily": "default",
+                  "textShadowColor": "#7a7b7c",
+                  "textShadowOffset": Object {
+                    "height": 2,
+                    "width": -2,
+                  },
+                },
+              ],
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="ndc_ast_nameBevelMedA"
+        />
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "includeFontPadding": false,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "textShadowRadius": 1,
+                  "width": "90%",
+                },
+                Object {
+                  "color": "#7a7b7c",
+                  "fontFamily": "default",
+                  "textShadowColor": "#7a7b7c",
+                  "textShadowOffset": Object {
+                    "height": -2,
+                    "width": 2,
+                  },
+                },
+              ],
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="ndc_ast_nameBevelMedB"
+        />
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "includeFontPadding": false,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "textShadowRadius": 1,
+                  "width": "90%",
+                },
+                Object {
+                  "color": "#bcbec0",
+                  "fontFamily": "default",
+                  "textShadowColor": "#bcbec0",
+                  "textShadowOffset": Object {
+                    "height": -2,
+                    "width": -2,
+                  },
+                },
+              ],
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="ndc_ast_nameBevelLight"
+        />
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "includeFontPadding": false,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "textShadowRadius": 1,
+                  "width": "90%",
+                },
+                Object {
+                  "color": "#414042",
+                  "fontFamily": "default",
+                  "textShadowColor": "#414042",
+                  "textShadowOffset": Object {
+                    "height": 2,
+                    "width": 2,
+                  },
+                },
+              ],
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="ndc_ast_nameBevelDark"
+        />
+        <Text
+          adjustsFontSizeToFit={true}
+          mode="max_lines"
+          numberOfLines={1}
+          onTextLayout={[Function]}
+          style={
+            Array [
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "includeFontPadding": false,
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "width": "90%",
+                },
+                Object {
+                  "color": "#9e9fa1",
+                  "fontFamily": "default",
+                },
+              ],
+              Object {
+                "fontSize": 200,
+              },
+            ]
+          }
+          testID="ndc_ast_nameFill"
         />
         <Text
           style={
@@ -221,6 +394,7 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
                 },
               ]
             }
+            testID="ndc_txt_trait"
           >
             ???
           </Text>
@@ -251,7 +425,7 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "flex": 0.35,
+          "flex": 0.25,
         }
       }
     >
@@ -267,71 +441,7 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "flex": 0.5,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#fff",
-                  "fontFamily": "Avenir",
-                  "fontSize": 16,
-                  "width": "100%",
-                },
-                Object {
-                  "textAlign": "center",
-                },
-              ]
-            }
-          >
-            <Text
-              mode="preset_font_sizes"
-              onTextLayout={[Function]}
-              style={
-                Array [
-                  Object {
-                    "fontSize": 70,
-                    "fontWeight": "bold",
-                  },
-                  Object {
-                    "fontSize": 64,
-                  },
-                ]
-              }
-              testID="preset-font-sizes"
-            >
-              25
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#fff",
-                    "fontFamily": "Avenir",
-                    "fontSize": 16,
-                    "width": "100%",
-                  },
-                  Object {
-                    "color": "#9e9fa1",
-                    "fontFamily": "default",
-                    "fontSize": 70,
-                    "lineHeight": 80,
-                  },
-                ]
-              }
-            >
-              HP
-            </Text>
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flex": 0.5,
+              "flex": 1,
               "justifyContent": "center",
             }
           }
@@ -341,9 +451,10 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
               Object {
                 "borderColor": "#bcbec0",
                 "borderWidth": 6,
-                "height": "60%",
+                "height": "65%",
+                "justifyContent": "center",
                 "overflow": "hidden",
-                "padding": 8,
+                "padding": 4,
                 "width": "90%",
               }
             }
@@ -372,7 +483,63 @@ exports[`Banner screen tests renders Banner screen correctly 1`] = `
                   "width": undefined,
                 }
               }
+              testID="comp_healthBar_bar"
             />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "width": "100%",
+                  },
+                  Object {
+                    "alignSelf": "center",
+                    "position": "absolute",
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "width": "100%",
+                    },
+                    Object {
+                      "fontSize": 40,
+                      "fontWeight": "bold",
+                    },
+                  ]
+                }
+              />
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "width": "100%",
+                    },
+                    Object {
+                      "color": "#bcbec0",
+                      "fontFamily": "default",
+                      "fontSize": 40,
+                      "lineHeight": 80,
+                    },
+                  ]
+                }
+                testID="comp_healthBar_hpLabel"
+              >
+                HP
+              </Text>
+            </Text>
           </View>
         </View>
       </View>

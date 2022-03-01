@@ -5,7 +5,7 @@ import { CheckGraphic, CheckboxGraphic } from "../assets/buttons/actions";
 import Player from "../utils/Player";
 import sounds from "../assets/sounds/sounds";
 
-function Checkbox({ onSelect, testID }) {
+function Checkbox({ onSelect, ...props }) {
   const [isSelected, setIsSelected] = useState(true);
 
   function onCheckmarkPress() {
@@ -17,7 +17,7 @@ function Checkbox({ onSelect, testID }) {
   return (
     <View style={styles.buttonContainer}>
       <Pressable
-        testID={testID}
+        {...props}
         style={styles.checkboxBase}
         onPress={onCheckmarkPress}
       >

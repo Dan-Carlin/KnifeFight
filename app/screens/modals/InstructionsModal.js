@@ -4,7 +4,7 @@ InstructionsModal - Modal that activates when a game is started.
 
 // External libraries
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
 // Assets
 import { GotItGraphic } from "../../assets/buttons/actions";
@@ -46,6 +46,7 @@ function InstructionsModal({ onConfirm }) {
       <View style={styles.buttonsContainer}>
         <View style={styles.button}>
           <Button
+            testID={"ins_btn_gotit"}
             Graphic={GotItGraphic}
             sound={sounds.NEXT_CONFIRM}
             onPress={onConfirm}

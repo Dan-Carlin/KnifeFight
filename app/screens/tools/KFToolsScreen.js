@@ -112,6 +112,7 @@ function KFToolsScreen({ route, navigation }) {
   return (
     <Screen style={styles.screenContainer} background={background}>
       <Modal
+        testID={"tls_modal_instructions"}
         component={
           <InstructionsModal onConfirm={() => setHowToModalVisible(false)} />
         }
@@ -120,6 +121,7 @@ function KFToolsScreen({ route, navigation }) {
       />
 
       <Modal
+        testID={"tls_modal_exit"}
         component={
           <ExitModal
             onCancel={() => setExitModalVisible(false)}
@@ -131,6 +133,7 @@ function KFToolsScreen({ route, navigation }) {
       />
 
       <Modal
+        testID={"tls_modal_diceroll"}
         component={
           <DiceRollerMenu onClose={() => setDiceRollerVisible(false)} />
         }
@@ -140,11 +143,12 @@ function KFToolsScreen({ route, navigation }) {
 
       <View style={styles.leftContainer}>
         <View style={styles.topButtons}>
-          <SoundButton style={styles.soundButton} />
+          <SoundButton testID="tls_btn_sound" style={styles.soundButton} />
         </View>
         <View style={styles.diceRollButton}>
           {!diceRollerVisible && (
             <OpacityButton
+              testID="tls_btn_diceRoller"
               Graphic={DiceRollerGraphic}
               sound={sounds.DICE_ROLLER}
               onPress={() => setDiceRollerVisible(true)}
@@ -157,6 +161,7 @@ function KFToolsScreen({ route, navigation }) {
           <View style={styles.styleEditContainer}>
             <View style={styles.styleButtons}>
               <Button
+                testID="tls_btn_arrowLeft"
                 Graphic={ArrowLeftGraphic}
                 sound={sounds.ARROW_LEFT}
                 onPress={() => previousFont()}
@@ -170,6 +175,7 @@ function KFToolsScreen({ route, navigation }) {
             </View>
             <View style={styles.styleButtons}>
               <Button
+                testID="tls_btn_arrowRight"
                 Graphic={ArrowRightGraphic}
                 sound={sounds.ARROW_RIGHT}
                 onPress={() => nextFont()}
@@ -177,15 +183,22 @@ function KFToolsScreen({ route, navigation }) {
             </View>
             <View style={styles.checkbox}>
               <Text style={styles.styleLabel}>Bevel:</Text>
-              <Checkbox onSelect={() => setBevelVisible(!bevelVisible)} />
+              <Checkbox
+                testID="tls_cb_bevel"
+                onSelect={() => setBevelVisible(!bevelVisible)}
+              />
             </View>
             <View style={styles.checkbox}>
               <Text style={styles.styleLabel}>Shadow:</Text>
-              <Checkbox onSelect={() => setShadowVisible(!shadowVisible)} />
+              <Checkbox
+                testID="tls_cb_shadow"
+                onSelect={() => setShadowVisible(!shadowVisible)}
+              />
             </View>
           </View>
           <View style={styles.nameDisplayContainer}>
             <NameDisplay
+              testID="tls_ndc"
               gangName={gangName}
               Trait={gangTrait}
               style={{
@@ -201,12 +214,14 @@ function KFToolsScreen({ route, navigation }) {
         <View style={styles.bottomContainer}>
           <View style={styles.hpButtons}>
             <Button
+              testID="tls_btn_minus"
               Graphic={MinusGraphic}
               sound={minusHpSounds[getRandomNumber(3)]}
               onPress={decreaseCount}
             />
           </View>
           <CounterContainer
+            testID="tls_txt_hpValue"
             width={240}
             Trait={gangTrait}
             hpValue={count}
@@ -214,6 +229,7 @@ function KFToolsScreen({ route, navigation }) {
           />
           <View style={styles.hpButtons}>
             <Button
+              testID="tls_btn_plus"
               Graphic={PlusGraphic}
               sound={sounds.PLUS}
               onPress={increaseCount}
@@ -224,6 +240,7 @@ function KFToolsScreen({ route, navigation }) {
       <View style={styles.rightContainer}>
         <View style={styles.topButtons}>
           <OpacityButton
+            testID="tls_btn_home"
             Graphic={HomeGraphic}
             sound={sounds.CLOSE_EXIT}
             onPress={() => onBackPress()}
@@ -231,6 +248,7 @@ function KFToolsScreen({ route, navigation }) {
         </View>
         <View style={styles.bannerButton}>
           <OpacityButton
+            testID="tls_btn_banner"
             Graphic={BannerGraphic}
             sound={sounds.START_END_TURN}
             onPress={() =>

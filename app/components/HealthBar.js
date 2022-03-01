@@ -14,7 +14,12 @@ const healthColors = [
   [colors.gang_medium_red, colors.gang_normal_red],
 ];
 
-function HealthBar({ currentHp, initialHp, gangColor = gangColors.NONE }) {
+function HealthBar({
+  currentHp,
+  initialHp,
+  gangColor = gangColors.NONE,
+  ...props
+}) {
   const getHealthBarColors = () => {
     if (currentHp <= initialHp / 6) {
       return healthColors[2];
@@ -43,9 +48,10 @@ function HealthBar({ currentHp, initialHp, gangColor = gangColors.NONE }) {
             colors={getHealthBarColors()}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
+            testID="comp_healthBar_bar"
           />
           <Text style={styles.hpText}>
-            <Text style={styles.numberText}>
+            <Text style={styles.numberText} {...props}>
               {currentHp <= initialHp ? currentHp : initialHp}
             </Text>
             <Text
@@ -55,14 +61,20 @@ function HealthBar({ currentHp, initialHp, gangColor = gangColors.NONE }) {
                 fontSize: 40,
                 lineHeight: 80,
               }}
+              testID="comp_healthBar_hpLabel"
             >
               {strings.app_hp_label}
             </Text>
           </Text>
         </View>
         {currentHp > initialHp && (
-          <View style={styles.extraHpContainer}>
-            <Text style={styles.extraHpText}>+{currentHp - initialHp}</Text>
+          <View
+            style={styles.extraHpContainer}
+            testID="comp_healthBar_extraHpContainer"
+          >
+            <Text style={styles.extraHpText} testID="comp_healthBar_extraHp">
+              +{currentHp - initialHp}
+            </Text>
           </View>
         )}
       </View>

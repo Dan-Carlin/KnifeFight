@@ -69,6 +69,7 @@ function KFSetupStepTwoScreen({ navigation }) {
           <View style={styles.colorRow}>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_purple"
                 Color={gangColors.PURPLE}
                 isSelected={color == gangColors.PURPLE}
                 onSelect={() => setGangColor(gangColors.PURPLE)}
@@ -76,6 +77,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_yellow"
                 Color={gangColors.YELLOW}
                 isSelected={color == gangColors.YELLOW}
                 onSelect={() => setGangColor(gangColors.YELLOW)}
@@ -83,6 +85,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_green"
                 Color={gangColors.GREEN}
                 isSelected={color == gangColors.GREEN}
                 onSelect={() => setGangColor(gangColors.GREEN)}
@@ -90,6 +93,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_red"
                 Color={gangColors.RED}
                 isSelected={color == gangColors.RED}
                 onSelect={() => setGangColor(gangColors.RED)}
@@ -97,6 +101,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_orange"
                 Color={gangColors.ORANGE}
                 isSelected={color == gangColors.ORANGE}
                 onSelect={() => setGangColor(gangColors.ORANGE)}
@@ -104,6 +109,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_blue"
                 Color={gangColors.BLUE}
                 isSelected={color == gangColors.BLUE}
                 onSelect={() => setGangColor(gangColors.BLUE)}
@@ -113,6 +119,7 @@ function KFSetupStepTwoScreen({ navigation }) {
           <View style={styles.colorRow}>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_black"
                 Color={gangColors.BLACK}
                 isSelected={color == gangColors.BLACK}
                 onSelect={() => setGangColor(gangColors.BLACK)}
@@ -120,6 +127,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_white"
                 Color={gangColors.WHITE}
                 isSelected={color == gangColors.WHITE}
                 onSelect={() => setGangColor(gangColors.WHITE)}
@@ -127,6 +135,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_pink"
                 Color={gangColors.PINK}
                 isSelected={color == gangColors.PINK}
                 onSelect={() => setGangColor(gangColors.PINK)}
@@ -134,6 +143,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_brown"
                 Color={gangColors.BROWN}
                 isSelected={color == gangColors.BROWN}
                 onSelect={() => setGangColor(gangColors.BROWN)}
@@ -141,6 +151,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_cyan"
                 Color={gangColors.CYAN}
                 isSelected={color == gangColors.CYAN}
                 onSelect={() => setGangColor(gangColors.CYAN)}
@@ -148,6 +159,7 @@ function KFSetupStepTwoScreen({ navigation }) {
             </View>
             <View style={styles.colorButton}>
               <ColorButton
+                testID="st2_btn_gold"
                 Color={gangColors.GOLD}
                 isSelected={color == gangColors.GOLD}
                 onSelect={() => setGangColor(gangColors.GOLD)}
@@ -157,6 +169,7 @@ function KFSetupStepTwoScreen({ navigation }) {
         </View>
         <View style={styles.navContainer}>
           <OpacityButton
+            testID="st2_btn_back"
             style={styles.navButton}
             Graphic={BackGraphic}
             sound={sounds.BACK_CANCEL}
@@ -165,6 +178,7 @@ function KFSetupStepTwoScreen({ navigation }) {
           />
           {colorIsSelected && (
             <OpacityButton
+              testID="st2_btn_next"
               style={styles.navButton}
               Graphic={NextGraphic}
               sound={sounds.NEXT_CONFIRM}

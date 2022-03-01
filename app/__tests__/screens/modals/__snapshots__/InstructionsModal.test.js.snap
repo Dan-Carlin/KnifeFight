@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Instructions Modal screen tests renders Instructions screen correctly 1`] = `
+exports[`Instructions Modal screen tests renders correctly 1`] = `
 <View
   style={
     Object {
@@ -249,7 +249,7 @@ exports[`Instructions Modal screen tests renders Instructions screen correctly 1
     >
       <SvgMock
         accessible={true}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -257,6 +257,7 @@ exports[`Instructions Modal screen tests renders Instructions screen correctly 1
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID="ins_btn_gotit"
       />
     </View>
   </View>

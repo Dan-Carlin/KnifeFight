@@ -56,7 +56,6 @@ function KFSetupStepOneScreen({ navigation }) {
         <Text style={styles.title}>{strings.setup_step_one_title}</Text>
         <Text style={styles.text}>{strings.setup_step_one_text}</Text>
         <TextInput
-          testID={"ti_gangName"}
           style={styles.textInput}
           placeholder={strings.setup_step_one_placeholder}
           maxLength={25}
@@ -65,7 +64,7 @@ function KFSetupStepOneScreen({ navigation }) {
         />
         <View style={styles.nameButton}>
           <Button
-            testID={"btn_generateName"}
+            testID="st1_btn_generateName"
             Graphic={GenerateNameGraphic}
             sound={sounds.GENERATE_NAME}
             style={styles.button}
@@ -74,6 +73,7 @@ function KFSetupStepOneScreen({ navigation }) {
         </View>
         <View style={styles.navContainer}>
           <OpacityButton
+            testID="st1_btn_exit"
             style={styles.navButton}
             Graphic={ExitGraphic}
             sound={sounds.BACK_CANCEL}
@@ -82,6 +82,7 @@ function KFSetupStepOneScreen({ navigation }) {
           />
           {nameIsEntered && (
             <OpacityButton
+              testID="st1_btn_next"
               Graphic={NextGraphic}
               sound={sounds.NEXT_CONFIRM}
               onPress={() => {

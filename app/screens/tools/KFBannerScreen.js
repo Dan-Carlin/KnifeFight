@@ -16,13 +16,16 @@ import OpacityButton from "../../components/OpacityButton";
 import TraitScreen from "../../components/TraitScreen";
 
 // Resources
+import routes from "../../navigation/routes";
 import sounds from "../../assets/sounds/sounds";
 import styles from "./KFBannerStyles";
+import useCounter from "../../hooks/useCounter";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen({ route, navigation }) {
   const { currentHp, initialHp, style, name, Color, Trait } = route.params;
+  const { count, increaseCount, decreaseCount } = useCounter(currentHp);
 
   return (
     <TraitScreen
@@ -36,7 +39,13 @@ function KFBannerScreen({ route, navigation }) {
           <OpacityButton
             Graphic={ToolsGraphic}
             sound={sounds.START_TURN}
-            onPress={() => navigation.goBack()}
+            onPress={() => {
+              navigation.navigate({
+                name: routes.TOOLS,
+                params: { currentHp: count },
+                merge: true,
+              });
+            }}
           />
         </View>
       </View>
@@ -51,7 +60,9 @@ function KFBannerScreen({ route, navigation }) {
       </View>
       <View style={styles.healthContainer}>
         <HealthBar
-          currentHp={currentHp}
+          currentHp={count}
+          decreaseHp={() => decreaseCount()}
+          increaseHp={() => increaseCount()}
           initialHp={initialHp}
           gangColor={Color}
         />

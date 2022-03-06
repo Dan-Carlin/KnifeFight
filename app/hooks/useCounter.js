@@ -12,6 +12,7 @@ const useCounter = (initialHp) => {
 
   return {
     count,
+    setCount,
     increaseCount,
     decreaseCount,
   };

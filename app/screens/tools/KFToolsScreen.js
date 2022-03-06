@@ -74,7 +74,7 @@ function KFToolsScreen({ route, navigation }) {
   };
 
   const { hpModifier } = route.params;
-  const { count, increaseCount, decreaseCount } = useCounter(
+  const { count, setCount, increaseCount, decreaseCount } = useCounter(
     initialHp + hpModifier
   );
 
@@ -85,7 +85,7 @@ function KFToolsScreen({ route, navigation }) {
   const [rollResultsVisible, setRollResultsVisible] = useState(false);
   const [rollResult, setRollResult] = useState({ name: "", value: 0 });
 
-  const handleCallback = (result) => {
+  const resultsCallback = (result) => {
     setRollResult(result);
     setRollResultsVisible(true);
   };
@@ -95,7 +95,7 @@ function KFToolsScreen({ route, navigation }) {
       Color={gangColor}
       canRoll={!rollResultsVisible}
       results={rollResult}
-      resultsCallback={(result) => handleCallback(result)}
+      resultsCallback={(result) => resultsCallback(result)}
     />
   ) : (
     <HPCounter
@@ -128,13 +128,17 @@ function KFToolsScreen({ route, navigation }) {
   };
 
   useEffect(() => {
+    if (route.params?.currentHp) {
+      setCount(route.params?.currentHp);
+    }
+
     getData();
 
     BackHandler.addEventListener("hardwareBackPress", onBackPress);
 
     return () =>
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
-  }, []);
+  }, [route.params?.currentHp]);
 
   return (
     <Screen style={styles.screenContainer} background={background}>

@@ -1,12 +1,17 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-
-import colors from "../config/colors";
-import strings from "../config/strings";
-import Text from "../components/Text";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { MinusBGraphic, PlusBGraphic } from "../assets/buttons/actions";
+
+import Button from "./Button";
+import Text from "../components/Text";
+
+import colors from "../config/colors";
 import gangColors from "../data/gangColors";
+import getRandomNumber from "../utils/getRandomNumber";
+import sounds from "../assets/sounds/sounds";
+import strings from "../config/strings";
 
 const healthColors = [
   [colors.gang_medium_cyan, colors.gang_normal_cyan],
@@ -14,12 +19,18 @@ const healthColors = [
   [colors.gang_medium_red, colors.gang_normal_red],
 ];
 
+const MAX_PERCENT = 100;
+
 function HealthBar({
   currentHp,
+  decreaseHp,
+  increaseHp,
   initialHp,
   gangColor = gangColors.NONE,
   ...props
 }) {
+  const minusHpSounds = [sounds.MINUS_A, sounds.MINUS_B, sounds.MINUS_C];
+
   const getHealthBarColors = () => {
     if (currentHp <= initialHp / 6) {
       return healthColors[2];
@@ -32,12 +43,19 @@ function HealthBar({
 
   const getHealthBarLength = () => {
     if (currentHp <= initialHp) {
-      return (currentHp * 100) / initialHp + "%";
+      return (currentHp * MAX_PERCENT) / initialHp + "%";
     }
   };
 
   return (
     <View style={styles.container}>
+      <View style={styles.hpButtons}>
+        <Button
+          Graphic={MinusBGraphic}
+          onPress={decreaseHp}
+          sound={minusHpSounds[getRandomNumber(3)]}
+        />
+      </View>
       <View style={styles.barContainer}>
         <View style={styles.barBorder}>
           <LinearGradient
@@ -78,6 +96,13 @@ function HealthBar({
           </View>
         )}
       </View>
+      <View style={styles.hpButtons}>
+        <Button
+          Graphic={PlusBGraphic}
+          onPress={increaseHp}
+          sound={sounds.PLUS}
+        />
+      </View>
     </View>
   );
 }
@@ -90,14 +115,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     overflow: "hidden",
     padding: 4,
-    width: "90%",
+    width: "95%",
   },
   barContainer: {
     alignItems: "center",
     justifyContent: "center",
-    flex: 1,
+    flex: 0.88,
   },
   container: {
+    flexDirection: "row",
     height: "100%",
     width: "100%",
   },
@@ -120,6 +146,10 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 10,
+  },
+  hpButtons: {
+    flex: 0.06,
+    opacity: 0.8,
   },
   hpText: {
     alignSelf: "center",

@@ -7,6 +7,7 @@ export default Object.freeze({
     light: colors.gang_light_purple,
     medium: colors.gang_medium_purple,
     dark: colors.gang_dark_purple,
+    text: colors.white,
     svg: ColorSvgs.Purple,
   },
   YELLOW: {
@@ -14,6 +15,7 @@ export default Object.freeze({
     light: colors.gang_light_yellow,
     medium: colors.gang_medium_yellow,
     dark: colors.gang_dark_yellow,
+    text: colors.black,
     svg: ColorSvgs.Yellow,
   },
   GREEN: {
@@ -21,6 +23,7 @@ export default Object.freeze({
     light: colors.gang_light_green,
     medium: colors.gang_medium_green,
     dark: colors.gang_dark_green,
+    text: colors.black,
     svg: ColorSvgs.Green,
   },
   RED: {
@@ -28,6 +31,7 @@ export default Object.freeze({
     light: colors.gang_light_red,
     medium: colors.gang_medium_red,
     dark: colors.gang_dark_red,
+    text: colors.white,
     svg: ColorSvgs.Red,
   },
   ORANGE: {
@@ -35,6 +39,7 @@ export default Object.freeze({
     light: colors.gang_light_orange,
     medium: colors.gang_medium_orange,
     dark: colors.gang_dark_orange,
+    text: colors.black,
     svg: ColorSvgs.Orange,
   },
   BLUE: {
@@ -42,6 +47,7 @@ export default Object.freeze({
     light: colors.gang_light_blue,
     medium: colors.gang_medium_blue,
     dark: colors.gang_dark_blue,
+    text: colors.white,
     svg: ColorSvgs.Blue,
   },
   BLACK: {
@@ -49,6 +55,7 @@ export default Object.freeze({
     light: colors.gang_light_black,
     medium: colors.gang_medium_black,
     dark: colors.gang_dark_black,
+    text: colors.white,
     svg: ColorSvgs.Black,
   },
   WHITE: {
@@ -56,6 +63,7 @@ export default Object.freeze({
     light: colors.gang_light_white,
     medium: colors.gang_medium_white,
     dark: colors.gang_dark_white,
+    text: colors.black,
     svg: ColorSvgs.White,
   },
   PINK: {
@@ -63,6 +71,7 @@ export default Object.freeze({
     light: colors.gang_light_pink,
     medium: colors.gang_medium_pink,
     dark: colors.gang_dark_pink,
+    text: colors.black,
     svg: ColorSvgs.Pink,
   },
   BROWN: {
@@ -70,6 +79,7 @@ export default Object.freeze({
     light: colors.gang_light_brown,
     medium: colors.gang_medium_brown,
     dark: colors.gang_dark_brown,
+    text: colors.white,
     svg: ColorSvgs.Brown,
   },
   CYAN: {
@@ -77,6 +87,7 @@ export default Object.freeze({
     light: colors.gang_light_cyan,
     medium: colors.gang_medium_cyan,
     dark: colors.gang_dark_cyan,
+    text: colors.black,
     svg: ColorSvgs.Cyan,
   },
   GOLD: {
@@ -84,6 +95,7 @@ export default Object.freeze({
     light: colors.gang_light_gold,
     medium: colors.gang_medium_gold,
     dark: colors.gang_dark_gold,
+    text: colors.white,
     svg: ColorSvgs.Gold,
   },
   NONE: {
@@ -91,5 +103,6 @@ export default Object.freeze({
     light: colors.light,
     medium: colors.medium,
     dark: colors.dark,
+    text: colors.black,
   },
 });

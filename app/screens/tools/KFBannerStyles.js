@@ -11,6 +11,7 @@ export default StyleSheet.create({
   healthContainer: {
     alignItems: "center",
     flex: 0.25,
+    flexDirection: "row",
   },
   nameContainer: {
     alignItems: "center",

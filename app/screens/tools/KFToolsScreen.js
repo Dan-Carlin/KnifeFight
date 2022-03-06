@@ -13,40 +13,42 @@ import {
   ArrowRightGraphic,
   BannerGraphic,
   DiceRollerGraphic,
-  MinusGraphic,
-  PlusGraphic,
+  HpCounterGraphic,
 } from "../../assets/buttons/actions";
 import { HomeGraphic } from "../../assets/buttons/navigation";
 
 // Components
 import Button from "../../components/Button";
-import CounterContainer from "../../components/CounterContainer";
-import DiceRollerMenu from "../../components/DiceRollerMenu";
+import Checkbox from "../../components/Checkbox";
+import DiceSelector from "../../components/DiceSelector";
 import ExitModal from "../modals/ExitModal";
+import HPCounter from "../../components/HPCounter";
 import InstructionsModal from "../modals/InstructionsModal";
-import Modal from "../../components/Modal";
+import LastRollBox from "../../components/LastRollBox";
+import ModalWithPressable from "../../components/ModalWithPressable";
+import ModalNoPressable from "../../components/ModalNoPressable";
 import NameDisplay from "../../components/NameDisplay";
 import OpacityButton from "../../components/OpacityButton";
+import Player from "../../utils/Player";
+import RollResults from "../../components/RollResults";
 import Screen from "../../components/Screen";
 import SoundButton from "../../components/SoundButton";
 import Text from "../../components/Text";
+import TraitContainer from "../../components/TraitContainer";
 
 // Resources
 import capitalize from "../../utils/capitalize";
 import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
-import getRandomNumber from "../../utils/getRandomNumber";
 import routes from "../../navigation/routes";
 import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
-import Checkbox from "../../components/Checkbox";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 const initialHp = 20;
-const minusHpSounds = [sounds.MINUS_A, sounds.MINUS_B, sounds.MINUS_C];
 
 function KFToolsScreen({ route, navigation }) {
   const [gangName, setGangName] = useState("???");
@@ -76,11 +78,36 @@ function KFToolsScreen({ route, navigation }) {
     initialHp + hpModifier
   );
 
+  const [diceMode, setDiceMode] = useState(false);
+
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [howToModalVisible, setHowToModalVisible] = useState(true);
-  const [diceRollerVisible, setDiceRollerVisible] = useState(false);
+  const [rollResultsVisible, setRollResultsVisible] = useState(false);
+  const [rollResult, setRollResult] = useState({ name: "", value: 0 });
+
+  const handleCallback = (result) => {
+    setRollResult(result);
+    setRollResultsVisible(true);
+  };
+
+  const setToolsMode = diceMode ? (
+    <DiceSelector
+      Color={gangColor}
+      canRoll={!rollResultsVisible}
+      results={rollResult}
+      resultsCallback={(result) => handleCallback(result)}
+    />
+  ) : (
+    <HPCounter
+      hpValue={count}
+      decreaseHp={() => decreaseCount()}
+      increaseHp={() => increaseCount()}
+      Color={gangColor}
+    />
+  );
 
   const onBackPress = () => {
+    Player.playSound(sounds.CLOSE_EXIT);
     setExitModalVisible(true);
     return true;
   };
@@ -111,7 +138,7 @@ function KFToolsScreen({ route, navigation }) {
 
   return (
     <Screen style={styles.screenContainer} background={background}>
-      <Modal
+      <ModalWithPressable
         testID={"tls_modal_instructions"}
         component={
           <InstructionsModal onConfirm={() => setHowToModalVisible(false)} />
@@ -120,7 +147,7 @@ function KFToolsScreen({ route, navigation }) {
         setIsVisible={() => setHowToModalVisible(!howToModalVisible)}
       />
 
-      <Modal
+      <ModalWithPressable
         testID={"tls_modal_exit"}
         component={
           <ExitModal
@@ -132,26 +159,40 @@ function KFToolsScreen({ route, navigation }) {
         setIsVisible={() => setExitModalVisible(!exitModalVisible)}
       />
 
-      <Modal
-        testID={"tls_modal_diceroll"}
+      <ModalNoPressable
+        testID={"tls_modal_rollResults"}
         component={
-          <DiceRollerMenu onClose={() => setDiceRollerVisible(false)} />
+          <RollResults
+            results={rollResult}
+            onClose={() => setRollResultsVisible(false)}
+          />
         }
-        isVisible={diceRollerVisible}
-        setIsVisible={() => setDiceRollerVisible(!diceRollerVisible)}
+        isVisible={rollResultsVisible}
+        setIsVisible={() => setRollResultsVisible(!rollResultsVisible)}
       />
 
       <View style={styles.leftContainer}>
         <View style={styles.topButtons}>
           <SoundButton testID="tls_btn_sound" style={styles.soundButton} />
         </View>
+        <View style={styles.lastRollBox}>
+          {rollResult.value != 0 && <LastRollBox results={rollResult} />}
+        </View>
         <View style={styles.diceRollButton}>
-          {!diceRollerVisible && (
+          {!diceMode && (
             <OpacityButton
               testID="tls_btn_diceRoller"
               Graphic={DiceRollerGraphic}
               sound={sounds.DICE_ROLLER}
-              onPress={() => setDiceRollerVisible(true)}
+              onPress={() => setDiceMode(true)}
+            />
+          )}
+          {diceMode && (
+            <OpacityButton
+              testID="tls_btn_hpCounter"
+              Graphic={HpCounterGraphic}
+              sound={sounds.DICE_ROLLER}
+              onPress={() => setDiceMode(false)}
             />
           )}
         </View>
@@ -183,17 +224,21 @@ function KFToolsScreen({ route, navigation }) {
             </View>
             <View style={styles.checkbox}>
               <Text style={styles.styleLabel}>Bevel:</Text>
-              <Checkbox
-                testID="tls_cb_bevel"
-                onSelect={() => setBevelVisible(!bevelVisible)}
-              />
+              <View style={{ flex: 1 }}>
+                <Checkbox
+                  testID="tls_cb_bevel"
+                  onSelect={() => setBevelVisible(!bevelVisible)}
+                />
+              </View>
             </View>
             <View style={styles.checkbox}>
               <Text style={styles.styleLabel}>Shadow:</Text>
-              <Checkbox
-                testID="tls_cb_shadow"
-                onSelect={() => setShadowVisible(!shadowVisible)}
-              />
+              <View style={{ flex: 1 }}>
+                <Checkbox
+                  testID="tls_cb_shadow"
+                  onSelect={() => setShadowVisible(!shadowVisible)}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.nameDisplayContainer}>
@@ -212,29 +257,14 @@ function KFToolsScreen({ route, navigation }) {
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <View style={styles.hpButtons}>
-            <Button
-              testID="tls_btn_minus"
-              Graphic={MinusGraphic}
-              sound={minusHpSounds[getRandomNumber(3)]}
-              onPress={decreaseCount}
-            />
-          </View>
-          <CounterContainer
+          <TraitContainer
+            child={setToolsMode}
             testID="tls_txt_hpValue"
+            style={styles.traitContainer}
             width={240}
             Trait={gangTrait}
-            hpValue={count}
             Color={gangColor}
           />
-          <View style={styles.hpButtons}>
-            <Button
-              testID="tls_btn_plus"
-              Graphic={PlusGraphic}
-              sound={sounds.PLUS}
-              onPress={increaseCount}
-            />
-          </View>
         </View>
       </View>
       <View style={styles.rightContainer}>

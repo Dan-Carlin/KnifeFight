@@ -28,7 +28,8 @@
     "react-native-screens": "~3.10.1",
     "react-native-svg": "12.1.1",
     "react-native-svg-transformer": "^1.0.0",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "react-native-reanimated": "~2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -50,6 +51,8 @@
     "setupFiles": [
       "<rootDir>/__mocks__/jestSetup.js"
     ],
-    "setupFilesAfterEnv": ["jest-extended/all"]
+    "setupFilesAfterEnv": [
+      "jest-extended/all"
+    ]
   }
 }

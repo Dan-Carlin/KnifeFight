@@ -10,9 +10,9 @@ export default StyleSheet.create({
   },
   bottomContainer: {
     alignItems: "center",
-    flex: 0.5,
-    flexDirection: "row",
+    flex: 0.55,
     paddingHorizontal: 10,
+    paddingTop: 20,
     width: "100%",
   },
   centerContainer: {
@@ -20,10 +20,9 @@ export default StyleSheet.create({
     flex: 0.6,
   },
   checkbox: {
-    alignSelf: "center",
-    height: "50%",
-    justifyContent: "flex-end",
-    width: "17%",
+    height: "100%",
+    padding: 4,
+    width: "20%",
   },
   currentFont: {
     fontSize: 18,
@@ -42,10 +41,9 @@ export default StyleSheet.create({
     justifyContent: "center",
     width: "25%",
   },
-  hpButtons: {
-    bottom: -25,
-    flex: 1,
-    margin: 10,
+  lastRollBox: {
+    height: "20%",
+    width: "80%",
   },
   leftContainer: {
     alignItems: "center",
@@ -54,11 +52,11 @@ export default StyleSheet.create({
   },
   nameContainer: {
     alignItems: "center",
-    flex: 0.5,
+    flex: 0.45,
     width: "100%",
   },
   nameDisplayContainer: {
-    flex: 0.65,
+    flex: 0.6,
     height: "100%",
     width: "100%",
   },
@@ -80,8 +78,8 @@ export default StyleSheet.create({
     width: "15%",
   },
   styleEditContainer: {
-    alignItems: "flex-start",
-    flex: 0.35,
+    alignItems: "center",
+    flex: 0.4,
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
@@ -99,6 +97,10 @@ export default StyleSheet.create({
     height: "25%",
     justifyContent: "center",
     padding: 15,
+    width: "100%",
+  },
+  traitContainer: {
+    position: "absolute",
     width: "100%",
   },
 });

@@ -81,4 +81,7 @@ export default {
   // Components
   name_display_text_a: "(The ",
   name_display_text_b: " ones)",
+  roll_results_title: "Results:",
+  roll_results_text_a: "You rolled a",
+  roll_results_text_b: "You rolled an",
 };

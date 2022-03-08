@@ -48,7 +48,6 @@ import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
-const initialHp = 20;
 
 function KFToolsScreen({ route, navigation }) {
   const [gangName, setGangName] = useState("???");
@@ -73,15 +72,18 @@ function KFToolsScreen({ route, navigation }) {
     }
   };
 
-  const { hpModifier } = route.params;
+  const { hpModifier, settings } = route.params;
   const { count, setCount, increaseCount, decreaseCount } = useCounter(
-    initialHp + hpModifier
+    parseInt(settings.baseHp) + hpModifier
   );
 
   const [diceMode, setDiceMode] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
-  const [howToModalVisible, setHowToModalVisible] = useState(true);
+  const [howToModalVisible, setHowToModalVisible] = useState(
+    settings.showPopup
+  );
   const [rollResultsVisible, setRollResultsVisible] = useState(false);
   const [rollResult, setRollResult] = useState({ name: "", value: 0 });
 
@@ -177,7 +179,12 @@ function KFToolsScreen({ route, navigation }) {
 
       <View style={styles.leftContainer}>
         <View style={styles.topButtons}>
-          <SoundButton testID="tls_btn_sound" style={styles.soundButton} />
+          <SoundButton
+            testID="tls_btn_sound"
+            style={styles.soundButton}
+            isEnabled={soundEnabled}
+            onSelect={() => setSoundEnabled(!soundEnabled)}
+          />
         </View>
         <View style={styles.lastRollBox}>
           {rollResult.value != 0 && <LastRollBox results={rollResult} />}
@@ -231,6 +238,7 @@ function KFToolsScreen({ route, navigation }) {
               <View style={{ flex: 1 }}>
                 <Checkbox
                   testID="tls_cb_bevel"
+                  checked={bevelVisible}
                   onSelect={() => setBevelVisible(!bevelVisible)}
                 />
               </View>
@@ -240,6 +248,7 @@ function KFToolsScreen({ route, navigation }) {
               <View style={{ flex: 1 }}>
                 <Checkbox
                   testID="tls_cb_shadow"
+                  checked={shadowVisible}
                   onSelect={() => setShadowVisible(!shadowVisible)}
                 />
               </View>
@@ -288,7 +297,7 @@ function KFToolsScreen({ route, navigation }) {
             onPress={() =>
               navigation.navigate(routes.BANNER, {
                 currentHp: count,
-                initialHp: initialHp,
+                initialHp: settings.baseHp,
                 style: {
                   font: fonts[fontIndex],
                   borderSize: 4,

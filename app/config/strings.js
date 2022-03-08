@@ -32,6 +32,11 @@ export default {
   home_disclaimer_text_a: "This is a companion app for the ",
   home_disclaimer_text_b: " board game, not a standalone game.",
 
+  // Settings
+  settings_basehp_label: "Base HP:",
+  settings_soundfx_label: "SoundFX:",
+  settings_ins_popup_label: "Show instructions pop-up:",
+
   // Setup - step one
   setup_step_one_title: "First...",
   setup_step_one_text: "Let's come up with a name for your gang.",

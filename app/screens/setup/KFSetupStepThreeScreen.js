@@ -3,7 +3,7 @@ KFSetupStepThreeScreen - View for the third setup screen.
 */
 
 // External libraries
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -30,8 +30,27 @@ import styles from "./KFSetupStepThreeStyles";
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
 function KFSetupStepThreeScreen({ navigation }) {
+  const [settings, setSettings] = useState({
+    baseHp: "0",
+    soundEnabled: true,
+    showPopup: true,
+  });
+
   const [trait, setTrait] = useState(gangTraits.NONE);
   const [traitIsSelected, setTraitIsSelected] = useState(false);
+
+  const getSettings = async () => {
+    try {
+      const settingsValue = await AsyncStorage.getItem("@settings");
+      if (settingsValue !== null) {
+        const settings = JSON.parse(settingsValue);
+        console.log(settings);
+        setSettings(settings);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const setGangTrait = (value) => {
     if (value != gangTraits.NONE) {
@@ -50,6 +69,10 @@ function KFSetupStepThreeScreen({ navigation }) {
       console.log(e);
     }
   };
+
+  useEffect(() => {
+    getSettings();
+  }, []);
 
   return (
     <Screen style={styles.screenContainer} background={background}>
@@ -274,7 +297,7 @@ function KFSetupStepThreeScreen({ navigation }) {
                 storeGangTrait(trait);
                 navigation.navigate(routes.GAME_NAVIGATOR, {
                   screen: routes.TOOLS,
-                  params: { hpModifier: trait.hp },
+                  params: { hpModifier: trait.hp, settings: settings },
                 });
               }}
               width="45%"

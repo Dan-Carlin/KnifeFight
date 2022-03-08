@@ -9,7 +9,10 @@ import { View, Image } from "react-native";
 // Assets
 import { FGLogo, KFLogo } from "../../assets/logos";
 import Gradient from "../../assets/backgrounds/split_gradient_green.svg";
-import { StartGameGraphic } from "../../assets/buttons/navigation";
+import {
+  SettingsGraphic,
+  StartGameGraphic,
+} from "../../assets/buttons/navigation";
 
 // Components
 import OpacityButton from "../../components/OpacityButton";
@@ -23,13 +26,23 @@ import strings from "../../config/strings";
 import styles from "./KFHomeStyles";
 
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
-const sgLogo = require("../../assets/logos/sg_logo_light.png");
 
 function KFHomeScreen({ navigation }) {
+  const sgLogo = require("../../assets/logos/sg_logo_light.png");
+
   return (
     <Screen style={styles.screenContainer} background={background}>
       <View style={styles.logoContainer}>
         <KFLogo style={styles.logo} />
+        <View style={styles.settingsButton}>
+          <OpacityButton
+            Graphic={SettingsGraphic}
+            sound={sounds.NEXT_CONFIRM}
+            onPress={() => {
+              navigation.navigate(routes.SETTINGS);
+            }}
+          />
+        </View>
       </View>
       <View style={styles.buttonContainer}>
         <Gradient style={styles.gradient} />

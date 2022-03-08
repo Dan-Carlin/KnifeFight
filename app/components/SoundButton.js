@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Pressable } from "react-native";
 
 import Player from "../utils/Player";
@@ -9,20 +9,19 @@ import {
   SoundOnGraphic,
 } from "../assets/buttons/actions";
 
-function SoundButton({ style }) {
-  const [isActive, setIsActive] = useState(true);
-
+function SoundButton({ style, isEnabled, onSelect }) {
   function onSpeakerPress() {
     Player.playSound(sounds.SOUND);
-    Player.setMutedState(isActive);
-    setIsActive(!isActive);
+    Player.setMutedState(isEnabled);
+    isEnabled = !isEnabled;
+    onSelect();
   }
 
   return (
     <Pressable style={[styles.container, style]} onPress={onSpeakerPress}>
       <SoundBaseGraphic style={styles.soundBase} />
-      {isActive && <SoundOnGraphic style={styles.soundOn} />}
-      {!isActive && <SoundOffGraphic style={styles.soundOff} />}
+      {isEnabled && <SoundOnGraphic style={styles.soundOn} />}
+      {!isEnabled && <SoundOffGraphic style={styles.soundOff} />}
     </Pressable>
   );
 }

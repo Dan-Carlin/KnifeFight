@@ -74,7 +74,6 @@ function KFSetupStepOneScreen({ navigation }) {
         <View style={styles.navContainer}>
           <OpacityButton
             testID="st1_btn_exit"
-            style={styles.navButton}
             Graphic={ExitGraphic}
             sound={sounds.BACK_CANCEL}
             onPress={() => navigation.goBack()}

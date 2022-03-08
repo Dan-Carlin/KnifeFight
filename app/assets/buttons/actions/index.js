@@ -17,6 +17,8 @@ export { default as MinusGraphic } from "./kf_minus_btn.svg";
 export { default as MinusBGraphic } from "./kf_minus_b_btn.svg";
 export { default as PlusGraphic } from "./kf_plus_btn.svg";
 export { default as PlusBGraphic } from "./kf_plus_b_btn.svg";
+export { default as RestoreDefaultsGraphic } from "./kf_restore_defaults_btn.svg";
+export { default as SaveGraphic } from "./kf_save_btn.svg";
 export { default as SoundBaseGraphic } from "./kf_sound_base_btn.svg";
 export { default as SoundOffGraphic } from "./kf_sound_off_btn.svg";
 export { default as SoundOnGraphic } from "./kf_sound_on_btn.svg";

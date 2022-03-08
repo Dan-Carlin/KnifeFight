@@ -58,9 +58,17 @@ export default StyleSheet.create({
   logoContainer: {
     alignItems: "center",
     flex: 0.6,
+    justifyContent: "space-between",
   },
   screenContainer: {
     flex: 1,
+  },
+  settingsButton: {
+    alignSelf: "flex-end",
+    height: 65,
+    marginBottom: 10,
+    marginEnd: 20,
+    width: 65,
   },
   sgLogo: {
     flex: 1,

@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, StyleSheet, Pressable } from "react-native";
 
 import { CheckGraphic, CheckboxGraphic } from "../assets/buttons/actions";
 import Player from "../utils/Player";
 import sounds from "../assets/sounds/sounds";
 
-function Checkbox({ onSelect, ...props }) {
-  const [isSelected, setIsSelected] = useState(true);
-
+function Checkbox({ onSelect, checked = true, ...props }) {
   function onCheckmarkPress() {
     Player.playSound(sounds.CHECKBOX);
-    setIsSelected(!isSelected);
+    checked = !checked;
     onSelect();
   }
 
@@ -23,7 +21,7 @@ function Checkbox({ onSelect, ...props }) {
       >
         <CheckboxGraphic style={styles.checkboxBorder} />
 
-        {isSelected && (
+        {checked && (
           <View style={styles.select}>
             <CheckGraphic />
           </View>

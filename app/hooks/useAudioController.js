@@ -4,14 +4,8 @@ import soundLibrary from "../assets/sounds/soundLibrary";
 
 const soundObjects = {};
 
-class Player {
-  constructor() {
-    this.state = {
-      muted: true,
-    };
-  }
-
-  static load(library) {
+const useAudioController = () => {
+  const load = (library) => {
     const promisedSoundObjects = [];
 
     for (const name in library) {
@@ -23,9 +17,9 @@ class Player {
     }
 
     return promisedSoundObjects;
-  }
+  };
 
-  static async playSound(name) {
+  const playSound = async (name) => {
     try {
       if (soundObjects[name]) {
         await soundObjects[name].replayAsync();
@@ -33,17 +27,23 @@ class Player {
     } catch (error) {
       console.warn(error);
     }
-  }
+  };
 
-  static async setMutedState(isMuted) {
+  const enableSounds = async (enabled) => {
     try {
       for (const name in soundLibrary) {
-        await soundObjects[name].setIsMutedAsync(isMuted);
+        await soundObjects[name].setIsMutedAsync(!enabled);
       }
     } catch (error) {
       console.warn(error);
     }
-  }
-}
+  };
 
-export default Player;
+  return {
+    load,
+    playSound,
+    enableSounds,
+  };
+};
+
+export default useAudioController;

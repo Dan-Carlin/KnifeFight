@@ -34,7 +34,7 @@ export default StyleSheet.create({
     width: "100%",
   },
   restoreDefaults: {
-    height: "10%",
+    height: 40,
     width: "80%",
   },
   saveButton: {

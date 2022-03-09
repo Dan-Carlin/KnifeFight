@@ -20,9 +20,9 @@ export default StyleSheet.create({
     flex: 0.6,
   },
   checkbox: {
-    height: "100%",
+    height: 60,
     padding: 4,
-    width: "20%",
+    width: 80,
   },
   currentFont: {
     fontSize: 18,

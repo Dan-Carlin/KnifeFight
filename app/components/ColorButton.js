@@ -1,13 +1,15 @@
 import React from "react";
 import { StyleSheet, Pressable } from "react-native";
 
-import Player from "../utils/Player";
 import { Select } from "../assets/buttons/colors/index";
 import sounds from "../assets/sounds/sounds";
+import useAudioController from "../hooks/useAudioController";
 
 function ColorButton({ Color, isSelected, onSelect, ...props }) {
+  const { playSound } = useAudioController();
+
   function onCheckmarkPress() {
-    Player.playSound(sounds.COLOR);
+    playSound(sounds.COLOR);
     onSelect();
   }
 

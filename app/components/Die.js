@@ -10,7 +10,6 @@ import {
 } from "../assets/buttons/actions";
 
 import Button from "./Button";
-import Player from "../utils/Player";
 import Text from "./Text";
 
 import colors from "../config/colors";
@@ -18,6 +17,7 @@ import dieType from "../data/dieTypes";
 import gangColors from "../data/gangColors";
 import getRandomNumber from "../utils/getRandomNumber";
 import sounds from "../assets/sounds/sounds";
+import useAudioController from "../hooks/useAudioController";
 
 function Die({
   DieType,
@@ -26,6 +26,7 @@ function Die({
   results,
   resultsCallback,
 }) {
+  const { playSound } = useAudioController();
   const rollValueHolder = useRef(new Animated.Value(0)).current;
 
   const rollInterpolation = rollValueHolder.interpolate({
@@ -87,7 +88,7 @@ function Die({
   };
 
   const rollDie = () => {
-    Player.playSound(sounds.DICE_HIT);
+    playSound(sounds.DICE_HIT);
     rollDieAnimation();
     setTimeout(() => {
       resultsCallback({

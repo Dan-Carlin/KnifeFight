@@ -6,6 +6,7 @@ KFToolsScreen - View for the tools screen.
 import React, { useState, useEffect } from "react";
 import { View, BackHandler } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useSelector, useDispatch } from "react-redux";
 
 // Assets
 import {
@@ -29,7 +30,6 @@ import ModalWithPressable from "../../components/ModalWithPressable";
 import ModalNoPressable from "../../components/ModalNoPressable";
 import NameDisplay from "../../components/NameDisplay";
 import OpacityButton from "../../components/OpacityButton";
-import Player from "../../utils/Player";
 import RollResults from "../../components/RollResults";
 import Screen from "../../components/Screen";
 import SoundButton from "../../components/SoundButton";
@@ -42,14 +42,22 @@ import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
 import routes from "../../navigation/routes";
+import { setEnableAudio } from "../../redux/actions";
 import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFToolsStyles";
 import useCounter from "../../hooks/useCounter";
+import useAudioController from "../../hooks/useAudioController";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFToolsScreen({ route, navigation }) {
+  const { baseHp, enableAudio, showPopup } = useSelector(
+    (state) => state.settingsReducer
+  );
+  const dispatch = useDispatch();
+  const { playSound } = useAudioController();
+
   const [gangName, setGangName] = useState("???");
   const [gangColor, setGangColor] = useState(gangColors.NONE);
   const [gangTrait, setGangTrait] = useState(gangTraits.NONE);
@@ -74,16 +82,13 @@ function KFToolsScreen({ route, navigation }) {
 
   const { hpModifier, settings } = route.params;
   const { count, setCount, increaseCount, decreaseCount } = useCounter(
-    parseInt(settings.baseHp) + hpModifier
+    parseInt(baseHp) + hpModifier
   );
 
   const [diceMode, setDiceMode] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
-  const [howToModalVisible, setHowToModalVisible] = useState(
-    settings.showPopup
-  );
+  const [howToModalVisible, setHowToModalVisible] = useState(showPopup);
   const [rollResultsVisible, setRollResultsVisible] = useState(false);
   const [rollResult, setRollResult] = useState({ name: "", value: 0 });
 
@@ -109,7 +114,7 @@ function KFToolsScreen({ route, navigation }) {
   );
 
   const onBackPress = () => {
-    Player.playSound(sounds.CLOSE_EXIT);
+    playSound(sounds.CLOSE_EXIT);
     setExitModalVisible(true);
     return true;
   };
@@ -138,8 +143,10 @@ function KFToolsScreen({ route, navigation }) {
 
     BackHandler.addEventListener("hardwareBackPress", onBackPress);
 
-    return () =>
+    return () => {
+      AsyncStorage.setItem("@audioChanged", JSON.stringify(enableAudio));
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+    };
   }, [route.params?.currentHp]);
 
   return (
@@ -182,8 +189,8 @@ function KFToolsScreen({ route, navigation }) {
           <SoundButton
             testID="tls_btn_sound"
             style={styles.soundButton}
-            isEnabled={soundEnabled}
-            onSelect={() => setSoundEnabled(!soundEnabled)}
+            enabled={enableAudio}
+            onPress={() => dispatch(setEnableAudio(!enableAudio))}
           />
         </View>
         <View style={styles.lastRollBox}>
@@ -297,7 +304,7 @@ function KFToolsScreen({ route, navigation }) {
             onPress={() =>
               navigation.navigate(routes.BANNER, {
                 currentHp: count,
-                initialHp: settings.baseHp,
+                initialHp: baseHp,
                 style: {
                   font: fonts[fontIndex],
                   borderSize: 4,

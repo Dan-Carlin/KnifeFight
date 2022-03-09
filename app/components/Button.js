@@ -1,15 +1,17 @@
 import React from "react";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
-import Player from "../utils/Player";
+import useAudioController from "../hooks/useAudioController";
 
 function Button({ Graphic, onPress, sound, ...props }) {
+  const { playSound } = useAudioController();
+
   return (
     <TouchableWithoutFeedback
       {...props}
       style={styles.buttonContainer}
       onPress={() => {
-        Player.playSound(sound);
+        playSound(sound);
         onPress();
       }}
     >

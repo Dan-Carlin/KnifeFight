@@ -3,8 +3,10 @@ KFHomeScreen - View for the home screen of the app.
 */
 
 // External libraries
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Image } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch } from "react-redux";
 
 // Assets
 import { FGLogo, KFLogo } from "../../assets/logos";
@@ -21,14 +23,40 @@ import Text from "../../components/Text";
 
 // Resources
 import routes from "../../navigation/routes";
+import { setBaseHp, setEnableAudio, setShowPopup } from "../../redux/actions";
 import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
 import styles from "./KFHomeStyles";
+import useAudioController from "../../hooks/useAudioController";
 
 const background = require("../../assets/backgrounds/kf_background_xxxhdpi.png");
 
 function KFHomeScreen({ navigation }) {
+  const { enableSounds } = useAudioController();
+
   const sgLogo = require("../../assets/logos/sg_logo_light.png");
+  const dispatch = useDispatch();
+
+  const LoadSettings = async () => {
+    try {
+      const settingsValue = await AsyncStorage.getItem("@settings");
+      const settings = JSON.parse(settingsValue);
+
+      if (settingsValue !== null) {
+        dispatch(setBaseHp(settings.baseHp));
+        dispatch(setEnableAudio(settings.enableAudio));
+        dispatch(setShowPopup(settings.showPopup));
+
+        enableSounds(settings.enableAudio);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    LoadSettings();
+  }, []);
 
   return (
     <Screen style={styles.screenContainer} background={background}>

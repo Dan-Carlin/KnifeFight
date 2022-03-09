@@ -7,9 +7,13 @@ import OpacityButton from "./OpacityButton";
 import Text from "../components/Text";
 
 import colors from "../config/colors";
+import sounds from "../assets/sounds/sounds";
 import strings from "../config/strings";
+import useAudioController from "../hooks/useAudioController";
 
 function RollResults({ results, onClose }) {
+  const { playSound } = useAudioController();
+
   const getText = () => {
     if (results.value == 8 || results.value == 11 || results.value == 18) {
       return strings.roll_results_text_b;
@@ -28,12 +32,17 @@ function RollResults({ results, onClose }) {
     }
   };
 
+  const closeWindow = () => {
+    playSound(sounds.BACK_CANCEL);
+    onClose();
+  };
+
   return (
-    <Pressable style={styles.container} onPress={onClose}>
+    <Pressable style={styles.container} onPress={() => closeWindow()}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{strings.roll_results_title}</Text>
         <View style={styles.closeButton}>
-          <OpacityButton Graphic={CloseGraphic} onPress={onClose} />
+          <OpacityButton Graphic={CloseGraphic} onPress={() => closeWindow()} />
         </View>
       </View>
       <View style={styles.bodyContainer}>

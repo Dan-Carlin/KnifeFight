@@ -7,23 +7,27 @@ import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
 import { NavigationContainer } from "@react-navigation/native";
+import { Provider } from "react-redux";
+import { Store } from "./app/redux/store";
 
 // Components
 import MainNavigator from "./app/navigation/MainNavigator";
 
 // Resources
 import navigationTheme from "./app/navigation/navigationTheme";
-import Player from "./app/utils/Player";
 import soundLibrary from "./app/assets/sounds/soundLibrary";
+import useAudioController from "./app/hooks/useAudioController";
 import useFonts from "./app/hooks/useFonts";
 
 export default function App() {
+  const { load } = useAudioController();
+
   const [assetsLoaded, setAssetsLoaded] = useState(false);
 
   const LoadAssets = async () => {
     await useFonts();
 
-    const sounds = Player.load(soundLibrary);
+    const sounds = load(soundLibrary);
     return Promise.all([...sounds]);
   };
 
@@ -45,7 +49,9 @@ export default function App() {
         hidden={true}
         translucent={true}
       />
-      <MainNavigator />
+      <Provider store={Store}>
+        <MainNavigator />
+      </Provider>
     </NavigationContainer>
   );
 }

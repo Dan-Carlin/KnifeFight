@@ -4,7 +4,7 @@ KFSettingsScreen - View for the settings screen.
 
 // External libraries
 import React from "react";
-import { View } from "react-native";
+import { Keyboard, View } from "react-native";
 import Toast from "react-native-simple-toast";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSelector, useDispatch } from "react-redux";
@@ -47,6 +47,7 @@ function KFSettingsScreen({ navigation }) {
     dispatch(setEnableAudio(true));
     enableSounds(true);
     dispatch(setShowPopup(true));
+    Toast.show("Default settings restored!");
   };
 
   const storeSettings = async (value) => {
@@ -120,20 +121,24 @@ function KFSettingsScreen({ navigation }) {
             <OpacityButton
               Graphic={ExitGraphic}
               sound={sounds.BACK_CANCEL}
-              onPress={() => navigation.goBack()}
+              onPress={() => {
+                Keyboard.dismiss();
+                navigation.goBack();
+              }}
             />
           </View>
           <View style={styles.saveButton}>
             <OpacityButton
               Graphic={SaveGraphic}
               sound={sounds.PLUS}
-              onPress={() =>
+              onPress={() => {
+                Keyboard.dismiss();
                 storeSettings({
                   baseHp: baseHp,
                   enableAudio: enableAudio,
                   showPopup: showPopup,
-                })
-              }
+                });
+              }}
             />
           </View>
         </View>

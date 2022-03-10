@@ -126,9 +126,11 @@ function KFToolsScreen({ route, navigation }) {
       const color = JSON.parse(colorValue);
       const traitValue = await AsyncStorage.getItem("@gangTrait");
       const trait = JSON.parse(traitValue);
-      setGangName(nameValue != null ? nameValue : null);
-      setGangColor(color);
-      setGangTrait(trait);
+      setTimeout(() => {
+        setGangName(nameValue != null ? nameValue : null);
+        setGangColor(color);
+        setGangTrait(trait);
+      }, 500);
     } catch (e) {
       console.log(e);
     }
@@ -144,7 +146,6 @@ function KFToolsScreen({ route, navigation }) {
     BackHandler.addEventListener("hardwareBackPress", onBackPress);
 
     return () => {
-      AsyncStorage.setItem("@audioChanged", JSON.stringify(enableAudio));
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
     };
   }, [route.params?.currentHp]);

@@ -80,7 +80,7 @@ function KFToolsScreen({ route, navigation }) {
     }
   };
 
-  const { hpModifier, settings } = route.params;
+  const { hpModifier } = route.params;
   const { count, setCount, increaseCount, decreaseCount } = useCounter(
     parseInt(baseHp) + hpModifier
   );

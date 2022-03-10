@@ -3,8 +3,8 @@ KFBannerScreen - View for the banner screen.
 */
 
 // External libraries
-import React from "react";
-import { View } from "react-native";
+import React, { useEffect } from "react";
+import { View, BackHandler } from "react-native";
 
 // Assets
 import { ToolsGraphic } from "../../assets/buttons/actions";
@@ -19,13 +19,30 @@ import TraitScreen from "../../components/TraitScreen";
 import routes from "../../navigation/routes";
 import sounds from "../../assets/sounds/sounds";
 import styles from "./KFBannerStyles";
+import useAudioController from "../../hooks/useAudioController";
 import useCounter from "../../hooks/useCounter";
 
 const background = require("../../assets/backgrounds/kf_background_land_xxxhdpi.png");
 
 function KFBannerScreen({ route, navigation }) {
+  const { playSound } = useAudioController();
+
   const { currentHp, initialHp, style, name, Color, Trait } = route.params;
   const { count, increaseCount, decreaseCount } = useCounter(currentHp);
+
+  const onBackPress = () => {
+    playSound(sounds.START_TURN);
+    navigation.goBack();
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", onBackPress);
+
+    return () => {
+      BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+    };
+  }, []);
 
   return (
     <TraitScreen

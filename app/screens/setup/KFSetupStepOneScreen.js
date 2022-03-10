@@ -5,6 +5,7 @@ KFSetupStepOneScreen - View for the first setup screen.
 // External libraries
 import React, { useState } from "react";
 import { Keyboard, View } from "react-native";
+import Toast from "react-native-simple-toast";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Assets
@@ -32,8 +33,13 @@ function KFSetupStepOneScreen({ navigation }) {
   const [nameIsEntered, setNameIsEntered] = useState(false);
   const { getRandomName } = useNameGenerator();
 
+  const containsInvalidChars = (str) => {
+    const invalidChars = /[`@#$%^&*()_+=\[\]{};':"\\|,.<>\/~]/;
+    return invalidChars.test(str);
+  };
+
   const setGangName = (value) => {
-    if (value.length > 0) {
+    if (value.length >= 2) {
       setNameIsEntered(true);
     } else {
       setNameIsEntered(false);
@@ -42,8 +48,10 @@ function KFSetupStepOneScreen({ navigation }) {
   };
 
   const storeGangName = async (value) => {
+    const name = value.trim();
+
     try {
-      await AsyncStorage.setItem("@gangName", value);
+      await AsyncStorage.setItem("@gangName", name);
     } catch (e) {
       console.log(e);
     }
@@ -85,9 +93,17 @@ function KFSetupStepOneScreen({ navigation }) {
               Graphic={NextGraphic}
               sound={sounds.NEXT_CONFIRM}
               onPress={() => {
-                Keyboard.dismiss();
-                storeGangName(name);
-                navigation.navigate(routes.SETUP_STEP_TWO);
+                if (containsInvalidChars(name)) {
+                  Toast.showWithGravity(
+                    'Gang name should only contain letters, numbers, and "?" "!" or "-".',
+                    Toast.LONG,
+                    Toast.TOP
+                  );
+                } else {
+                  Keyboard.dismiss();
+                  storeGangName(name);
+                  navigation.navigate(routes.SETUP_STEP_TWO);
+                }
               }}
               width="45%"
             />

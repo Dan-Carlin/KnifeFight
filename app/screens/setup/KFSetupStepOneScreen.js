@@ -5,8 +5,8 @@ KFSetupStepOneScreen - View for the first setup screen.
 // External libraries
 import React, { useState } from "react";
 import { Keyboard, View } from "react-native";
-import Toast from "react-native-simple-toast";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Toast from "react-native-root-toast";
 
 // Assets
 import { ExitGraphic, NextGraphic } from "../../assets/buttons/navigation";
@@ -94,10 +94,12 @@ function KFSetupStepOneScreen({ navigation }) {
               sound={sounds.NEXT_CONFIRM}
               onPress={() => {
                 if (containsInvalidChars(name)) {
-                  Toast.showWithGravity(
+                  Toast.show(
                     'Gang name should only contain letters, numbers, and "?" "!" or "-".',
-                    Toast.LONG,
-                    Toast.TOP
+                    {
+                      duration: Toast.durations.LONG,
+                      position: Toast.positions.TOP,
+                    }
                   );
                 } else {
                   Keyboard.dismiss();

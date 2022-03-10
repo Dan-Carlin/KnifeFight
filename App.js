@@ -9,6 +9,7 @@ import AppLoading from "expo-app-loading";
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import { Store } from "./app/redux/store";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 // Components
 import MainNavigator from "./app/navigation/MainNavigator";
@@ -50,7 +51,9 @@ export default function App() {
         translucent={true}
       />
       <Provider store={Store}>
-        <MainNavigator />
+        <RootSiblingParent>
+          <MainNavigator />
+        </RootSiblingParent>
       </Provider>
     </NavigationContainer>
   );

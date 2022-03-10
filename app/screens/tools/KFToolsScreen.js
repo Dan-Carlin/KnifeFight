@@ -85,6 +85,12 @@ function KFToolsScreen({ route, navigation }) {
     parseInt(baseHp) + hpModifier
   );
 
+  useEffect(() => {
+    if (route.params?.currentHp) {
+      setCount(route.params?.currentHp);
+    }
+  }, [route.params?.currentHp]);
+
   const [diceMode, setDiceMode] = useState(false);
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
@@ -137,10 +143,6 @@ function KFToolsScreen({ route, navigation }) {
   };
 
   useEffect(() => {
-    if (route.params?.currentHp) {
-      setCount(route.params?.currentHp);
-    }
-
     getData();
 
     BackHandler.addEventListener("hardwareBackPress", onBackPress);
@@ -148,7 +150,7 @@ function KFToolsScreen({ route, navigation }) {
     return () => {
       BackHandler.removeEventListener("hardwareBackPress", onBackPress);
     };
-  }, [route.params?.currentHp]);
+  }, []);
 
   return (
     <Screen style={styles.screenContainer} background={background}>

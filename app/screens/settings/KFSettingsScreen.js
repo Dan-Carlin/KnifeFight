@@ -5,8 +5,8 @@ KFSettingsScreen - View for the settings screen.
 // External libraries
 import React from "react";
 import { Keyboard, View } from "react-native";
-import Toast from "react-native-simple-toast";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Toast from "react-native-root-toast";
 import { useSelector, useDispatch } from "react-redux";
 
 // Assets
@@ -47,14 +47,18 @@ function KFSettingsScreen({ navigation }) {
     dispatch(setEnableAudio(true));
     enableSounds(true);
     dispatch(setShowPopup(true));
-    Toast.show("Default settings restored!");
+    Toast.show("Default settings restored!", {
+      duration: Toast.durations.SHORT,
+    });
   };
 
   const storeSettings = async (value) => {
     try {
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem("@settings", jsonValue);
-      Toast.show("Settings successfully saved!");
+      Toast.show("Settings successfully saved!", {
+        duration: Toast.durations.SHORT,
+      });
     } catch (e) {
       console.log(e);
     }

@@ -9,6 +9,7 @@ function AppModal({ component, isVisible, setIsVisible, testID, ...props }) {
       animationType="fade"
       transparent={true}
       visible={isVisible}
+      supportedOrientations={["portrait", "landscape"]}
       onRequestClose={setIsVisible}
       {...props}
     >

@@ -3,7 +3,7 @@
     "name": "KnifeFight",
     "slug": "KnifeFight",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./app/assets/kf_icon_logo.png",
     "splash": {
       "image": "./app/assets/splash.png",
@@ -18,7 +18,8 @@
     ],
     "ios": {
       "icon": "./app/assets/icons/kf_icon_ios.png",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "requireFullScreen": true
     },
     "android": {
       "adaptiveIcon": {

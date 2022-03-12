@@ -13,6 +13,7 @@ function ModalNoPressable({
       animationType="fade"
       transparent={true}
       visible={isVisible}
+      supportedOrientations={["portrait", "landscape"]}
       onRequestClose={setIsVisible}
       {...props}
     >

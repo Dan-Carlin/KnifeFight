@@ -34,7 +34,7 @@ function KFSetupStepOneScreen({ navigation }) {
   const { getRandomName } = useNameGenerator();
 
   const containsInvalidChars = (str) => {
-    const invalidChars = /[`@#$%^&*()_+=\[\]{};':"\\|,.<>\/~]/;
+    const invalidChars = /[`@#$%^&*()_+=\[\]{};:"\\|,.<>\/~]/;
     return invalidChars.test(str);
   };
 
@@ -95,7 +95,7 @@ function KFSetupStepOneScreen({ navigation }) {
               onPress={() => {
                 if (containsInvalidChars(name)) {
                   Toast.show(
-                    'Gang name should only contain letters, numbers, and "?" "!" or "-".',
+                    "Gang name should only contain letters, numbers, and - ! ' or ?.",
                     {
                       duration: Toast.durations.LONG,
                       position: Toast.positions.TOP,

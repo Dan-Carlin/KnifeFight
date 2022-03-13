@@ -11,16 +11,12 @@ const GameNavigator = () => (
     initialRouteName="Tools"
     screenOptions={{
       headerShown: false,
-      // orientation: "landscape",
+      orientation: "landscape_right",
       presentation: "containedTransparentModal",
     }}
   >
     <Stack.Screen name="Tools" component={KFToolsScreen} />
-    <Stack.Screen
-      name="Banner"
-      component={KFBannerScreen}
-      options={({ route }) => ({ hp: route.params.hp })}
-    />
+    <Stack.Screen name="Banner" component={KFBannerScreen} />
   </Stack.Navigator>
 );
 

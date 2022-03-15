@@ -4,9 +4,11 @@ import colors from "./colors";
 
 export default {
   colors,
+  screenContainer: {
+    flex: 1,
+  },
   text: {
     color: colors.white,
-    width: "100%",
     fontSize: 16,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },

@@ -1,21 +1,17 @@
 /* 
-KFSetupStepOneStyles - Stylesheet for KFSetupStepOneScreen.js
+KFSettingsStyles - Stylesheet for KFSettingsScreen.js
 */
 
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
+import colors from "../../../config/colors";
 
 export default StyleSheet.create({
   bodyContainer: {
     alignItems: "center",
-    flex: 0.6,
+    flex: 1,
     justifyContent: "center",
     paddingHorizontal: 35,
-  },
-  bottomContainer: {
-    alignItems: "center",
-    flex: 0.2,
   },
   checkbox: {
     height: 30,
@@ -24,12 +20,10 @@ export default StyleSheet.create({
   },
   navButton: {
     height: "100%",
-    width: "50%",
   },
   navContainer: {
     flexDirection: "row",
     height: 90,
-    justifyContent: "space-between",
     padding: 5,
     width: "100%",
   },
@@ -49,7 +43,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     height: 70,
     justifyContent: "space-between",
-    width: "100%",
   },
   settingsLabel: {
     color: colors.light,
@@ -57,13 +50,15 @@ export default StyleSheet.create({
     fontWeight: "bold",
     marginEnd: 20,
   },
+  settingsLabelSmall: {
+    fontSize: 18,
+  },
   settingsTitle: {
     height: 50,
     marginBottom: 10,
     width: "100%",
   },
   soundButton: {
-    height: "50%",
     width: 60,
   },
   textInput: {
@@ -71,9 +66,5 @@ export default StyleSheet.create({
     fontSize: 20,
     marginHorizontal: 20,
     textAlign: "center",
-  },
-  topContainer: {
-    alignItems: "center",
-    flex: 0.2,
   },
 });

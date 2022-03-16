@@ -8,8 +8,6 @@ function Screen({ children, background, isPortrait, style }) {
 
   const getBackground = isPortrait ? portraitBG : landscapeBG;
 
-  console.log(isPortrait);
-
   return (
     <ImageBackground
       style={styles.background}

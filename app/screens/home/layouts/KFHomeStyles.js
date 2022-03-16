@@ -8,10 +8,6 @@ export default StyleSheet.create({
   bottomContainer: {
     alignItems: "center",
   },
-  bottomContents: {
-    height: "100%",
-    width: "55%",
-  },
   button: {
     height: "100%",
     width: "100%",

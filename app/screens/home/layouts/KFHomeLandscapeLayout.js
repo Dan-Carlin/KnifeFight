@@ -73,7 +73,7 @@ const landscapeStyles = StyleSheet.create({
     flex: 0.3,
   },
   disclaimer: {
-    width: "30%",
+    width: "45%",
   },
   logo: {
     alignSelf: "center",

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
+import colors from "../../../config/colors";
 
 export default StyleSheet.create({
   bannerButton: {
@@ -20,6 +20,9 @@ export default StyleSheet.create({
     flex: 0.6,
   },
   checkbox: {
+    flex: 1,
+  },
+  checkboxAttribute: {
     height: 60,
     padding: 4,
     width: 80,

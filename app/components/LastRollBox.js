@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flex: 0.7,
     flexDirection: "row",
+    justifyContent: "center",
   },
   name: {
     fontSize: 26,

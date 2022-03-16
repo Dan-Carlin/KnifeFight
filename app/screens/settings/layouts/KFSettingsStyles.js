@@ -28,15 +28,11 @@ export default StyleSheet.create({
     width: "100%",
   },
   restoreDefaults: {
-    height: 40,
     width: "80%",
   },
   saveButton: {
     height: "100%",
     width: "25%",
-  },
-  screenContainer: {
-    flex: 1,
   },
   settingsHolder: {
     alignItems: "center",
@@ -62,7 +58,7 @@ export default StyleSheet.create({
     width: 60,
   },
   textInput: {
-    color: colors.white,
+    color: colors.light,
     fontSize: 20,
     marginHorizontal: 20,
     textAlign: "center",

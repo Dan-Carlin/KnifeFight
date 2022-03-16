@@ -18,7 +18,7 @@ import TraitScreen from "../../components/TraitScreen";
 // Resources
 import routes from "../../navigation/routes";
 import sounds from "../../assets/sounds/sounds";
-import styles from "./KFBannerStyles";
+import styles from "./layouts/KFBannerStyles";
 import useAudioController from "../../hooks/useAudioController";
 import useCounter from "../../hooks/useCounter";
 

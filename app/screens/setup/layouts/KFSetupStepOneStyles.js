@@ -4,22 +4,19 @@ KFSetupStepOneStyles - Stylesheet for KFSetupStepOneScreen.js
 
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
+import colors from "../../../config/colors";
 
 export default StyleSheet.create({
   bodyContainer: {
     alignItems: "center",
-    flex: 0.4,
+    flex: 1,
     justifyContent: "center",
     paddingHorizontal: 25,
-  },
-  bottomContainer: {
-    alignItems: "center",
-    flex: 0.3,
   },
   nameButton: {
     height: 40,
     marginBottom: 15,
+    marginTop: 6,
     width: "85%",
   },
   buttonDisabled: {
@@ -28,17 +25,14 @@ export default StyleSheet.create({
   navContainer: {
     flexDirection: "row",
     height: 90,
-    justifyContent: "space-between",
     width: "90%",
   },
-  screenContainer: {
-    flex: 1,
-  },
   text: {
+    marginBottom: 6,
     textAlign: "center",
   },
   textInput: {
-    color: colors.white,
+    color: colors.light,
     fontSize: 20,
     marginHorizontal: 20,
     textAlign: "center",
@@ -47,9 +41,5 @@ export default StyleSheet.create({
     fontFamily: "default",
     fontSize: 50,
     textAlign: "center",
-  },
-  topContainer: {
-    alignItems: "center",
-    flex: 0.3,
   },
 });

@@ -23,6 +23,7 @@ import Text from "../../../components/Text";
 import TextInput from "../../../components/TextInput";
 
 // Resources
+import defaultStyles from "../../../config/styles";
 import sounds from "../../../assets/sounds/sounds";
 import strings from "../../../config/strings";
 import Button from "../../../components/Button";
@@ -31,7 +32,7 @@ import styles from "./KFSettingsStyles";
 function KFSettingsLandscapeLayout({ actions, values }) {
   return (
     <Screen
-      style={[styles.screenContainer, landscapeStyles.screenContainer]}
+      style={[defaultStyles.screenContainer, landscapeStyles.screenContainer]}
       isPortrait={false}
     >
       <View style={styles.bodyContainer}>
@@ -80,7 +81,7 @@ function KFSettingsLandscapeLayout({ actions, values }) {
             />
           </View>
         </View>
-        <View style={styles.restoreDefaults}>
+        <View style={[styles.restoreDefaults, landscapeStyles.restoreDefaults]}>
           <Button
             Graphic={RestoreDefaultsGraphic}
             sound={sounds.NEXT_CONFIRM}
@@ -114,6 +115,9 @@ const landscapeStyles = StyleSheet.create({
   },
   navContainer: {
     justifyContent: "center",
+  },
+  restoreDefaults: {
+    height: 35,
   },
   saveButton: {
     width: "25%",

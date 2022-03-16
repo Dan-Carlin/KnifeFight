@@ -14,10 +14,10 @@ import routes from "../../navigation/routes";
 import useOrientation from "../../hooks/useOrientation";
 
 // ViewModel
-import HomeViewModel from "./KFHomeViewModel";
+import KFHomeViewModel from "./KFHomeViewModel";
 
 function KFHomeScreen({ navigation }) {
-  const homeViewModel = HomeViewModel();
+  const homeViewModel = KFHomeViewModel();
 
   const orientation = useOrientation();
 

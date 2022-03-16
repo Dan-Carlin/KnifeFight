@@ -44,7 +44,7 @@ function KFHomePortraitLayout({ actions }) {
         </View>
       </View>
       <View style={[styles.bottomContainer, portraitStyles.bottomContainer]}>
-        <View style={styles.bottomContents}>
+        <View style={portraitStyles.bottomContents}>
           <Text style={styles.disclaimer}>
             <Text style={styles.disclaimerBold}>
               {strings.home_disclaimer_title}
@@ -70,6 +70,10 @@ function KFHomePortraitLayout({ actions }) {
 const portraitStyles = StyleSheet.create({
   bottomContainer: {
     flex: 0.22,
+  },
+  bottomContents: {
+    height: "100%",
+    width: "75%",
   },
   buttonContainer: {
     flex: 0.2,

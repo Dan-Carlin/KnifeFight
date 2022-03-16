@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Pressable } from "react-native";
 import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { CheckGraphic } from "../assets/buttons/actions";
 import colors from "../config/colors";
@@ -26,6 +27,12 @@ function TraitButton({ Trait, isSelected, onSelect, ...props }) {
         onPress={onCheckmarkPress}
       >
         <TraitGraphic style={styles.traitGraphic} />
+        <LinearGradient
+          style={styles.gradient}
+          colors={["#0000", colors.black]}
+          start={{ x: 0, y: 0.6 }}
+          end={{ x: 0, y: 0.8 }}
+        />
         <AutoSizeText
           style={styles.traitName}
           fontSize={12}
@@ -46,7 +53,7 @@ function TraitButton({ Trait, isSelected, onSelect, ...props }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "black",
+    backgroundColor: colors.black,
     height: "100%",
     overflow: "hidden",
     width: "100%",
@@ -58,8 +65,16 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     width: "100%",
   },
+  gradient: {
+    height: "100%",
+    opacity: 0.4,
+    position: "absolute",
+    width: "100%",
+  },
   traitGraphic: {
+    bottom: 2,
     height: "82%",
+    position: "absolute",
     width: "82%",
   },
   traitName: {

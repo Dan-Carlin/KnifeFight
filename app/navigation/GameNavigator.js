@@ -11,7 +11,7 @@ const GameNavigator = () => (
     initialRouteName="Tools"
     screenOptions={{
       headerShown: false,
-      orientation: "landscape_right",
+      // orientation: "landscape_right",
       presentation: "containedTransparentModal",
     }}
   >

@@ -2,11 +2,16 @@ import React from "react";
 import { SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import Constants from "expo-constants";
 
-function Screen({ children, background, style }) {
+function Screen({ children, background, isPortrait, style }) {
+  const portraitBG = require("../assets/backgrounds/kf_background_xxxhdpi.png");
+  const landscapeBG = require("../assets/backgrounds/kf_background_land_xxxhdpi.png");
+
+  const getBackground = isPortrait ? portraitBG : landscapeBG;
+
   return (
     <ImageBackground
       style={styles.background}
-      source={background}
+      source={getBackground}
       resizeMode="cover"
     >
       <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>

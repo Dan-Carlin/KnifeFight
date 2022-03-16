@@ -41,6 +41,8 @@ export default {
   setup_step_one_title: "First...",
   setup_step_one_text: "Let's come up with a name for your gang.",
   setup_step_one_placeholder: "Name your gang",
+  setup_step_one_toast:
+    "Gang name should only contain letters, numbers, and - ! ' or ?.",
 
   // Setup - step two
   setup_step_two_title: "Next...",
@@ -82,6 +84,8 @@ export default {
 
   // Tools screen
   tools_font_label: "Font Style:",
+  tools_bevel_label: "Bevel:",
+  tools_shadow_label: "Shadow:",
 
   // Components
   name_display_text_a: "(The ",

@@ -13,6 +13,7 @@ export { default as DiceRollerGraphic } from "./kf_dice_roller_btn.svg";
 export { default as GenerateNameGraphic } from "./kf_generate_name_btn.svg";
 export { default as GotItGraphic } from "./kf_got_it_btn.svg";
 export { default as HpCounterGraphic } from "./kf_hp_counter_btn.svg";
+export { default as LockGraphic } from "./kf_lock_btn.svg";
 export { default as MinusGraphic } from "./kf_minus_btn.svg";
 export { default as MinusBGraphic } from "./kf_minus_b_btn.svg";
 export { default as PlusGraphic } from "./kf_plus_btn.svg";

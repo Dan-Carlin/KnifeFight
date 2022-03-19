@@ -32,7 +32,7 @@ function KFToolsScreen({ route, navigation }) {
   };
 
   useEffect(() => {
-    if (route.params?.currentHp) {
+    if (route.params?.currentHp != undefined) {
       toolsViewModel.setCount(route.params?.currentHp);
     }
   }, [route.params?.currentHp]);
@@ -63,7 +63,10 @@ function KFToolsScreen({ route, navigation }) {
 
   const onExitCancelButtonPressed = () => toolsViewModel.hideExitModal();
 
-  const onExitConfirmButtonPressed = () => navigation.popToTop();
+  const onExitConfirmButtonPressed = () => {
+    toolsViewModel.resetDiceLocks();
+    navigation.popToTop();
+  };
 
   const showExitModal = () => toolsViewModel.toggleExitModalVisible();
 

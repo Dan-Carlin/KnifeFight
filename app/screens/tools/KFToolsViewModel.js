@@ -13,6 +13,7 @@ import capitalize from "../../utils/capitalize";
 import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
+import { setD6Lock, setD8Lock, setD10Lock } from "../../redux/diceActions";
 import sounds from "../../assets/sounds/sounds";
 import useCounter from "../../hooks/useCounter";
 import useAudioController from "../../hooks/useAudioController";
@@ -20,6 +21,9 @@ import useAudioController from "../../hooks/useAudioController";
 function KFToolsViewModel(props) {
   const { baseHp, enableAudio, showPopup } = useSelector(
     (state) => state.settingsReducer
+  );
+  const { d6IsLocked, d8IsLocked, d10IsLocked } = useSelector(
+    (state) => state.diceReducer
   );
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
@@ -71,7 +75,6 @@ function KFToolsViewModel(props) {
   };
 
   const setRollResultAndDisplay = (result) => {
-    console.log(result);
     setRollResult(result);
     setRollResultsVisible(true);
   };
@@ -120,6 +123,12 @@ function KFToolsViewModel(props) {
 
   const toggleShadowState = () => setShadowVisible(!shadowVisible);
 
+  const resetDiceLocks = () => {
+    dispatch(setD6Lock(false));
+    dispatch(setD8Lock(false));
+    dispatch(setD10Lock(false));
+  };
+
   return {
     exitModalVisible,
     instructionsModalVisible,
@@ -156,6 +165,7 @@ function KFToolsViewModel(props) {
     toggleBevelState,
     toggleShadowState,
     setCount,
+    resetDiceLocks,
   };
 }
 

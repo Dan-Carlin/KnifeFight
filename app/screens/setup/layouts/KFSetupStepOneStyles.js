@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
   navContainer: {
     flexDirection: "row",
-    height: 90,
+    height: 80,
     width: "90%",
   },
   text: {

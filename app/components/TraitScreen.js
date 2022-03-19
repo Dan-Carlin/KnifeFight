@@ -9,17 +9,21 @@ import { traits } from "../assets/traits/TraitArray";
 
 function Screen({
   children,
-  background,
+  isPortrait,
   Color = gangColors.NONE,
   Trait = gangTraits.NONE,
   style,
 }) {
   const TraitGraphic = traits[Trait.svgId];
+  const portraitBG = require("../assets/backgrounds/kf_background_xxxhdpi.png");
+  const landscapeBG = require("../assets/backgrounds/kf_background_land_xxxhdpi.png");
+
+  const getBackground = isPortrait ? portraitBG : landscapeBG;
 
   return (
     <ImageBackground
       style={styles.background}
-      source={background}
+      source={getBackground}
       resizeMode="cover"
     >
       <LinearGradient

@@ -4,7 +4,7 @@ ExitModalStyles - Stylesheet for ExitModal.js
 
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
+import colors from "../../../config/colors";
 
 export default StyleSheet.create({
   alertContainer: {
@@ -25,8 +25,8 @@ export default StyleSheet.create({
     color: colors.light,
   },
   button: {
-    height: "80%",
-    width: "30%",
+    height: "60%",
+    width: "35%",
   },
   buttonsContainer: {
     flex: 0.35,
@@ -38,15 +38,17 @@ export default StyleSheet.create({
     borderColor: colors.black,
     borderRadius: 20,
     borderWidth: 2,
-    height: "50%",
+    height: 200,
     overflow: "hidden",
-    width: "60%",
+    width: 320,
   },
   title: {
     fontFamily: "default",
     fontSize: 50,
+    lineHeight: 45,
   },
   titleContainer: {
+    alignItems: "center",
     backgroundColor: "#0005",
     borderTopEndRadius: 20,
     borderTopStartRadius: 20,

@@ -22,17 +22,20 @@ function NameDisplay({
   style = styleDefaults,
   Color = gangColors.NONE,
   descriptionVisible = false,
+  isPortrait = false,
   ...props
 }) {
+  const getNumberOfLines = isPortrait ? 2 : 1;
+
   return (
     <View style={styles.container} {...props}>
       {style.shadowVisible && (
         <AutoSizeText
-          testID="ndc_ast_nameShadow"
           style={[
             styles.gangNameShadow,
             {
-              fontFamily: style.font,
+              fontFamily: style.font.name,
+              // lineHeight: style.font.lineHeight,
               textShadowOffset: {
                 width: style.borderSize * 2.5,
                 height: style.borderSize * 2.5,
@@ -40,7 +43,7 @@ function NameDisplay({
             },
           ]}
           fontSize={200}
-          numberOfLines={1}
+          numberOfLines={getNumberOfLines}
           mode={ResizeTextMode.max_lines}
         >
           {gangName}
@@ -48,12 +51,12 @@ function NameDisplay({
       )}
       {style.bevelVisible && (
         <AutoSizeText
-          testID="ndc_ast_nameBevelMedA"
           style={[
             styles.gangNameBevel,
             {
               color: Color.medium,
-              fontFamily: style.font,
+              fontFamily: style.font.name,
+              // lineHeight: style.font.lineHeight,
               textShadowOffset: {
                 width: style.borderSize * -1,
                 height: style.borderSize,
@@ -62,7 +65,7 @@ function NameDisplay({
             },
           ]}
           fontSize={200}
-          numberOfLines={1}
+          numberOfLines={getNumberOfLines}
           mode={ResizeTextMode.max_lines}
         >
           {gangName}
@@ -70,12 +73,12 @@ function NameDisplay({
       )}
       {style.bevelVisible && (
         <AutoSizeText
-          testID="ndc_ast_nameBevelMedB"
           style={[
             styles.gangNameBevel,
             {
               color: Color.medium,
-              fontFamily: style.font,
+              fontFamily: style.font.name,
+              // lineHeight: style.font.lineHeight,
               textShadowOffset: {
                 width: style.borderSize,
                 height: style.borderSize * -1,
@@ -84,7 +87,7 @@ function NameDisplay({
             },
           ]}
           fontSize={200}
-          numberOfLines={1}
+          numberOfLines={getNumberOfLines}
           mode={ResizeTextMode.max_lines}
         >
           {gangName}
@@ -92,12 +95,12 @@ function NameDisplay({
       )}
       {style.bevelVisible && (
         <AutoSizeText
-          testID="ndc_ast_nameBevelLight"
           style={[
             styles.gangNameBevel,
             {
               color: Color.light,
-              fontFamily: style.font,
+              fontFamily: style.font.name,
+              // lineHeight: style.font.lineHeight,
               textShadowOffset: {
                 width: style.borderSize * -1,
                 height: style.borderSize * -1,
@@ -106,7 +109,7 @@ function NameDisplay({
             },
           ]}
           fontSize={200}
-          numberOfLines={1}
+          numberOfLines={getNumberOfLines}
           mode={ResizeTextMode.max_lines}
         >
           {gangName}
@@ -114,12 +117,12 @@ function NameDisplay({
       )}
       {style.bevelVisible && (
         <AutoSizeText
-          testID="ndc_ast_nameBevelDark"
           style={[
             styles.gangNameBevel,
             {
               color: Color.dark,
-              fontFamily: style.font,
+              fontFamily: style.font.name,
+              // lineHeight: style.font.lineHeight,
               textShadowOffset: {
                 width: style.borderSize,
                 height: style.borderSize,
@@ -128,23 +131,23 @@ function NameDisplay({
             },
           ]}
           fontSize={200}
-          numberOfLines={1}
+          numberOfLines={getNumberOfLines}
           mode={ResizeTextMode.max_lines}
         >
           {gangName}
         </AutoSizeText>
       )}
       <AutoSizeText
-        testID="ndc_ast_nameFill"
         style={[
           styles.gangName,
           {
             color: Color.normal,
-            fontFamily: style.font,
+            fontFamily: style.font.name,
+            // lineHeight: style.font.lineHeight,
           },
         ]}
         fontSize={200}
-        numberOfLines={1}
+        numberOfLines={getNumberOfLines}
         mode={ResizeTextMode.max_lines}
       >
         {gangName}
@@ -152,9 +155,7 @@ function NameDisplay({
       {descriptionVisible && (
         <Text style={styles.traitTextContainer}>
           <Text style={styles.text}>{strings.name_display_text_a}</Text>
-          <Text style={styles.traitName} testID="ndc_txt_trait">
-            {Trait.name}
-          </Text>
+          <Text style={styles.traitName}>{Trait.name}</Text>
           <Text style={styles.text}>{strings.name_display_text_b}</Text>
         </Text>
       )}
@@ -168,6 +169,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: "100%",
     justifyContent: "center",
+    overflow: "visible",
     paddingBottom: 4,
     width: "100%",
   },
@@ -177,6 +179,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     textAlign: "center",
     width: "90%",
+    padding: 30,
   },
   gangNameBevel: {
     alignSelf: "center",
@@ -185,6 +188,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textShadowRadius: 1,
     width: "90%",
+    padding: 30,
   },
   gangNameShadow: {
     alignSelf: "center",
@@ -196,6 +200,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 14,
     textShadowColor: colors.black,
     width: "90%",
+    padding: 30,
   },
   text: {
     color: colors.light,

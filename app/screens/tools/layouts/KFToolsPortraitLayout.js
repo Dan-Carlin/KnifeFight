@@ -17,6 +17,7 @@ import {
 import { HomeGraphic } from "../../../assets/buttons/navigation";
 
 // Components
+import AutoSizeText from "../../../components/AutoSizeText";
 import Button from "../../../components/Button";
 import Checkbox from "../../../components/Checkbox";
 import DiceSelector from "../../../components/DiceSelector";
@@ -35,6 +36,7 @@ import Text from "../../../components/Text";
 import TraitContainer from "../../../components/TraitContainer";
 
 // Resources
+import defaultStyles from "../../../config/styles";
 import sounds from "../../../assets/sounds/sounds";
 import strings from "../../../config/strings";
 import styles from "./KFToolsStyles";
@@ -57,7 +59,7 @@ function KFToolsPortraitLayout({ actions, values }) {
   );
 
   return (
-    <Screen style={styles.screenContainer} isPortrait={true}>
+    <Screen style={defaultStyles.screenContainer} isPortrait={true}>
       <ModalWithPressable
         component={
           <InstructionsModal
@@ -90,39 +92,44 @@ function KFToolsPortraitLayout({ actions, values }) {
         setIsVisible={() => actions.rollResultsVisibility()}
       />
 
-      <View style={styles.leftContainer}>
-        <View style={styles.topButtons}>
-          <SoundButton
-            style={styles.soundButton}
-            enabled={values.enableAudio}
-            onPress={() => actions.soundButton()}
-          />
-        </View>
-        <View style={styles.lastRollBox}>
-          {values.rollResult.value != 0 && (
-            <LastRollBox results={values.rollResult} />
-          )}
-        </View>
-        <View style={styles.diceRollButton}>
-          {!values.diceMode && (
-            <OpacityButton
-              Graphic={DiceRollerGraphic}
-              sound={sounds.DICE_ROLLER}
-              onPress={() => actions.diceRollerButton()}
+      <View style={portraitStyles.bodycontainer}>
+        <View style={portraitStyles.topContainer}>
+          <View style={[styles.topButtons, portraitStyles.topButtons]}>
+            <SoundButton
+              style={portraitStyles.soundButton}
+              enabled={values.enableAudio}
+              onPress={() => actions.soundButton()}
             />
-          )}
-          {values.diceMode && (
+          </View>
+          <View style={[styles.topButtons, portraitStyles.topButtons]}>
             <OpacityButton
-              Graphic={HpCounterGraphic}
-              sound={sounds.DICE_ROLLER}
-              onPress={() => actions.hpCounterButton()}
+              Graphic={HomeGraphic}
+              sound={sounds.CLOSE_EXIT}
+              onPress={() => actions.homeButton()}
             />
-          )}
+          </View>
         </View>
-      </View>
-      <View style={styles.centerContainer}>
-        <View style={styles.nameContainer}>
-          <View style={styles.styleEditContainer}>
+        <View style={portraitStyles.nameContainer}>
+          <View
+            style={[
+              styles.nameDisplayContainer,
+              portraitStyles.nameDisplayContainer,
+            ]}
+          >
+            <NameDisplay
+              gangName={values.gangName}
+              Trait={values.gangTrait}
+              style={values.nameDisplayStyles}
+              Color={values.gangColor}
+              isPortrait={true}
+            />
+          </View>
+          <View
+            style={[
+              styles.styleEditContainer,
+              portraitStyles.styleEditContainer,
+            ]}
+          >
             <View style={styles.styleButtons}>
               <Button
                 Graphic={ArrowLeftGraphic}
@@ -131,8 +138,12 @@ function KFToolsPortraitLayout({ actions, values }) {
               />
             </View>
             <View style={styles.fontPickerContainer}>
-              <Text style={styles.styleLabel}>{strings.tools_font_label}</Text>
-              <Text style={styles.currentFont}>{values.fontName}</Text>
+              <AutoSizeText style={styles.styleLabel}>
+                {strings.tools_font_label}
+              </AutoSizeText>
+              <AutoSizeText style={styles.currentFont}>
+                {values.fontName}
+              </AutoSizeText>
             </View>
             <View style={styles.styleButtons}>
               <Button
@@ -162,39 +173,45 @@ function KFToolsPortraitLayout({ actions, values }) {
               </View>
             </View>
           </View>
-          <View style={styles.nameDisplayContainer}>
-            <NameDisplay
-              gangName={values.gangName}
-              Trait={values.gangTrait}
-              style={values.nameDisplayStyles}
-              Color={values.gangColor}
-            />
-          </View>
         </View>
-        <View style={styles.bottomContainer}>
+        <View style={portraitStyles.toolsContainer}>
           <TraitContainer
             child={setToolsMode}
             style={styles.traitContainer}
-            width={240}
+            width={values.screenWidth / 2}
             Trait={values.gangTrait}
             Color={values.gangColor}
           />
         </View>
-      </View>
-      <View style={styles.rightContainer}>
-        <View style={styles.topButtons}>
-          <OpacityButton
-            Graphic={HomeGraphic}
-            sound={sounds.CLOSE_EXIT}
-            onPress={() => actions.homeButton()}
-          />
-        </View>
-        <View style={styles.bannerButton}>
-          <OpacityButton
-            Graphic={BannerGraphic}
-            sound={sounds.START_END_TURN}
-            onPress={() => actions.bannerButton()}
-          />
+        <View style={portraitStyles.bottomContainer}>
+          <View style={portraitStyles.diceRollButton}>
+            {!values.diceMode && (
+              <OpacityButton
+                Graphic={DiceRollerGraphic}
+                sound={sounds.DICE_ROLLER}
+                onPress={() => actions.diceRollerButton()}
+              />
+            )}
+            {values.diceMode && (
+              <OpacityButton
+                Graphic={HpCounterGraphic}
+                sound={sounds.DICE_ROLLER}
+                onPress={() => actions.hpCounterButton()}
+              />
+            )}
+          </View>
+          <View style={portraitStyles.lastRollBox}>
+            {values.rollResult.value != 0 && (
+              <LastRollBox results={values.rollResult} />
+            )}
+          </View>
+          <View style={portraitStyles.bannerButton}>
+            <OpacityButton
+              Graphic={BannerGraphic}
+              sound={sounds.START_END_TURN}
+              onPress={() => actions.bannerButton()}
+            />
+          </View>
         </View>
       </View>
     </Screen>
@@ -202,7 +219,67 @@ function KFToolsPortraitLayout({ actions, values }) {
 }
 
 const portraitStyles = StyleSheet.create({
-  container: {},
+  bannerButton: {
+    height: "100%",
+    padding: 5,
+    width: "32%",
+  },
+  bodycontainer: {
+    flex: 1,
+  },
+  bottomContainer: {
+    alignItems: "center",
+    backgroundColor: defaultStyles.colors.dark,
+    borderTopColor: defaultStyles.colors.light,
+    borderTopWidth: 6,
+    flex: 0.18,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  diceRollButton: {
+    height: "100%",
+    paddingHorizontal: 16,
+    width: "30%",
+  },
+  lastRollBox: {
+    height: "75%",
+    marginStart: 6,
+    width: "33%",
+  },
+  nameContainer: {
+    flex: 0.47,
+    justifyContent: "flex-start",
+    paddingHorizontal: 15,
+  },
+  nameDisplayContainer: {
+    alignSelf: "center",
+    flex: 0.7,
+    height: "70%",
+    position: "absolute",
+    bottom: 0,
+  },
+  soundButton: {
+    height: "70%",
+    width: "70%",
+  },
+  styleEditContainer: {
+    flex: 0.3,
+  },
+  toolsContainer: {
+    flex: 0.25,
+    paddingHorizontal: 15,
+  },
+  topButtons: {
+    height: "100%",
+    padding: 10,
+    width: "20%",
+  },
+  topContainer: {
+    flex: 0.1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 15,
+  },
 });
 
 export default KFToolsPortraitLayout;

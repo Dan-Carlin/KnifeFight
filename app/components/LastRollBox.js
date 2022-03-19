@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     borderColor: colors.light,
     borderWidth: 1,
     flex: 0.3,
+    justifyContent: "center",
   },
   valueContainer: {
     borderColor: colors.light,

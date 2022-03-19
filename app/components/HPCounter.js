@@ -68,19 +68,20 @@ const styles = StyleSheet.create({
     paddingTop: 45,
   },
   hpLabel: {
-    bottom: -20,
+    bottom: -10,
     fontFamily: "default",
-    fontSize: 80,
+    fontSize: 70,
     textAlign: "center",
   },
   number: {
-    bottom: 5,
-    fontSize: 100,
+    bottom: 15,
+    fontSize: 90,
     fontWeight: "bold",
     textAlign: "center",
   },
   valueContainer: {
     flex: 0.64,
+    justifyContent: "center",
   },
 });
 

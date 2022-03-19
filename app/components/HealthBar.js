@@ -26,6 +26,7 @@ function HealthBar({
   decreaseHp,
   increaseHp,
   initialHp,
+  flexWidth,
   gangColor = gangColors.NONE,
   ...props
 }) {
@@ -49,14 +50,14 @@ function HealthBar({
 
   return (
     <View style={styles.container}>
-      <View style={styles.hpButtons}>
+      <View style={[styles.hpButtons, { flex: (1 - flexWidth) / 2 }]}>
         <Button
           Graphic={MinusBGraphic}
           onPress={decreaseHp}
           sound={minusHpSounds[getRandomNumber(3)]}
         />
       </View>
-      <View style={styles.barContainer}>
+      <View style={[styles.barContainer, { flex: flexWidth }]}>
         <View style={styles.barBorder}>
           <LinearGradient
             style={{
@@ -96,7 +97,7 @@ function HealthBar({
           </View>
         )}
       </View>
-      <View style={styles.hpButtons}>
+      <View style={[styles.hpButtons, { flex: (1 - flexWidth) / 2 }]}>
         <Button
           Graphic={PlusBGraphic}
           onPress={increaseHp}
@@ -120,7 +121,6 @@ const styles = StyleSheet.create({
   barContainer: {
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.88,
   },
   container: {
     flexDirection: "row",
@@ -148,7 +148,6 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   hpButtons: {
-    flex: 0.06,
     opacity: 0.8,
   },
   hpText: {

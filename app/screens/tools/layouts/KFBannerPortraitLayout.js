@@ -10,6 +10,7 @@ import { View, StyleSheet } from "react-native";
 import { ToolsGraphic } from "../../../assets/buttons/actions";
 
 // Components
+import DefeatedOverlay from "../../../components/DefeatedOverlay";
 import HealthBar from "../../../components/HealthBar";
 import NameDisplay from "../../../components/NameDisplay";
 import OpacityButton from "../../../components/OpacityButton";
@@ -37,6 +38,7 @@ function KFBannerPortraitLayout({ actions, values }) {
           descriptionVisible
         />
       </View>
+      {values.count == 0 && <DefeatedOverlay />}
       <View style={styles.bodyContainer}>
         <View style={[styles.buttonContainer, portraitStyles.buttonContainer]}>
           <View style={[styles.toolsButton, portraitStyles.toolsButton]}>

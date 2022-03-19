@@ -55,7 +55,6 @@ function DiceSelector({ Color, canRoll, results, resultsCallback }) {
       resultsCallback={(result) => handleCallback(result)}
     />,
     <Die
-      style={{ opacity: getD6RollState && canRoll ? 1 : 0.4 }}
       DieType={dieType.D6}
       Color={Color}
       canRoll={getD6RollState}
@@ -63,7 +62,6 @@ function DiceSelector({ Color, canRoll, results, resultsCallback }) {
       resultsCallback={(result) => handleCallbackAndLockD6(result)}
     />,
     <Die
-      style={{ opacity: getD8RollState && canRoll ? 1 : 0.4 }}
       DieType={dieType.D8}
       Color={Color}
       canRoll={getD8RollState}
@@ -71,7 +69,6 @@ function DiceSelector({ Color, canRoll, results, resultsCallback }) {
       resultsCallback={(result) => handleCallbackAndLockD8(result)}
     />,
     <Die
-      style={{ opacity: getD10RollState && canRoll ? 1 : 0.4 }}
       DieType={dieType.D10}
       Color={Color}
       canRoll={getD10RollState}

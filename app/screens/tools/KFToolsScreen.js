@@ -99,15 +99,15 @@ function KFToolsScreen({ route, navigation }) {
     navigation.navigate(routes.BANNER, {
       currentHp: toolsViewModel.count,
       initialHp: toolsViewModel.baseHp,
-      style: {
+      nameStyle: {
         font: toolsViewModel.font,
-        borderSize: 4,
+        borderSize: orientation.isLandscape ? 4 : 2,
         shadowVisible: toolsViewModel.shadowVisible,
         bevelVisible: toolsViewModel.bevelVisible,
       },
-      name: toolsViewModel.gangName,
-      Color: toolsViewModel.gangColor,
-      Trait: toolsViewModel.gangTrait,
+      gangName: toolsViewModel.gangName,
+      gangColor: toolsViewModel.gangColor,
+      gangTrait: toolsViewModel.gangTrait,
     });
   };
 
@@ -148,6 +148,8 @@ function KFToolsScreen({ route, navigation }) {
     gangColor: toolsViewModel.gangColor,
     gangTrait: toolsViewModel.gangTrait,
     nameDisplayStyles: nameDisplayStyles,
+    screenHeight: orientation.height,
+    screenWidth: orientation.width,
   };
 
   return (

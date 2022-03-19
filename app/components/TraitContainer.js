@@ -9,7 +9,7 @@ import { traits } from "../assets/traits/TraitArray";
 
 function TraitContainer({
   child,
-  width,
+  width = "100%",
   Trait = gangTraits.NONE,
   Color = gangColors.NONE,
 }) {

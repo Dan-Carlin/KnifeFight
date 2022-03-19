@@ -17,7 +17,7 @@ import Text from "../../components/Text";
 // Resources
 import sounds from "../../assets/sounds/sounds";
 import strings from "../../config/strings";
-import styles from "./ExitModalStyles";
+import styles from "./layouts/ExitModalStyles";
 
 function ExitModal({ onConfirm, onCancel }) {
   return (

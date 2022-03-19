@@ -8,6 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSelector, useDispatch } from "react-redux";
 
 // Resources
+import { setEnableAudio } from "../../redux/actions";
 import capitalize from "../../utils/capitalize";
 import { fonts } from "../../assets/fonts/FontsArray";
 import gangColors from "../../data/gangColors";
@@ -38,7 +39,7 @@ function KFToolsViewModel(props) {
 
   const [fontIndex, setFontIndex] = useState(0);
   const font = fonts[fontIndex];
-  const fontName = capitalize(font);
+  const fontName = capitalize(font.name);
   const [bevelVisible, setBevelVisible] = useState(true);
   const [shadowVisible, setShadowVisible] = useState(true);
 

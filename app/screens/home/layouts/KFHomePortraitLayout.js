@@ -59,7 +59,7 @@ function KFHomePortraitLayout({ actions }) {
           </Text>
           <View style={portraitStyles.companyLogos}>
             <SGLogo style={[styles.smallLogo, portraitStyles.smallLogo]} />
-            <FGLogo style={[styles.smallLogo, portraitStyles.smallLogo]} />
+            <FGLogo style={[styles.smallLogo, portraitStyles.smallLogoB]} />
           </View>
         </View>
       </View>
@@ -96,6 +96,10 @@ const portraitStyles = StyleSheet.create({
   smallLogo: {
     height: "80%",
     width: "50%",
+  },
+  smallLogoB: {
+    height: "80%",
+    width: "25%",
   },
 });
 

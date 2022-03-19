@@ -35,6 +35,7 @@ import Text from "../../../components/Text";
 import TraitContainer from "../../../components/TraitContainer";
 
 // Resources
+import defaultStyles from "../../../config/styles";
 import sounds from "../../../assets/sounds/sounds";
 import strings from "../../../config/strings";
 import styles from "./KFToolsStyles";
@@ -57,7 +58,7 @@ function KFToolsLandscapeLayout({ actions, values }) {
   );
 
   return (
-    <Screen style={styles.screenContainer} isPortrait={false}>
+    <Screen style={landscapeStyles.screenContainer} isPortrait={false}>
       <ModalWithPressable
         component={
           <InstructionsModal
@@ -90,10 +91,11 @@ function KFToolsLandscapeLayout({ actions, values }) {
         setIsVisible={() => actions.rollResultsVisibility()}
       />
 
+      <View style={landscapeStyles.bottomBar} />
       <View style={styles.leftContainer}>
-        <View style={styles.topButtons}>
+        <View style={[styles.topButtons, landscapeStyles.topButtons]}>
           <SoundButton
-            style={styles.soundButton}
+            style={landscapeStyles.soundButton}
             enabled={values.enableAudio}
             onPress={() => actions.soundButton()}
           />
@@ -121,8 +123,27 @@ function KFToolsLandscapeLayout({ actions, values }) {
         </View>
       </View>
       <View style={styles.centerContainer}>
-        <View style={styles.nameContainer}>
-          <View style={styles.styleEditContainer}>
+        <View style={[styles.nameContainer, landscapeStyles.nameContainer]}>
+          <View
+            style={[
+              styles.nameDisplayContainer,
+              landscapeStyles.nameDisplayContainer,
+            ]}
+          >
+            <NameDisplay
+              gangName={values.gangName}
+              Trait={values.gangTrait}
+              style={values.nameDisplayStyles}
+              Color={values.gangColor}
+              isPortrait={false}
+            />
+          </View>
+          <View
+            style={[
+              styles.styleEditContainer,
+              landscapeStyles.styleEditContainer,
+            ]}
+          >
             <View style={styles.styleButtons}>
               <Button
                 Graphic={ArrowLeftGraphic}
@@ -162,34 +183,26 @@ function KFToolsLandscapeLayout({ actions, values }) {
               </View>
             </View>
           </View>
-          <View style={styles.nameDisplayContainer}>
-            <NameDisplay
-              gangName={values.gangName}
-              Trait={values.gangTrait}
-              style={values.nameDisplayStyles}
-              Color={values.gangColor}
-            />
-          </View>
         </View>
-        <View style={styles.bottomContainer}>
+        <View style={landscapeStyles.bottomContainer}>
           <TraitContainer
             child={setToolsMode}
             style={styles.traitContainer}
-            width={240}
+            width={values.screenWidth / 3.5}
             Trait={values.gangTrait}
             Color={values.gangColor}
           />
         </View>
       </View>
       <View style={styles.rightContainer}>
-        <View style={styles.topButtons}>
+        <View style={[styles.topButtons, landscapeStyles.topButtons]}>
           <OpacityButton
             Graphic={HomeGraphic}
             sound={sounds.CLOSE_EXIT}
             onPress={() => actions.homeButton()}
           />
         </View>
-        <View style={styles.bannerButton}>
+        <View style={landscapeStyles.bannerButton}>
           <OpacityButton
             Graphic={BannerGraphic}
             sound={sounds.START_END_TURN}
@@ -202,7 +215,50 @@ function KFToolsLandscapeLayout({ actions, values }) {
 }
 
 const landscapeStyles = StyleSheet.create({
-  container: {},
+  bannerButton: {
+    height: "50%",
+    padding: 10,
+    width: "100%",
+  },
+  bottomBar: {
+    alignSelf: "flex-end",
+    backgroundColor: defaultStyles.colors.dark,
+    borderTopColor: defaultStyles.colors.light,
+    borderTopWidth: 6,
+    height: "25%",
+    position: "absolute",
+    width: "100%",
+  },
+  bottomContainer: {
+    alignItems: "center",
+    flex: 0.5,
+    paddingHorizontal: 10,
+    width: "100%",
+  },
+  nameContainer: {
+    justifyContent: "flex-start",
+  },
+  nameDisplayContainer: {
+    bottom: 0,
+    height: "60%",
+    position: "absolute",
+  },
+  screenContainer: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  soundButton: {
+    height: "60%",
+    width: "60%",
+  },
+  styleEditContainer: {
+    flex: 0.4,
+  },
+  topButtons: {
+    height: "25%",
+    padding: 15,
+    width: "100%",
+  },
 });
 
 export default KFToolsLandscapeLayout;

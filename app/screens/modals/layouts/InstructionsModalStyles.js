@@ -4,35 +4,51 @@ InstructionsModalStyles - Stylesheet for InstructionsModal.js
 
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
+import colors from "../../../config/colors";
 
 export default StyleSheet.create({
   bodyContainer: {
-    flex: 0.83,
     padding: 10,
   },
-  button: {
-    height: "60%",
-    width: "50%",
-  },
-  buttonsContainer: {
+  bottomContainer: {
     alignItems: "center",
-    flex: 0.11,
+    flex: 0.2,
     flexDirection: "row",
     justifyContent: "flex-end",
+  },
+  confirmButton: {
+    bottom: 10,
+    position: "absolute",
+    right: 10,
+  },
+  buttonDisabled: {
+    opacity: 0.5,
+  },
+  centerContainer: {
+    flex: 0.8,
   },
   container: {
     backgroundColor: colors.dark,
     borderColor: colors.black,
     borderRadius: 20,
-    height: "165%",
     overflow: "hidden",
-    transform: [{ rotate: "-90deg" }],
-    width: "45%",
+  },
+  leftContainer: {
+    flex: 0.1,
+  },
+  pageLabel: {
+    justifyContent: "center",
+  },
+  pageLabelText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  rightContainer: {
+    flex: 0.1,
   },
   title: {
     fontFamily: "default",
-    fontSize: 40,
+    fontSize: 32,
     textAlign: "center",
   },
   titleContainer: {
@@ -45,8 +61,9 @@ export default StyleSheet.create({
     borderStartColor: colors.light,
     borderTopColor: colors.light,
     borderWidth: 2,
-    flex: 0.06,
     flexDirection: "row",
+    justifyContent: "space-between",
     padding: 4,
+    paddingHorizontal: 14,
   },
 });

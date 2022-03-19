@@ -5,25 +5,31 @@ KFBannerStyles - Stylesheet for KFBannerScreen.js
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  bodyContainer: {
+    justifyContent: "space-between",
+    height: "100%",
+    width: "100%",
+  },
   buttonContainer: {
-    flex: 0.25,
+    width: "100%",
   },
   healthContainer: {
     alignItems: "center",
-    flex: 0.25,
     flexDirection: "row",
   },
   nameContainer: {
     alignItems: "center",
-    flex: 0.5,
+    position: "absolute",
+    width: "100%",
   },
   screenContainer: {
+    alignItems: "center",
     flex: 1,
+    justifyContent: "center",
     padding: 16,
   },
   toolsButton: {
     height: "100%",
-    width: "20%",
     transform: [{ rotate: "180deg" }],
   },
 });

@@ -22,9 +22,6 @@ function KFToolsViewModel(props) {
   const { baseHp, enableAudio, showPopup } = useSelector(
     (state) => state.settingsReducer
   );
-  const { d6IsLocked, d8IsLocked, d10IsLocked } = useSelector(
-    (state) => state.diceReducer
-  );
 
   const [exitModalVisible, setExitModalVisible] = useState(false);
   const [instructionsModalVisible, setInstructionsModalVisible] =
@@ -43,7 +40,7 @@ function KFToolsViewModel(props) {
 
   const [fontIndex, setFontIndex] = useState(0);
   const font = fonts[fontIndex];
-  const fontName = capitalize(font.name);
+  const fontName = capitalize(font);
   const [bevelVisible, setBevelVisible] = useState(true);
   const [shadowVisible, setShadowVisible] = useState(true);
 

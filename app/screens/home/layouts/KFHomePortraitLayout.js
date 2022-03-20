@@ -11,6 +11,7 @@ import { FGLogo, KFLogo, SGLogo } from "../../../assets/logos";
 import { SettingsGraphic } from "../../../assets/buttons/navigation";
 
 // Components
+import AutoSizeText from "../../../components/AutoSizeText";
 import OpacityButton from "../../../components/OpacityButton";
 import Screen from "../../../components/Screen";
 import StartGameButton from "../../../components/StartGameButton";
@@ -45,7 +46,7 @@ function KFHomePortraitLayout({ actions }) {
       </View>
       <View style={[styles.bottomContainer, portraitStyles.bottomContainer]}>
         <View style={portraitStyles.bottomContents}>
-          <Text style={styles.disclaimer}>
+          <AutoSizeText style={styles.disclaimer} maxLines={2}>
             <Text style={styles.disclaimerBold}>
               {strings.home_disclaimer_title}
             </Text>
@@ -56,7 +57,7 @@ function KFHomePortraitLayout({ actions }) {
             <Text style={styles.disclaimer}>
               {strings.home_disclaimer_text_b}
             </Text>
-          </Text>
+          </AutoSizeText>
           <View style={portraitStyles.companyLogos}>
             <SGLogo style={[styles.smallLogo, portraitStyles.smallLogo]} />
             <FGLogo style={[styles.smallLogo, portraitStyles.smallLogoB]} />
@@ -73,7 +74,7 @@ const portraitStyles = StyleSheet.create({
   },
   bottomContents: {
     height: "100%",
-    width: "75%",
+    width: "70%",
   },
   buttonContainer: {
     flex: 0.2,

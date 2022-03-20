@@ -6,9 +6,9 @@
     "orientation": "default",
     "icon": "./app/assets/kf_icon_logo.png",
     "splash": {
-      "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./app/assets/logos_splash_screen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -29,7 +29,7 @@
       "icon": "./app/assets/icons/kf_icon_android.png"
     },
     "web": {
-      "favicon": "./app/assets/favicon.png"
+      "favicon": "./app/assets/kf_favicon.png"
     },
     "description": "Companion app for the Knife Fight board game. Board game and app both currently under development.",
     "githubUrl": "https://github.com/Dan-Carlin/KnifeFight"

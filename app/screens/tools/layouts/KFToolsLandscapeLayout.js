@@ -20,9 +20,9 @@ import { HomeGraphic } from "../../../assets/buttons/navigation";
 import Button from "../../../components/Button";
 import Checkbox from "../../../components/Checkbox";
 import DiceSelector from "../../../components/DiceSelector";
-import ExitModal from "../../modals/ExitModal";
 import HPCounter from "../../../components/HPCounter";
-import InstructionsModal from "../../modals/InstructionsModal";
+import KFExitModal from "../../modals/KFExitModal";
+import KFInstructionsModal from "../../modals/KFInstructionsModal";
 import LastRollBox from "../../../components/LastRollBox";
 import ModalWithPressable from "../../../components/ModalWithPressable";
 import ModalNoPressable from "../../../components/ModalNoPressable";
@@ -61,7 +61,7 @@ function KFToolsLandscapeLayout({ actions, values }) {
     <Screen style={landscapeStyles.screenContainer} isPortrait={false}>
       <ModalWithPressable
         component={
-          <InstructionsModal
+          <KFInstructionsModal
             onConfirm={() => actions.instructionsConfirmButton()}
           />
         }
@@ -71,7 +71,7 @@ function KFToolsLandscapeLayout({ actions, values }) {
 
       <ModalWithPressable
         component={
-          <ExitModal
+          <KFExitModal
             onCancel={() => actions.exitModalCancelButton()}
             onConfirm={() => actions.exitModalConfirmButton()}
           />

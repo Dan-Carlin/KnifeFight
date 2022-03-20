@@ -35,7 +35,7 @@ export default {
   // Settings
   settings_basehp_label: "Base HP:",
   settings_soundfx_label: "SoundFX:",
-  settings_ins_popup_label: "Show instructions pop-up:",
+  settings_ins_popup_label: "Show instructions\npop-up:",
 
   // Setup - step one
   setup_step_one_title: "First...",

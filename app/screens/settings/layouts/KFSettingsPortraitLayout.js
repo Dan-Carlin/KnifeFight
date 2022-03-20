@@ -50,7 +50,7 @@ function KFSettingsPortraitLayout({ actions, values }) {
             keyboardType="numeric"
             maxLength={2}
             value={values.baseHp}
-            width={"30%"}
+            width={"35%"}
             onChangeText={(value) => actions.baseHpInput(value)}
           />
         </View>

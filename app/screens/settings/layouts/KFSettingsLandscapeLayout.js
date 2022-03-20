@@ -50,7 +50,7 @@ function KFSettingsLandscapeLayout({ actions, values }) {
             keyboardType="numeric"
             maxLength={2}
             value={values.baseHp}
-            width={"25%"}
+            width={"35%"}
             onChangeText={(value) => actions.baseHpInput(value)}
           />
         </View>
@@ -117,7 +117,7 @@ const landscapeStyles = StyleSheet.create({
     justifyContent: "center",
   },
   restoreDefaults: {
-    height: 35,
+    height: 30,
   },
   saveButton: {
     width: "25%",
@@ -127,7 +127,7 @@ const landscapeStyles = StyleSheet.create({
   },
   settingsHolder: {
     height: 50,
-    width: "50%",
+    width: "55%",
   },
   soundButton: {
     height: "65%",

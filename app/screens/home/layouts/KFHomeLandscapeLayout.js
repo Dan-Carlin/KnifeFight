@@ -11,6 +11,7 @@ import { FGLogo, KFLogo, SGLogo } from "../../../assets/logos";
 import { SettingsGraphic } from "../../../assets/buttons/navigation";
 
 // Components
+import AutoSizeText from "../../../components/AutoSizeText";
 import OpacityButton from "../../../components/OpacityButton";
 import Screen from "../../../components/Screen";
 import StartGameButton from "../../../components/StartGameButton";
@@ -45,7 +46,10 @@ function KFHomeLandscapeLayout({ actions }) {
       </View>
       <View style={[styles.bottomContainer, landscapeStyles.bottomContainer]}>
         <SGLogo style={[styles.smallLogo, landscapeStyles.smallLogo]} />
-        <Text style={[styles.disclaimer, landscapeStyles.disclaimer]}>
+        <AutoSizeText
+          style={[styles.disclaimer, landscapeStyles.disclaimer]}
+          maxLines={2}
+        >
           <Text style={styles.disclaimerBold}>
             {strings.home_disclaimer_title}
           </Text>
@@ -56,7 +60,7 @@ function KFHomeLandscapeLayout({ actions }) {
           <Text style={styles.disclaimer}>
             {strings.home_disclaimer_text_b}
           </Text>
-        </Text>
+        </AutoSizeText>
         <FGLogo style={[styles.smallLogo, landscapeStyles.smallLogo]} />
       </View>
     </Screen>

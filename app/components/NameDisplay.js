@@ -34,8 +34,7 @@ function NameDisplay({
           style={[
             styles.gangNameShadow,
             {
-              fontFamily: style.font.name,
-              // lineHeight: style.font.lineHeight,
+              fontFamily: style.font,
               textShadowOffset: {
                 width: style.borderSize * 2.5,
                 height: style.borderSize * 2.5,
@@ -55,8 +54,7 @@ function NameDisplay({
             styles.gangNameBevel,
             {
               color: Color.medium,
-              fontFamily: style.font.name,
-              // lineHeight: style.font.lineHeight,
+              fontFamily: style.font,
               textShadowOffset: {
                 width: style.borderSize * -1,
                 height: style.borderSize,
@@ -77,8 +75,7 @@ function NameDisplay({
             styles.gangNameBevel,
             {
               color: Color.medium,
-              fontFamily: style.font.name,
-              // lineHeight: style.font.lineHeight,
+              fontFamily: style.font,
               textShadowOffset: {
                 width: style.borderSize,
                 height: style.borderSize * -1,
@@ -99,8 +96,7 @@ function NameDisplay({
             styles.gangNameBevel,
             {
               color: Color.light,
-              fontFamily: style.font.name,
-              // lineHeight: style.font.lineHeight,
+              fontFamily: style.font,
               textShadowOffset: {
                 width: style.borderSize * -1,
                 height: style.borderSize * -1,
@@ -121,8 +117,7 @@ function NameDisplay({
             styles.gangNameBevel,
             {
               color: Color.dark,
-              fontFamily: style.font.name,
-              // lineHeight: style.font.lineHeight,
+              fontFamily: style.font,
               textShadowOffset: {
                 width: style.borderSize,
                 height: style.borderSize,
@@ -142,8 +137,7 @@ function NameDisplay({
           styles.gangName,
           {
             color: Color.normal,
-            fontFamily: style.font.name,
-            // lineHeight: style.font.lineHeight,
+            fontFamily: style.font,
           },
         ]}
         fontSize={200}

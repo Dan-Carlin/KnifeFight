@@ -42,9 +42,13 @@ function NameDisplay({
   const [fontIsAdjusted, setFontIsAdjusted] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setFontIsAdjusted(true);
     }, 50);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [window]);
 
   return (

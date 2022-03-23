@@ -15,6 +15,7 @@ import gangColors from "../../data/gangColors";
 import gangTraits from "../../data/gangTraits";
 import { setD6Lock, setD8Lock, setD10Lock } from "../../redux/diceActions";
 import sounds from "../../assets/sounds/sounds";
+import splitStringToTwo from "../../utils/splitStringToTwo";
 import useCounter from "../../hooks/useCounter";
 import useAudioController from "../../hooks/useAudioController";
 
@@ -34,7 +35,7 @@ function KFToolsViewModel(props) {
 
   const dispatch = useDispatch();
 
-  const [gangName, setGangName] = useState("???");
+  const [gangName, setGangName] = useState(["???", ""]);
   const [gangColor, setGangColor] = useState(gangColors.NONE);
   const [gangTrait, setGangTrait] = useState(gangTraits.NONE);
 
@@ -55,11 +56,10 @@ function KFToolsViewModel(props) {
       const color = JSON.parse(colorValue);
       const traitValue = await AsyncStorage.getItem("@gangTrait");
       const trait = JSON.parse(traitValue);
-      setTimeout(() => {
-        setGangName(nameValue != null ? nameValue : null);
-        setGangColor(color);
-        setGangTrait(trait);
-      }, 500);
+
+      setGangName(nameValue != null ? splitStringToTwo(nameValue) : null);
+      setGangColor(color);
+      setGangTrait(trait);
     } catch (e) {
       console.log(e);
     }

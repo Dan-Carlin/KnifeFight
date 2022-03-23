@@ -34,7 +34,6 @@ function KFBannerPortraitLayout({ actions, values }) {
           Trait={values.gangTrait}
           style={values.nameStyle}
           Color={values.gangColor}
-          isPortrait={true}
           descriptionVisible
         />
       </View>
@@ -73,7 +72,7 @@ const portraitStyles = StyleSheet.create({
   },
   nameContainer: {
     flex: 0.7,
-    height: "70%",
+    height: "35%",
   },
   toolsButton: {
     width: "25%",

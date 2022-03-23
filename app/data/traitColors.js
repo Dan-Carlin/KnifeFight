@@ -1,6 +1,11 @@
 import colors from "../config/colors";
 
 export default Object.freeze({
+  NONE: {
+    light: colors.light,
+    medium: colors.medium,
+    dark: colors.dark,
+  },
   BLUE: {
     light: colors.trait_light_blue,
     medium: colors.trait_medium_blue,

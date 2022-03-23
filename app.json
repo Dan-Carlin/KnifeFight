@@ -28,6 +28,9 @@
       },
       "icon": "./app/assets/icons/kf_icon_android.png"
     },
+    "androidNavigationBar": {
+      "visible": "immersive"
+    },
     "web": {
       "favicon": "./app/assets/kf_favicon.png"
     },

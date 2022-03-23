@@ -26,7 +26,7 @@ function KFToolsScreen({ route, navigation }) {
 
   const nameDisplayStyles = {
     font: toolsViewModel.font,
-    borderSize: 2,
+    borderSize: 3,
     shadowVisible: toolsViewModel.shadowVisible,
     bevelVisible: toolsViewModel.bevelVisible,
   };
@@ -104,7 +104,7 @@ function KFToolsScreen({ route, navigation }) {
       initialHp: toolsViewModel.baseHp,
       nameStyle: {
         font: toolsViewModel.font,
-        borderSize: orientation.isLandscape ? 4 : 2,
+        borderSize: orientation.isLandscape ? 6 : 3,
         shadowVisible: toolsViewModel.shadowVisible,
         bevelVisible: toolsViewModel.bevelVisible,
       },

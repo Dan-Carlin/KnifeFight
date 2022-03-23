@@ -15,7 +15,6 @@ const MainNavigator = () => (
     initialRouteName="Home"
     screenOptions={{
       headerShown: false,
-      // orientation: "portrait",
       presentation: "containedTransparentModal",
     }}
   >

@@ -1,13 +1,22 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import { AutoSizeText, ResizeTextMode } from "react-native-auto-size-text";
+import React, { useEffect, useState } from "react";
+import { View, StyleSheet, useWindowDimensions } from "react-native";
 
-import Text from "../components/Text";
+import Text from "./Text";
 
 import colors from "../config/colors";
 import gangColors from "../data/gangColors";
 import gangTraits from "../data/gangTraits";
 import strings from "../config/strings";
+import traitColors from "../data/traitColors";
+
+const traitColorArray = [
+  traitColors.NONE,
+  traitColors.BLUE,
+  traitColors.PURPLE,
+  traitColors.YELLOW,
+  traitColors.GREEN,
+  traitColors.RED,
+];
 
 const styleDefaults = {
   font: "default",
@@ -22,130 +31,252 @@ function NameDisplay({
   style = styleDefaults,
   Color = gangColors.NONE,
   descriptionVisible = false,
-  isPortrait = false,
   ...props
 }) {
-  const getNumberOfLines = isPortrait ? 2 : 1;
+  const window = useWindowDimensions();
+
+  const isPortrait = window.width < window.height;
+
+  const traitColorIndex = Trait ? Trait.colorId : 0;
+
+  const [fontIsAdjusted, setFontIsAdjusted] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFontIsAdjusted(true);
+    }, 50);
+  }, [window]);
 
   return (
     <View style={styles.container} {...props}>
-      {style.shadowVisible && (
-        <AutoSizeText
-          style={[
-            styles.gangNameShadow,
-            {
-              fontFamily: style.font,
-              textShadowOffset: {
-                width: style.borderSize * 2.5,
-                height: style.borderSize * 2.5,
+      <View style={styles.nameLine}>
+        {style.shadowVisible && (
+          <Text
+            style={[
+              styles.gangNameShadow,
+              {
+                fontFamily: style.font,
+                textShadowOffset: {
+                  width: style.borderSize * 2.5,
+                  height: style.borderSize * 2.5,
+                },
               },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+          </Text>
+        )}
+        {style.bevelVisible && (
+          <Text
+            style={[
+              styles.gangNameBevel,
+              {
+                color: traitColorArray[traitColorIndex].medium,
+                fontFamily: style.font,
+                textShadowOffset: {
+                  width: style.borderSize * -1,
+                  height: style.borderSize,
+                },
+                textShadowColor: traitColorArray[traitColorIndex].medium,
+              },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+          </Text>
+        )}
+        {style.bevelVisible && (
+          <Text
+            style={[
+              styles.gangNameBevel,
+              {
+                color: traitColorArray[traitColorIndex].medium,
+                fontFamily: style.font,
+                textShadowOffset: {
+                  width: style.borderSize,
+                  height: style.borderSize * -1,
+                },
+                textShadowColor: traitColorArray[traitColorIndex].medium,
+              },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+          </Text>
+        )}
+        {style.bevelVisible && (
+          <Text
+            style={[
+              styles.gangNameBevel,
+              {
+                color: traitColorArray[traitColorIndex].light,
+                fontFamily: style.font,
+                textShadowOffset: {
+                  width: style.borderSize * -1,
+                  height: style.borderSize * -1,
+                },
+                textShadowColor: traitColorArray[traitColorIndex].light,
+              },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+          </Text>
+        )}
+        {style.bevelVisible && (
+          <Text
+            style={[
+              styles.gangNameBevel,
+              {
+                color: traitColorArray[traitColorIndex].dark,
+                fontFamily: style.font,
+                textShadowOffset: {
+                  width: style.borderSize,
+                  height: style.borderSize,
+                },
+                textShadowColor: traitColorArray[traitColorIndex].dark,
+              },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+          </Text>
+        )}
+        <Text
+          style={[
+            styles.gangName,
+            {
+              color: Color.normal,
+              fontFamily: style.font,
             },
           ]}
-          fontSize={200}
-          numberOfLines={getNumberOfLines}
-          mode={ResizeTextMode.max_lines}
+          numberOfLines={1}
+          adjustsFontSizeToFit={fontIsAdjusted}
         >
-          {gangName}
-        </AutoSizeText>
-      )}
-      {style.bevelVisible && (
-        <AutoSizeText
-          style={[
-            styles.gangNameBevel,
-            {
-              color: Color.medium,
-              fontFamily: style.font,
-              textShadowOffset: {
-                width: style.borderSize * -1,
-                height: style.borderSize,
+          {isPortrait ? gangName[0] : `${gangName[0]} ${gangName[1]}`}
+        </Text>
+      </View>
+      {isPortrait && (
+        <View style={styles.nameLine}>
+          {style.shadowVisible && (
+            <Text
+              style={[
+                styles.gangNameShadow,
+                {
+                  fontFamily: style.font,
+                  textShadowOffset: {
+                    width: style.borderSize * 2.5,
+                    height: style.borderSize * 2.5,
+                  },
+                },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit={fontIsAdjusted}
+            >
+              {gangName[1]}
+            </Text>
+          )}
+          {style.bevelVisible && (
+            <Text
+              style={[
+                styles.gangNameBevel,
+                {
+                  color: traitColorArray[traitColorIndex].medium,
+                  fontFamily: style.font,
+                  textShadowOffset: {
+                    width: style.borderSize * -1,
+                    height: style.borderSize,
+                  },
+                  textShadowColor: traitColorArray[traitColorIndex].medium,
+                },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit={fontIsAdjusted}
+            >
+              {gangName[1]}
+            </Text>
+          )}
+          {style.bevelVisible && (
+            <Text
+              style={[
+                styles.gangNameBevel,
+                {
+                  color: traitColorArray[traitColorIndex].medium,
+                  fontFamily: style.font,
+                  textShadowOffset: {
+                    width: style.borderSize,
+                    height: style.borderSize * -1,
+                  },
+                  textShadowColor: traitColorArray[traitColorIndex].medium,
+                },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit={fontIsAdjusted}
+            >
+              {gangName[1]}
+            </Text>
+          )}
+          {style.bevelVisible && (
+            <Text
+              style={[
+                styles.gangNameBevel,
+                {
+                  color: traitColorArray[traitColorIndex].light,
+                  fontFamily: style.font,
+                  textShadowOffset: {
+                    width: style.borderSize * -1,
+                    height: style.borderSize * -1,
+                  },
+                  textShadowColor: traitColorArray[traitColorIndex].light,
+                },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit={fontIsAdjusted}
+            >
+              {gangName[1]}
+            </Text>
+          )}
+          {style.bevelVisible && (
+            <Text
+              style={[
+                styles.gangNameBevel,
+                {
+                  color: traitColorArray[traitColorIndex].dark,
+                  fontFamily: style.font,
+                  textShadowOffset: {
+                    width: style.borderSize,
+                    height: style.borderSize,
+                  },
+                  textShadowColor: traitColorArray[traitColorIndex].dark,
+                },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit={fontIsAdjusted}
+            >
+              {gangName[1]}
+            </Text>
+          )}
+          <Text
+            style={[
+              styles.gangName,
+              {
+                color: Color.normal,
+                fontFamily: style.font,
               },
-              textShadowColor: Color.medium,
-            },
-          ]}
-          fontSize={200}
-          numberOfLines={getNumberOfLines}
-          mode={ResizeTextMode.max_lines}
-        >
-          {gangName}
-        </AutoSizeText>
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit={fontIsAdjusted}
+          >
+            {gangName[1]}
+          </Text>
+        </View>
       )}
-      {style.bevelVisible && (
-        <AutoSizeText
-          style={[
-            styles.gangNameBevel,
-            {
-              color: Color.medium,
-              fontFamily: style.font,
-              textShadowOffset: {
-                width: style.borderSize,
-                height: style.borderSize * -1,
-              },
-              textShadowColor: Color.medium,
-            },
-          ]}
-          fontSize={200}
-          numberOfLines={getNumberOfLines}
-          mode={ResizeTextMode.max_lines}
-        >
-          {gangName}
-        </AutoSizeText>
-      )}
-      {style.bevelVisible && (
-        <AutoSizeText
-          style={[
-            styles.gangNameBevel,
-            {
-              color: Color.light,
-              fontFamily: style.font,
-              textShadowOffset: {
-                width: style.borderSize * -1,
-                height: style.borderSize * -1,
-              },
-              textShadowColor: Color.light,
-            },
-          ]}
-          fontSize={200}
-          numberOfLines={getNumberOfLines}
-          mode={ResizeTextMode.max_lines}
-        >
-          {gangName}
-        </AutoSizeText>
-      )}
-      {style.bevelVisible && (
-        <AutoSizeText
-          style={[
-            styles.gangNameBevel,
-            {
-              color: Color.dark,
-              fontFamily: style.font,
-              textShadowOffset: {
-                width: style.borderSize,
-                height: style.borderSize,
-              },
-              textShadowColor: Color.dark,
-            },
-          ]}
-          fontSize={200}
-          numberOfLines={getNumberOfLines}
-          mode={ResizeTextMode.max_lines}
-        >
-          {gangName}
-        </AutoSizeText>
-      )}
-      <AutoSizeText
-        style={[
-          styles.gangName,
-          {
-            color: Color.normal,
-            fontFamily: style.font,
-          },
-        ]}
-        fontSize={200}
-        numberOfLines={getNumberOfLines}
-        mode={ResizeTextMode.max_lines}
-      >
-        {gangName}
-      </AutoSizeText>
       {descriptionVisible && (
         <Text style={styles.traitTextContainer}>
           <Text style={styles.text}>{strings.name_display_text_a}</Text>
@@ -160,32 +291,33 @@ function NameDisplay({
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    flexDirection: "row",
     height: "100%",
     justifyContent: "center",
     overflow: "visible",
-    paddingBottom: 4,
     width: "100%",
   },
   gangName: {
     alignSelf: "center",
+    fontSize: 200,
     includeFontPadding: false,
     position: "absolute",
     textAlign: "center",
-    width: "90%",
+    width: "100%",
     padding: 30,
   },
   gangNameBevel: {
     alignSelf: "center",
+    fontSize: 200,
     includeFontPadding: false,
     position: "absolute",
     textAlign: "center",
     textShadowRadius: 1,
-    width: "90%",
+    width: "100%",
     padding: 30,
   },
   gangNameShadow: {
     alignSelf: "center",
+    fontSize: 200,
     color: colors.black,
     includeFontPadding: false,
     opacity: 0.5,
@@ -193,8 +325,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textShadowRadius: 14,
     textShadowColor: colors.black,
-    width: "90%",
+    width: "100%",
     padding: 30,
+  },
+  nameLine: {
+    alignItems: "center",
+    height: "50%",
+    justifyContent: "center",
+    overflow: "visible",
+    width: "100%",
   },
   text: {
     color: colors.light,
@@ -209,7 +348,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   traitTextContainer: {
-    alignSelf: "flex-end",
+    alignSelf: "center",
+    bottom: 0,
     textAlign: "center",
     position: "absolute",
   },

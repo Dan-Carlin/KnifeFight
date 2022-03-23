@@ -34,7 +34,6 @@ function KFBannerLandscapeLayout({ actions, values }) {
           Trait={values.gangTrait}
           style={values.nameStyle}
           Color={values.gangColor}
-          isPortrait={false}
           descriptionVisible
         />
       </View>

@@ -135,7 +135,6 @@ function KFToolsLandscapeLayout({ actions, values }) {
               Trait={values.gangTrait}
               style={values.nameDisplayStyles}
               Color={values.gangColor}
-              isPortrait={false}
             />
           </View>
           <View

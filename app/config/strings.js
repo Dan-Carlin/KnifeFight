@@ -43,6 +43,7 @@ export default {
   setup_step_one_placeholder: "Name your gang",
   setup_step_one_toast:
     "Gang name should only contain letters, numbers, and - ! ' or ?.",
+  setup_step_one_toastB: "Name cannot be empty.",
 
   // Setup - step two
   setup_step_two_title: "Next...",

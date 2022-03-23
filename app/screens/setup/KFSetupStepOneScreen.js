@@ -36,6 +36,10 @@ function KFSetupStepOneScreen({ navigation }) {
     return invalidChars.test(str);
   };
 
+  const isEmpty = (str) => {
+    return str.trim().length === 0;
+  };
+
   const onGangNameTextChanged = (value) =>
     stepOneViewModel.setGangNameValue(value);
 
@@ -48,6 +52,8 @@ function KFSetupStepOneScreen({ navigation }) {
   const onNextButtonPressed = () => {
     if (containsInvalidChars(stepOneViewModel.gangName)) {
       showLongMessage(strings.setup_step_one_toast);
+    } else if (isEmpty(stepOneViewModel.gangName)) {
+      showLongMessage(strings.setup_step_one_toastB);
     } else {
       Keyboard.dismiss();
       stepOneViewModel.storeGangNameValue(stepOneViewModel.gangName);

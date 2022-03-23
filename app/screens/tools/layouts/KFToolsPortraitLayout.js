@@ -121,7 +121,6 @@ function KFToolsPortraitLayout({ actions, values }) {
               Trait={values.gangTrait}
               style={values.nameDisplayStyles}
               Color={values.gangColor}
-              isPortrait={true}
             />
           </View>
           <View
